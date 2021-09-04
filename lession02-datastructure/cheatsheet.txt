@@ -1,0 +1,4 @@
+sout			>>System.out.println()
+main			>>public static void main...
+ctrl+d			>>xóa một dòng
+ctrl+Alt+down 	>>copy xuống một dòng
