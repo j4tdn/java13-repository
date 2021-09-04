@@ -1,0 +1,5 @@
+sout	 			>> System.out.println()
+main 	 			>> public static void main(String[] args)
+Ctrl + D 			>> Delete a line
+Ctrl + shift + F 	>> Format code
+Ctrl + Alt + Down >> Copy new line
