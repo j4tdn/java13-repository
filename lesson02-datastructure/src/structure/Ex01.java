@@ -60,6 +60,6 @@ public class Ex01 {
 		System.out.println("Enter a number: ");
 		int number = ip.nextInt();
 		
-		if (number)
+
 	}
 }
