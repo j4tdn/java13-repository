@@ -1,0 +1,5 @@
+sout >> System.out.println
+main >> public static void main >>>
+Ctrl D >> delete in line
+Ctrl shift f >> format code
+Ctrl alt down >> duplicate a line
