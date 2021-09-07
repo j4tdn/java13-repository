@@ -1,10 +1,13 @@
-package TrungHoHomeWork;
+package homework;
 
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Ex07 {
+	/**
+	 * <b>Description:</b> Enter the min and max value that you want to random between. Enter the amount/number of element that you want to get <br>
+	 */
 	public static void main(String[] args) {		
 		Scanner ip = new Scanner(System.in);
 		
@@ -20,6 +23,13 @@ public class Ex07 {
 		System.out.println("Random result: " + randomExhaustedInteger(min, max, numberOfElement));
 	}
 	
+	/**
+	 * <b>Description:</b> This function to return the random exhausted numbers from min, max value and amount/number of element to get<br>
+	 * <b>Return:</b> Array list of int for random number<br>
+	 * @param min represent the min value to random from
+	 * @param max represent the max value to random to
+	 * @param numberOfElement represent the amount/number of element that you want to get
+	 */
 	public static ArrayList<Integer> randomExhaustedInteger(int min, int max, int numberOfElement) {		
 		while(numberOfElement > (max - min + 1)) {
 			System.out.println("Please re-enter the number of value, it should be equal or less than: " + (max - min + 1));
@@ -37,7 +47,6 @@ public class Ex07 {
 				randomResult.add(random);
 			}
 		}
-		
 		return randomResult;
 	}
 }

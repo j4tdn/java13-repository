@@ -1,10 +1,13 @@
-package TrungHoHomeWork;
+package homework;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
 public class Ex05 {
+	/**
+	 * <b>Description:</b> Enter a decimal number from keyboards then convert it into binary then print the result<br>
+	 */
 	public static void main(String[] args) {
 		Scanner ip = new Scanner(System.in);
 		System.out.println("Please enter a decimal number: ");
@@ -14,6 +17,11 @@ public class Ex05 {
 		decimalToBinary(number);
 	}
 	
+	/**
+	 * <b>Description:</b> This function to get the integer number from keyboards then convert it into binary<br>
+	 * <b>Return:</b> All the digits of binary value of the input decimal number<br>
+	 * @param decimalNumber represent the input decimal number
+	 */
 	public static void decimalToBinary(int decimalNumber) {
 		ArrayList<Integer> binavalue = new ArrayList<>();
 		int binadigit;
