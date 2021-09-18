@@ -13,8 +13,17 @@ public class CarAdv {
 	public CarAdv(String color) {
 		this.color = color;
 	}
-
-
+	//static
+	public static void exportCarInfor() {
+		System.out.println(model);
+		
+	}
+	// non-static 
+	public void PrintCarInfor() {
+		System.out.println(model);
+		System.out.println(color);
+		exportCarInfor();
+	}
 
 	public String getColor() {
 		return color;
