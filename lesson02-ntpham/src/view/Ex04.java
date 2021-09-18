@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import bean.CarAdv;
 
@@ -7,11 +7,11 @@ public class Ex04 {
 		// Tạo 100 mẫu xe Audi với các màu sắc khác nhau
 		// Audi >> Abba
 		
-		// Khi 1 thuộc tính, hàm mà không phụ thuộc vào đối tượng đang gọi
+		// Khi 1 thuộc tính, hàm mà không phụ thuộc vào đối tượng đang g�?i
 		// >>>> Sử dụng static
 		
-		// Khi 1 thuộc tính, hàm mà phụ thuộc vào đối tượng đang gọi
-		// Hay là giá trị phụ thuộc vào đối tượng đang gọi
+		// Khi 1 thuộc tính, hàm mà phụ thuộc vào đối tượng đang g�?i
+		// Hay là giá trị phụ thuộc vào đối tượng đang g�?i
 		// >> Sử dụng non static
 		CarAdv.model = "Audi";
 		CarAdv c1 = new CarAdv("#fff");

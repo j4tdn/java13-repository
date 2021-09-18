@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import bean.Rectangle;
 
@@ -8,8 +8,8 @@ public class Ex01 {
 		// Rectangle(): constructor of Rectangle class
 		
 		// r1: w8, h4
-		// Khởi tạo đối tượng, chưa truyền giá trị cho thuộc tính
-		// Đối tượng sẽ có giá trị mặc định cho mỗi thuộc tính
+		// Khởi tạo đối tượng, chưa truy�?n giá trị cho thuộc tính
+		// �?ối tượng sẽ có giá trị mặc định cho mỗi thuộc tính
 		
 		Rectangle r1 = new Rectangle();
 		r1.setWidth(8);
@@ -23,7 +23,7 @@ public class Ex01 {
 		System.out.println("r2: " + r2);
 		
 		// r3: w2, h6
-		// Khởi tạo và truyền giá trị cho thuộc tính
+		// Khởi tạo và truy�?n giá trị cho thuộc tính
 		Rectangle r3 = new Rectangle(2, 6);
 		System.out.println("r3: " + r3);
 		
