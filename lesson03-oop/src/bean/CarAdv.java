@@ -1,0 +1,52 @@
+package bean;
+
+public class CarAdv {
+	
+	// static >> initial value when class is being loaded
+	// non-static >> initial value when initial an object from class
+	
+	// static things will be created before non-static things
+	
+	public static String model; // static: các Object đều có giá trị CHUNG
+	                            //(thuộc phạm vi của Class => giá trị chung cho all Object trong Class)
+	private String color; 
+	// non-static : mỗi Object mang giá trị riêng
+	
+	public CarAdv() {
+		
+	}
+	
+	public CarAdv(String color) {
+		this.color = color;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+	// static >> non-static
+	public static void exportCarInfo() {
+		System.out.println(model);
+		// System.out.println(color);
+		// printCarInfo();
+	}
+	
+	// static >> non-static
+	public void printCarInfo() {
+		System.out.println(model);
+		System.out.println(color);
+		exportCarInfo();
+	}
+	
+
+	
+	@Override
+	public String toString() {
+		return model + ", " + color;
+	}
+	
+
+}
