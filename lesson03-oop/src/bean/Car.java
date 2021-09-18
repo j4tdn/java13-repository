@@ -1,17 +1,41 @@
 package bean;
 
 public class Car {
+	// attributes, constructor, getter, setter, [hashcode], equal, toString
 	private String serial;
 	private String modal;
 	private String color;
 	
+	// double luôn có giá trị mặc định là: 0d
+	// Double chưa có giá trị - null, có giá trị 0 hoặc 1 giá trị bất kì
+	private Double price;
+	
+	// Database >> Table >> Column >> NULL/VALUE/ UNDIFIED (not in Java)
+	// JAVA 1.5 >> Generic, Collection
+	
 	public Car() {
 	}
-
+	
+	public Car(String serial, String modal) {
+		//this.serial = serial;
+		//this.modal = modal;
+		
+		this(serial, modal, null);
+	}
+	
 	public Car(String serial, String modal, String color) {
+		//this.serial = serial;
+		//this.modal = modal;
+		//this.color = color;
+		
+		this(serial, modal, color, null);
+	}
+	
+	public Car(String serial, String modal, String color, Double price) {
 		this.serial = serial;
 		this.modal = modal;
 		this.color = color;
+		this.price = price;
 	}
 
 	public String getSerial() {
@@ -36,6 +60,14 @@ public class Car {
 
 	public void setColor(String color) {
 		this.color = color;
+	}
+	
+	public Double getPrice() {
+		return price;
+	}
+	
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 	
 	@Override
@@ -70,7 +102,4 @@ public class Car {
 	public String toString() {
 		return serial + "," + modal + "," + color;
 	}
-	
-	
-	
 }
