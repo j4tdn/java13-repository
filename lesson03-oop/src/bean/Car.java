@@ -4,14 +4,26 @@ public class Car {
 	private String serial;
 	private String model;
 	private String color;
-	
+	private Double price;
+
 	public Car() {
 	}
-	
+
 	public Car(String serial, String model, String color) {
+		/*
+		 * this.serial = serial; 
+		 * this.model = model; 
+		 * this.color = color;
+		 */
+		this(serial, model, color, 0d);
+	}
+
+	public Car(String serial, String model, String color, double price) {
+		super();
 		this.serial = serial;
 		this.model = model;
 		this.color = color;
+		this.price = price;
 	}
 
 	public String getSerial() {
@@ -38,11 +50,19 @@ public class Car {
 		this.color = color;
 	}
 
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
 	@Override
 	public String toString() {
 		return serial + "," + model + "," + color;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		// this >> car
@@ -51,13 +71,12 @@ public class Car {
 			return true;
 		}
 		// Object >> not a car
-		if(!(obj instanceof Car)) {
+		if (!(obj instanceof Car)) {
 			return false;
 		}
 		// Obj >> a car
-		Car that = (Car)obj;
-		
-		return getSerial() == null ? false
-								   : getSerial().equals(that.getSerial());
+		Car that = (Car) obj;
+
+		return getSerial() == null ? false : getSerial().equals(that.getSerial());
 	}
 }

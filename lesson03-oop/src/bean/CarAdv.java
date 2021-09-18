@@ -22,7 +22,15 @@ public class CarAdv {
 	public void setColor(String color) {
 		this.color = color;
 	}
-
+	public static void exportCarInfo() {
+		System.out.println(model);
+	}
+	
+	public void printCarInfo() {
+		System.out.println(model);
+		System.out.println(color);
+		exportCarInfo();
+	}
 	@Override
 	public String toString() {
 		return model + "," + color;
