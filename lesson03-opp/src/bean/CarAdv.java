@@ -21,8 +21,15 @@ public class CarAdv {
 
 	public void setColor(String color) {
 		this.color = color;
-	}
 
+	}
+	//static >> non-static
+	public static void exportCarInfo() {
+		System.out.println(model);
+	}
+    public void printCarInfo() {
+    	System.out.println(model);
+    }
 	@Override
 	public String toString() {
 		return model + "," + color;

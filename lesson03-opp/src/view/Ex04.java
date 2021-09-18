@@ -8,7 +8,7 @@ public class Ex04 {
 		// Tao 100 mau xe Audi voi cac mau sac khac nhau
 		
 		// khi 1 thuoc tinh, ham ma khong phu thuoc vao doi tuong dang goi
-		
+	
 		// Audi >> Abba
 		CarAdv.model = "Audi";
 		
