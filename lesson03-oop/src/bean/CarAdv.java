@@ -2,7 +2,7 @@ package bean;
 
 public class CarAdv {
 	//static >>initial value when class is being loaded
-	//non-statoc>>initial value when init an object from class
+	//non-static>>initial value when init an object from class
 	
 	public static  String model;
 	
@@ -19,6 +19,17 @@ public class CarAdv {
 	}
 	public void setColor(String color) {
 		this.color = color;
+	}
+	public static void exportCarInfor() {
+		System.out.println(model);
+//		System.out.println(color);
+//		printCarInfor();
+	}
+	
+	public void printCarInfor() {
+		System.out.println(model);
+		System.out.println(color);
+		exportCarInfor();
 	}
 	
 	@Override
