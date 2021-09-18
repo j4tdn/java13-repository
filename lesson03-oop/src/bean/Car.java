@@ -4,6 +4,7 @@ public class Car {
 	private String serial;
 	private String model;
 	private String color;
+	private double price;
 	
 	public Car() {
 		
@@ -13,6 +14,13 @@ public class Car {
 		this.serial = serial;
 		this.model = model;
 		this.color = color;
+		
+	}
+
+	public Car(String serial, String model, String color, double price) {
+		
+		this(serial, model, color);
+		this.price = price;
 	}
 
 	public String getSerial() {
@@ -37,6 +45,14 @@ public class Car {
 
 	public void setColor(String color) {
 		this.color = color;
+	}
+	
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	public double getPrice() {
+		return price;
 	}
 	
 	@Override

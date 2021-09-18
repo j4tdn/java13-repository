@@ -33,6 +33,20 @@ public class CarAdv {
 //		this.model = model;
 //	}
 	
+	//static >> non-static
+	public static void exportCarInf() {
+		System.out.println(model);
+		//System.out.println(color);
+		//printCarInf();
+	}
+	
+	//non-static >> static
+	public void printCarInf() {
+		System.out.println(model);
+		System.out.println(color);
+		exportCarInf();
+	}
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
