@@ -19,6 +19,16 @@ public static String model;
 	public void setColor(String color) {
 		this.color = color;
 	}
+	
+	public static void exportCarInfo() {
+		System.out.println(model);
+	}
+	
+	public void printCarInfo() {
+		System.out.println(model);
+		System.out.println(color);
+		exportCarInfo();
+	}
 
 //	public String getModel() {
 //		return model;
