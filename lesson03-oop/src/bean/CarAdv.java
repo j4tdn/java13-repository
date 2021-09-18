@@ -11,7 +11,6 @@ public class CarAdv {
 	
 	private String color;
 	
-	
 	public CarAdv() {
 	}
 
@@ -19,6 +18,8 @@ public class CarAdv {
 		this.color = color;
 	}
 
+	// no getter setter for static attribute
+	
 	public String getColor() {
 		return color;
 	}
@@ -26,7 +27,18 @@ public class CarAdv {
 	public void setColor(String color) {
 		this.color = color;
 	}
-
+	
+	public static void exportCarInfo() {
+		System.out.println(model);
+	}
+	
+	// static >> non-static
+	public void printCarInfo() {
+		System.out.println(model);
+		System.out.println(color);
+		exportCarInfo();
+	}
+	
 	@Override
 	public String toString() {
 		return model + ", " + color;
