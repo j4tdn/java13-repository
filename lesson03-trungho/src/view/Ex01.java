@@ -2,11 +2,18 @@ package view;
 
 import java.util.Scanner;
 
+/**
+ * Bài 1: Viết chương trình nhập vào thông tin các phương tiện/xe (Chủ xe, Loại xe, Dung tích xylanh, trị giá xe) và lưu trữ chúng
+ * Sau đó tính mức thuế phải nộp cho từng xe (dựa vào dung tích xylanh và giá trị xe) và in ra tất cả các thông tin liên quan cho tất cả các xe đã nhập vào
+ */
 public class Ex01 {
 	public static void main(String[] args) {
 		printVehicleInfo(getVehicleInfo());
 	}
 	
+	/**
+	 * Hàm này dùng để tính mức thuế (phần trăm) phải đóng dựa trên dung tích xylanh
+	 */
 	public static Double taxRateCalculation(Double cylinderCapacity) {
 		if(cylinderCapacity < 100) {
 			return 0.01;
@@ -16,6 +23,10 @@ public class Ex01 {
 		return 0.05;
 	}
 	
+	/**
+	 * Hàm này dùng để nhập thông tin các xe từ bàn phím và lưu trữ chúng
+	 * Hàm này cũng tính luôn thuế phải nộp cho từng xe và lưu trữ chúng
+	 */
 	public static Object[][] getVehicleInfo () {
 		Double cylinderCapacity;
 		Double price;
@@ -48,6 +59,9 @@ public class Ex01 {
 		return arrayOfVehicle;
 	}
 	
+	/**
+	 * Hàm này dùng để in ra tất cả các thông tin liên quan cho tất cả các xe đã nhập vào theo định dạng nhất định
+	 */
 	public static void printVehicleInfo(Object[][] arrayOfVehicle) {
 		System.out.println("---------------------------------------------------------------------------------------------");
 		String header = String.format("%-20s%-20s%-20s%-20s%s", "Tên chủ xe", "Loại xe", "Dung tích", "Trị giá", "Thuế phải nộp");

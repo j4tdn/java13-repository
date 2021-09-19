@@ -1,12 +1,19 @@
 package view;
 
 import java.util.Scanner;
-
+/**
+ * Bài 2: Viết chương trình nhập vào 1 mảng số nguyên A có kích thước MxN
+ * Sau đó kiểm tra và in ra phần tử yên ngựa nếu có và vị trí của nó trong mảng
+ * Nếu không có phần tử yên ngựa thì in ra không có phần tử yên ngựa
+ */
 public class Ex02 {
 	public static void main(String[] args) {
-		printArrayInfo(getArrayInfo());
+		getSaddleElement(getArrayInfo());
 	}
 	
+	/**
+	 * Hàm này dùng để nhập 1 mảng số nguyên A có kích thước MxN từ bàn phím vào và lưu trữ nó
+	 */
 	public static Integer[][] getArrayInfo () {
 		Scanner ip = new Scanner(System.in);
 		System.out.println("Please enter the number of row for the array: ");
@@ -25,6 +32,9 @@ public class Ex02 {
 		return arrayOfNumber;
 	}
 	
+	/**
+	 * Hàm này dùng để in ra các phần tử trong mảng số nguyên A có kích thước MxN
+	 */
 	public static void printArrayInfo (Integer[][] arrayOfNumber) {
 		int row = arrayOfNumber.length;
 		int column = arrayOfNumber[0].length;
@@ -38,22 +48,33 @@ public class Ex02 {
 		}
 	}
 	
-	// This function is not finished yet :(
-	public static Object[][] getSaddleElement(Integer[][] arrayOfNumber){
-		Integer[][] arrayOfSaddleElement = null;
+	/**
+	 * Hàm này dùng để duyệt mảng số nguyên A có kích thước MxN
+	 * Sau đó kiểm tra và in ra phần tử yên ngựa nếu có và vị trí của nó trong mảng
+	 * Nếu không có phần tử yên ngựa thì in ra không có phần tử yên ngựa
+	 */
+	public static Integer getSaddleElement(Integer[][] arrayOfNumber){
+		Integer saddleElement = null;
 		int row = arrayOfNumber.length;
-		int column = arrayOfNumber[0].length;
 		
 		for(int i = 0; i < row; i++) {
-			for(int j = 0; j < column; j++) {
+			int tempColumn = getIndexOfMinValueOfARow(arrayOfNumber[i]);
+			
+			if(isMaxValueOfAColumn(arrayOfNumber, tempColumn, i)) {
+				saddleElement = arrayOfNumber[i][tempColumn];
+				System.out.println("The saddle element is " + arrayOfNumber[i][tempColumn] + ". At row " + (i + 1) + " - column " + (tempColumn + 1) + " in the array that you input!");
 				
+				return saddleElement;
 			}
 		}
 		
-		return arrayOfSaddleElement;
+		System.out.println("There is no saddle element in the array that you input!");
+		return saddleElement;
 	}
 	
-	
+	/**
+	 * Hàm này dùng để lấy ra index của số nguyên nhỏ nhất trong 1 mảng
+	 */
 	public static int getIndexOfMinValueOfARow(Integer[] numbers){
 		int min = numbers[0];
 		int index = 0;
@@ -67,17 +88,17 @@ public class Ex02 {
 		return index;
 		}
 	
+	/**
+	 * Hàm này dùng kiểm tra một số tại địa chỉ (rowIndex, columnIndex) trong mảng 2 chiều A có phải là giá trị lớn nhất trong cột đang chứa nó hay không
+	 */
 	public static boolean isMaxValueOfAColumn(Integer[][] arrayOfNumber, int columnIndex, int rowIndex) {
 		int row = arrayOfNumber.length;
 		
 		for(int i = 0; i < row; i++) {
-			if(arrayOfNumber[i][columnIndex] > arrayOfNumber[rowIndex][columnIndex]) {
+			if((arrayOfNumber[i][columnIndex] >= arrayOfNumber[rowIndex][columnIndex]) && (i!= rowIndex)) {
 				return false;
 			}
 		}
 		return true;
 	}
-	
-	
-
 }
