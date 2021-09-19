@@ -8,6 +8,7 @@ import java.time.Month;
  * Normally: Utility is place where contains utility methods
  * No cares created class's objects
  */
+
 public class OrderUtils {
 	// o1, o2, o3
 		public static double export(Order order) {
