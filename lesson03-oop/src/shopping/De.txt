@@ -1,0 +1,13 @@
+Bài tập:
+ Thiết kế bài toán mua hàng khi khách hàng vào mua điện thoại tại của hàng thế giới di động.
+Sau khi hoàn tất mua hàng. Thông tin khách hàng phải được lưu trữ tại hệ thống.
+Trong ngày 05/05. Mặt hàng trên 590.000 sẽ được giảm giá 10%
+ Khách hàng phải biết được thông tin thiết bị mà mình đã mua.
+ Thông tin khách hàng: họ tên, số điện thoại, chứng minh nhân dân, địa chỉ
+ Thông tin thiết bị: mã thiết bị, hệ điều hành, màu sắc, giá.
+ Chương trình:
+• Khởi tạo dữ liệu cho cửa hàng
+• Khởi tạo thông tin khách hàng
+• Thực hiện mua hàng
+– Tính tổng tiền mà khách hàng phải trả.
+– Xuất ra thông tin toàn bộ sản phẩm mà khách hàng đã mua để xuất hóa đơn
