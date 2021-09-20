@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Bill {
 	private Customer customer;
 	private PhoneDetails[] phoneDetails;
-	private LocalDateTime dateTime; 
+	private LocalDateTime dateTime;
 
 	public Bill() {
 	}
@@ -43,28 +43,13 @@ public class Bill {
 	@Override
 	public String toString() {
 		String space = "================================||=================================";
-		return "=> Infomation of customer: \n" + customer + ""
-				+ "\n=> Things bought: \n" + getAllPhoneDetails() + 
-				"=> At: " + dateTime + "\n=> TotalPrice: "+ getTotalPrice() +
-				"\n" + space;
+		return "=> Infomation of customer: \n" + customer + "" + 
+				"\n=> Things bought: \n" + BillUtils.getAllPhoneDetails(this) +
+				"=> At: " + dateTime + 
+				"\n=> TotalPrice: " + BillUtils.getTotalPrice(this) + "\n" + space;
 	}
-	public String getAllPhoneDetails() {
-		String str = "";
-		for(PhoneDetails pD : phoneDetails) {
-			str+= pD.toString() + "\n";
-		}
-		return str;
-	}
-	public double getTotalPrice() {
-		double toTal = 0d;
-		for (PhoneDetails pD : phoneDetails) {
-			toTal += pD.getPhone().getPrice() * pD.getQuantity();
-		}
 
-		if (dateTime.getDayOfMonth() == 8 && dateTime.getMonthValue() == 5) {
-			return toTal - toTal * 10 / 100;
-		} else {
-			return toTal;
-		}
-	}
+
+
+	
 }
