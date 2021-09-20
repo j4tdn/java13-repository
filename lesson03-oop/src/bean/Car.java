@@ -72,7 +72,7 @@ public class Car {
 	
 	@Override
 	public String toString() {
-		return serial + ", " + model + ", " + color;
+		return serial + ", " + model + ", " + color + ", " + price;
 	}
 	
 }
