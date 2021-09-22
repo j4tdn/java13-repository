@@ -1,0 +1,8 @@
+***Tính Chất Đóng gói (Encapsulation) : được thể hiện qua vào Access MOdifier private,public,protected ,___
+	protected hoặc default: dùng class nào cùng được nhưng phải cùng packed
+	public : dùng đâu cũng được ngoài package cũng được
+	private chỉ dùng trong class.
+*** Tính chất Đa Hình (Polymorphism) + Đa hình trong phương thức : là phương thức có thể 
+										làm chức năng này, lúc làm chức năng khác
+									 + Đa hình trong đối tượng : là phương thức lúc làm 
+									 	cái này, lúc làm cái kia
