@@ -14,5 +14,17 @@ public class App {
 		
 		/////
 		
+		Shape s10 = new Shape();
+		Rectangle r11 = new Rectangle();
+		Square s12 = new Square();
+		
+		s10 = r11; s10 = s12; // OK >> child to parent
+		// r11 = s10; s12 = s10; no OK >> parent to child
+		
+		Rectangle[] rs = {r11, rectangle};
+		Square[] ss = {s12, square};
+		
+		// store shape and shape's inherited
+		Shape[] shapes = {s10,r11,s12,rectangle,square};
 	}
 }
