@@ -7,7 +7,7 @@ public class Freelancer {
 		Company company = new Company();
 		company.id = "123";
 		company.name = "N234";
-		company.insurance = "I345";
-		company.fund = 123;
+//		company.insurance = "I345";
+//		company.fund = 123;
 	}
 }

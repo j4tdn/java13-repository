@@ -1,5 +1,6 @@
 package polymorphism.object;
 
+
 public class App {
 	public static void main(String[] args) {
 		Shape shape = new Shape();
@@ -19,6 +20,19 @@ public class App {
 		s1.drawing();
 		// rectangle = new Shape(); // compile error
 		////////////////////////////////////////////
+		
+		Shape s10 = new Shape();
+		Rectangle r11= new Rectangle();
+		Square s12 = new Square();
+		
+		s10 = r11;
+		s10 = s12;
+		
+		Rectangle[] rs = {r11, rectangle};
+		Square[] ss = {s12, square};
+		
+		Shape[] shapes = {s10, r11, rectangle, s1, square}; 
+		
 		
 	}
 }
