@@ -1,0 +1,8 @@
+Class : +không bắt buộc override ( con kế thừa từ cha)
+        +Class không có hàm trừu tượng
+Abstract class : + dùng được extends
+				 + Có hàm trừu tượng và hàm không trừu tượng 
+Interface:+ Tập hợp các phương thức trừu tượng ( chỉ có phương thức ko có phần body)
+		  + cha là interface thì con phải bắt buộc override
+		  + hàm trừu tượng đã có sẵn public abstract.
+		  + con kế thừa từ Inteface thì không dùng extends mà phải dùng implements
