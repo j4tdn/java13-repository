@@ -1,4 +1,4 @@
-package polymorphism;
+package polymorphism.method;
 
 public class App {
 	
