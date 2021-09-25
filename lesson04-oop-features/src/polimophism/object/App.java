@@ -32,5 +32,18 @@ public class App {
 		//Rectangle r1 = (Rectangle) new Shape();//Error First
 		//r1.drawing();
 		//r1.setBackGround();
+		
+		Shape s10 = new Shape();
+		Rectangle r11 = new Rectangle();
+		Square s12 = new Square();
+		
+		s10 = r11; s10 = s12; //OK 
+		//r11 = s10; s12 = s10 //NO 
+		
+		Rectangle[] rs = {r11, rec};
+		Square[] ss = {s12, sq};
+		
+		Shape[] shapes = {s1, r11, s12, sq, s10};
+		
 	}
 }
