@@ -28,8 +28,18 @@ public class App {
 		//>>flexible ,easy for casting instance
 		
 		
-		Rectangle r1 =(Rectangle) new Shape();//error first
-		r1.drawing();
+//		Rectangle r1 =(Rectangle) new Shape();//error first
+//		r1.drawing();
+		
+		Shape s10 = new Shape();
+		Rectangle r11 = new Rectangle();
+		Square s12 = new Square();
+		
+		s10=r11;s10=s12; //ok>>assign child to parent
+		//r11=s10;s12=s10 //no
+		
+		Shape[] shapes = {s10,r11,s12,rectangle,square};
+		
 		
 		
 	}
