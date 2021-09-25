@@ -1,4 +1,4 @@
-package polymorphism.object;
+package polimorphism.object;
 
 public class Rectangle extends Shape{
 	@Override
