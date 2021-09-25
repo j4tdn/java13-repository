@@ -1,11 +1,8 @@
-package polymorphism.object;
+package factory;
 
 public class Shape {
 	void drawing(){
 		System.out.println("Shape >> drawing ..");
-	}
-	int calS() {
-		return 1;
 	}
 	
 	private void clear() {

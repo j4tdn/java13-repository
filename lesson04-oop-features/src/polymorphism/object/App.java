@@ -1,4 +1,5 @@
-package polymorphism.object;
+   package polymorphism.object;
+
 
 public class App {
 	public static void main(String[] args) {
@@ -29,6 +30,20 @@ public class App {
 		// Rectangle r1 = (Rectangle) new Shape(); // Error
 		// r1.drawing();
 		// r1.setBackground();
+		
+		
+		Shape s10 = new Shape();
+		Rectangle r11 = new Rectangle();
+		Square s12 = new Square();
+		
+		s10 = r11; s10 = s12; //OK >> assign child to parent
+		//r11 = s10; s12 = s10; //NO >> assign parent to child
+		
+		Rectangle[] rs = {r11, rectangle};
+		Square[] ss = {s12, square};
+		
+		// store shape and shape's inherited
+		Shape[] shapes = {s10, r11, s12, rectangle, square};
 		
 	}
 }
