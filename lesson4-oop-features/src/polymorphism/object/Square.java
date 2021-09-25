@@ -1,8 +1,9 @@
 package polymorphism.object;
 
-public class Square {
+public class Square extends Shape {
 	@Override
 	void drawing() {
-		System.out.println("Square >> drawing..");
+		System.out.println("Square>>drawing");
 	}
+
 }
