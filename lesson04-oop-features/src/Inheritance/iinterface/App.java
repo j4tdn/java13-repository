@@ -7,5 +7,14 @@ public class App {
 		
 		s1.drawing();
 		s2.drawing();
+		
+		/*
+		 * Shape s3 = new Shape() {
+		 * 
+		 * @Override public void drawing() {
+		 * System.out.println("Anoymous class >> class >> drawing"); } };
+		 */
+		Shape s3 = new Anonymous();
+		s3.drawing();
 	}
 }

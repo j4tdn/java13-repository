@@ -1,5 +1,13 @@
 package Inheritance.abstractclass;
 
-public class BusinessEmailServiceImpl {
+public class BusinessEmailServiceImpl extends EmailService{
 
+	@Override
+	void login() {
+		System.out.println("BusinessEmailServiceImpl >> login ..");
+	}
+	@Override
+	void loginWith2Steps() {
+		System.out.println("BusinessEmailServiceImpl >> loginWith2Steps ..");
+	}
 }
