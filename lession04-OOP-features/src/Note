@@ -6,5 +6,21 @@
 										làm chức năng này, lúc làm chức năng khác
 									 + Đa hình trong đối tượng : là phương thức lúc làm 
 									 	cái này, lúc làm cái kia
+Class : +không bắt buộc override ( con kế thừa từ cha)
+        +Class không có hàm trừu tượng
+Abstract class : + dùng được extends
+				 + Có hàm trừu tượng và hàm không trừu tượng 
+Interface:+ Tập hợp các phương thức trừu tượng ( chỉ có phương thức ko có phần body)
+		  + cha là interface thì con phải bắt buộc override
+		  + hàm trừu tượng đã có sẵn public abstract.
+		  + con kế thừa từ Inteface thì không dùng extends mà phải dùng implements
+		  + 1 Inteface thì extends từ 1 interface
+Một class có thể extends [Abstract] class và implement Interface.
+Class có thể implement 1 hay nhiều nhiều Interface
+***Khi nào dùng interface:+ dễ tái sử dụng
+
+*** Khi nào dùng abstract:+
+
+
 
 									 	
