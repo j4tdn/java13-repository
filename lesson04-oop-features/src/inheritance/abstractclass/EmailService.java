@@ -1,7 +1,6 @@
 package inheritance.abstractclass;
 
 public abstract class EmailService {
-	
 	//abstract method >> mandatory for override
 	abstract void login();
 	
