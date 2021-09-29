@@ -1,6 +1,6 @@
 package released;
 
-public class Child implements Father{
+public class Child implements Father,Mother{
 
 	@Override
 	public void adn() {
@@ -9,7 +9,9 @@ public class Child implements Father{
 	}
 	@Override
 	public void playSport() {
-		System.out.println(" Child>> Football, Voleyball");
+		Mother.super.playSport();
+		Father.super.playSport();
+		System.out.println("Playing game...");
    		
 	}
 

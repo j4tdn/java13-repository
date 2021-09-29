@@ -3,7 +3,7 @@ package inheritance.basic;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class MouseEnterListener implements MouseListener {
+public abstract class MouseEnterListener implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -23,11 +23,11 @@ public class MouseEnterListener implements MouseListener {
 		
 	}
 
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
+	//@Override
+	//public void mouseEntered(MouseEvent e) {
+	//	// TODO Auto-generated method stub
 		
-	}
+	//}
 
 	@Override
 	public void mouseExited(MouseEvent e) {

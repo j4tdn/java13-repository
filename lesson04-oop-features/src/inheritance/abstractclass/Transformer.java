@@ -1,6 +1,6 @@
 package inheritance.abstractclass;
 
-public interface Transformer {
+public interface Transformer extends Authorization {
 	void send(boolean safeMode); // encrypt
 
 }
