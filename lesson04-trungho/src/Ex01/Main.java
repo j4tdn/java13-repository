@@ -3,7 +3,7 @@ package Ex01;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class View {
+public class Main {
 	public static void main(String[] args) {
 		Student sv1 = new Student(1, "Dong", 9, 9);
 		Student sv2 = new Student(2, "Tay", 9, 8);
