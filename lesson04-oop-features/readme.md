@@ -1,13 +1,22 @@
 inheritance
-+parent >> class, abstract Class, Interface
++ Parent >> class, abstract Class, Interface
 + Child >> class
-Class extends [Abstract] class
-Class implements Interface(s)
+
+[Abstract] Class extends [Abstract] class
+[Abstract] Class implements Interface(s)
 
 Class extends [Abstract] Class implements Interface[s]
 
-in reality Interface
+In reality >> Interface
 + More readable, reuse
 + Modeling
 
-In reality 
+In reality  >> Abstract class
++ Mouse listener
++ Mouse Adapter
++ Dependency >> Laptop >> SuperMarket
+
+Difference between Interface [Java07, JAVA08], Abstract class
+
+Abstraction
++ class, Interface , Abstract (method) Class >> Tagging
