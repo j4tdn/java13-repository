@@ -1,4 +1,0 @@
-sout         >> System.out.println
-main         >> public static void main ...
-Ctrl d       >> delete a line
-Ctrl shift f >> format code
