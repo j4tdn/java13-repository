@@ -53,7 +53,7 @@ public class Ex07 {
 	}*/
 	
 	// JAVA version 9
-	@Deprecated(since = "9") // annotation
+	// @Deprecated(since = "9") // annotation
 	// Should use sumAll
 	public static int sum(int a, int b) {
 		return a + b;
