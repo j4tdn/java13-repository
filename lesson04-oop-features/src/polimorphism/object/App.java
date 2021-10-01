@@ -11,7 +11,7 @@ public class App {
 		square.drawing();
 		
 		
-		Shape s1 = new Rectangle();
+		Shape s1 = new Rectangle(); 
 		s1.drawing();
 		Shape s2 = new Square();
 		s2.drawing();
