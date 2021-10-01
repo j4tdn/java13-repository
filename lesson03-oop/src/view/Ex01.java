@@ -7,7 +7,7 @@ public class Ex01 {
 		Rectangle r1 = new Rectangle();
 		r1.setWidth(8);
 		r1.setHeight(4);
-		System.out.println("r1: " + r1);
+		System.out.println("r1: " + r1); 
 		
 		Rectangle r2 = new Rectangle();
 		r2.setWidth(10);

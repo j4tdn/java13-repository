@@ -8,7 +8,7 @@ public class Bill {
 	private LocalDateTime dateTime;
 
 	public Bill() {
-	}
+	} 
 
 	public Bill(Customer customer, PhoneDetails[] phoneDetails, LocalDateTime dateTime) {
 		this.customer = customer;
