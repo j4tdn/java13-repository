@@ -17,17 +17,16 @@ public class Ex02 {
 		
 		// Get the number that in arrayFull but not in arrayA
 		for (int j = 0; j < maxNumber; j++) {
+			int count = 0;
 			for (int k = 0; k < maxNumber - 1; k++) {
-				int count = 0;
 				if(arrayFull[j] == arrayA[k]) {
 					count = count + 1;
 				}
-				if(count == 0) {
-					System.out.println(arrayFull[j]);
-					return arrayFull[j];
-				}
 			}
-			
+			if(count == 0) {
+				System.out.println(arrayFull[j]);
+				return arrayFull[j];
+			}
 		}
 		return -1;
 	}
