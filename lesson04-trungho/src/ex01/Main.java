@@ -1,4 +1,4 @@
-package Ex01;
+package ex01;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,7 +14,7 @@ public class Main {
 		Student[] studentArray = {sv1, sv2, sv3};  
 		
 		getStudentWithAveragePointBiggerThan(studentArray, 8.5f);
-		System.out.println("=================================================");
+		System.out.println("====================================================");
 		getStudentWithPointLTBiggerThanPointTH(studentArray);
 	}
 	

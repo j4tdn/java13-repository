@@ -1,4 +1,4 @@
-package Ex02;
+package ex02;
 
 import java.util.Arrays;
 
@@ -9,21 +9,21 @@ public class Main {
 		
 		int count = 0;
 		
-		for(int i = 0; i < randomNumber.length; i++) {
+		for (int i = 0; i < randomNumber.length; i++) {
 			if((randomNumber[i] % 7 == 0) && (randomNumber[i] % 5 != 0)) {
 				randomNumberSorted[count] = randomNumber[i];
 				count++;
 			}
 		}
 		
-		for(int i = 0; i < randomNumber.length; i++) {
+		for (int i = 0; i < randomNumber.length; i++) {
 			if((randomNumber[i] % 7 == 0) && (randomNumber[i] % 5 == 0) || (randomNumber[i] % 7 != 0) && (randomNumber[i] % 5 != 0)) {
 				randomNumberSorted[count] = randomNumber[i];
 				count++;
 			}
 		}
 		
-		for(int i = 0; i < randomNumber.length; i++) {
+		for (int i = 0; i < randomNumber.length; i++) {
 			if((randomNumber[i] % 7 != 0) && (randomNumber[i] % 5 == 0)) {
 				randomNumberSorted[count] = randomNumber[i];
 				count++;

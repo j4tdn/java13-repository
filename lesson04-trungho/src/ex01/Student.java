@@ -1,4 +1,4 @@
-package Ex01;
+package ex01;
 
 public class Student {
 	private int id;
@@ -54,6 +54,6 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", pointLT=" + pointLT + ", pointTH=" + pointTH + "]";
+		return "Student  [id=" + id + ", name=" + name + ", pointLT=" + pointLT + ", pointTH=" + pointTH + "]";
 	}
 }
