@@ -1,20 +1,29 @@
 package ex04;
 
-import java.util.ArrayList;
-
 public class App {
 	public static void main(String[] args) {
 		int[] input = {3,15,21,0,15,17,21};
+
+		int[] output = getUniqueNumbers(input);
 		
-		ArrayList<Integer> output = getUniqueNumbers(input);
-		
-		for(Integer x : output) {
-			System.out.print(x + " ");
+		for(int i = 0; i < output.length - 1; i++) {
+			for(int j = i + 1; j < output.length; j++) {
+				if (output[i] > output[j]) {
+					int tmp = output[i];
+					output[i] = output[j];
+					output[j] = tmp;
+				}
+			}		
 		}
+		for(int i:output) {
+			System.out.print(i + " ");
+		}
+		
 	}
-	
-	public static ArrayList<Integer> getUniqueNumbers(int input[]) {
-		ArrayList<Integer> output = new ArrayList<Integer>();
+
+	public static int[] getUniqueNumbers(int input[]) {
+		int[] output = new int[input.length];
+		int x = 0;
 		int count = 0;
 		int number = 0;
 		for(int i = 0;i<input.length;i++) {
@@ -25,9 +34,12 @@ public class App {
 					count++;
 				}
 			}
-			if(count == 1)  output.add(number);
+			if(count == 1)  {
+				output[x++] = input[i];
+			}
 		}
-		
+
 		return output;
 	}
+
 }

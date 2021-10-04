@@ -2,21 +2,23 @@ package ex02;
 
 public class App {
 	public static void main(String[] args) {
-		int []arr1 = {3,2,1,6,5};
-		int []arr2 = {1,2,3,4,5,6,};
-		System.out.println(getMissingNumber(arr1, arr2));
+		int[] arr = {3, 2, 1, 6, 5};
+		System.out.println(getMissingNumber(arr));
 	}
 	
-	public static int getMissingNumber(int []arr1, int[] arr2) {
-		int b = 0;
-		for(int i=0;i<arr1.length;i++) {
-			for(int j = 0 ;j<arr2.length; j++) {
-				if(arr1[i] == arr2[j]) break;
-				else b = arr2[j];
-			}
+	public static boolean isCheck(int[] arr,  int i) {
+			for (int j = 0; j <= arr.length-1; j++) {
+				if (i == arr[j]) return true;
+			}			
+		return false;
+	}
+	public static int getMissingNumber(int[] arr) {
+		for (int i = 1; i <= arr.length; i++) {
+			for (int j = 0; j <= arr.length-1; j++) {
+				if (!isCheck(arr,i)) return i;
+			}			
 		}
-		return b;
-
+		return 0;
 	}
 
 }
