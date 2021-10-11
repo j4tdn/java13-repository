@@ -1,6 +1,8 @@
 package ex05;
 
-public abstract class Book {
+// Không cần dùng abstract class trong TH này
+// Nếu em có hàm abstract thì e mới để abstract class
+public class Book {
 	private String id;
 	private double cost;
 	private String publisher;
@@ -10,7 +12,6 @@ public abstract class Book {
 	}
 
 	public Book(String id, double cost, String publisher) {
-		super();
 		this.id = id;
 		this.cost = cost;
 		this.publisher = publisher;

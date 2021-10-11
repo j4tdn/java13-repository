@@ -1,23 +1,28 @@
 package ex05;
 
+import java.util.Arrays;
 
+/**
+ * Lưu ý cách đặt tên biết và format code giúp a nghe
+ * Đúng 5 ý 25đ >> 22đ (trừ lỗi) 
+ */
 public class App {
 	public static void main(String[] args) {
 		Book [] book;
 		book = createArray();
 		show(book);
+		
 		System.out.println("------------");
 		Book [] f = findBook(book);
 		show(f);
+		
 		System.out.println("------------");
 		Book [] f1 = findBook(book,"Nhi Dong");
 		show(f1);
+		
 		System.out.println("------------");
 		Book [] f2 = findBook(book,50.0);
 		show(f2);
-		
-		
-		
 		
 	}
 	
@@ -62,25 +67,33 @@ public class App {
 		}
 		return result;
 	}
+	
 	private static Book [] findBook(Book [] a) {
 		Book [] b = new Book[a.length];
 		int i = 0;
 		for( Book book : a) {
+			// Có thể truyền tham số để hàm more generic
 			if(book instanceof TextBook && book.getCost() > 100 && book.getCost() < 200) {
 				b[i] = book;
 				i++;
 			}
 		}
+		
+		// Good
 		Book [] result = new Book[i];
 		for(int j =0; j < i ; j++ ) {
 			result[j] = b[j];
 		}
 		return result;
+		
+		// Hoặc em có thể dùng hàm này để copy
+		// return Arrays.copyOfRange(b, 0, i);
 	}
 	
 	private static double getPrice(TextBook a, ReferenceBook b) {
 		double price = 0;
-			if(a.getStatus().equals("OLD")) {
+		// avoid NullPointerException
+			if("OLD".equals(a.getStatus())) {
 				price =  price - 0.3*a.getCost() + a.getCost();
 			}
 			else price =  price + a.getCost();

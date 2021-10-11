@@ -1,5 +1,8 @@
 package ex05;
 
+/**
+ * Unused
+ */
 public class Customer {
 	String customerID;
 	String name;
