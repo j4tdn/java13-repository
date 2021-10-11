@@ -1,29 +1,36 @@
 import java.util.Scanner;
 
+/**
+ * Đúng 50% yêu cầu. Và sai convention
+ * 8đ
+ */
 public class Ex01 {
+	private static final Scanner sc = new Scanner(System.in);
+
 	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		int a , b;
-		
+		// Có thể truyền trực tiếp ko cần nhập suất mất thời gian
 		System.out.print("Nhap a ");
-		a = sc.nextInt();
-		System.out.print("Nhap b(nho hon a)");
-		b = sc.nextInt();
-		check (a , b);
+		int a = sc.nextInt();
 		
+		// Chưa chắc user đã nhập b nhỏ hơn a
+		// Khi đó bài toán sẽ sai
+		System.out.print("Nhap b");
+		int b = sc.nextInt();
+		
+		// Cứ cho nhập a, b thoải mái rồi sửa lại như này thử xem
+		boolean isPowerOf = a > b ? isPowerOf(a, b) : isPowerOf(b, a);
+		System.out.println(isPowerOf + ".....");
+
 	}
-	public static void check(int a, int b) {
-		while(a % b == 0) {
+
+	// Hạn chế method return void. Như kiểu mình viết api, service
+	// phải trả về value cụ thể
+	// Đặt tên hàm có ý nghĩa
+	public static boolean isPowerOf(int a, int b) {
+		while (a % b == 0) {
 			a = a / b;
 		}
-		if (a == 1) {
-			System.out.println("a la luy thua cua b");
-		}
-		else {
-			System.out.println("a ko phai luy thua cua b");
-		}
-		
+		return a == 1;
 	}
-	
+
 }
