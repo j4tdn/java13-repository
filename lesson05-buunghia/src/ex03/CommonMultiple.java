@@ -2,7 +2,11 @@ package ex03;
 import java.util.Random;
 import java.util.ArrayList;
 
-
+/**
+ * Giống bài a BN
+ * Hôm sau nhớ làm riêng lẻ giúp a nha :P
+ * same point 16đ
+ */
 public class CommonMultiple {
 	private static Random rd= new Random();
 	public static void main(String[] args) {

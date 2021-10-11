@@ -1,6 +1,8 @@
 package ex05;
 
 public class Book {
+	// Nếu e muốn dùng trong package thôi
+	// thì để access modifier ko có gì ok
 	String code;
 	double price;
 	String publisher;

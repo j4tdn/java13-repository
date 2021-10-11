@@ -1,4 +1,8 @@
 package ex01;
+/**
+ * Nhớ format code
+ * 14đ
+ */
 //bai 1:Viet 1 ham kiem tra xem 1 so co phai luy thua cua so khac khong.
 public class Power {
 	public static void main(String[] args) {
@@ -7,6 +11,9 @@ public class Power {
 		System.out.println(isPowerOf(3,9));
 		
 	}
+	
+	// good
+	// Nhớ thêm {} vào các đoạn if else do while
 	public static boolean isPowerOf(int a,int b) {
 		if (a==0||b==0) return false;
 		if (a==1||b==1) return true;
@@ -14,8 +21,7 @@ public class Power {
 		if (a>b) {
 			if (a%b==0) return isPowerOf(a/b,b);
 				else    return false; 
-		}
-		else {
+		} else {
 			if (b%a==0) return isPowerOf(a,b/a);
 				else        return false;
 		}
