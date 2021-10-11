@@ -9,6 +9,10 @@ public class TextBook {
 	public TextBook() {
 	}
 
+	// E quên tính chất kế thừa
+	// Phải tạo class Book chưa 3 thuộc tính chung id, publishingCompany, status
+	// Rồi TextBook và ReferenceBook extend từ Book
+	// Tham khảo code mấy bạn nghe
 	public TextBook(String id, String publishingCompany, String status, double cost) {
 		this.id = id;
 		this.publishingCompany = publishingCompany;
