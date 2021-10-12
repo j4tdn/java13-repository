@@ -2,15 +2,14 @@ package ex01;
 
 /**
  * <b>Description:</b> <br>
+ * Có idea: 5đ
  */
 public class Ex01 {
 
 	public static void main (String[] args) {
-		System.out.println(isPowerOf(8, 2));
-		System.out.println(isPowerOf(2, 8));
-		System.out.println(isPowerOf(6, 2));
-		System.out.println(isPowerOf(20, 4));
-		System.out.println(isPowerOf(64, 4));
+		int a = 4;
+		int b = 64;
+		System.out.println(a > b ? isPowerOf(a, b) : isPowerOf(b, a));
 	}
 	
 	/**
@@ -32,23 +31,32 @@ public class Ex01 {
         } 
         
         // Check if b is power of a
-		boolean result2 = true;
-		if (b == 0)
-			result2 = false;
+//		boolean result2 = true;
+//		if (b == 0)
+//			result2 = false;
 	 
-        while (b != 1) {
-            if (b % a != 0)
-            	result2 = false;
-            b = b / a;
-        } 
+		// A đang code bị trùng với logic phía trên
+		// VD a=8, b=2 >> Tron TH này b sẽ luôn luôn != 1
+		// Vì cứ lấy b = b / a thì sẽ ko bao giờ bằng 1 để break
+		// dẫn đến lặp vô hạng
+		// comment 
+//        while (b != 1) {
+//            if (b % a != 0)
+//            	result2 = false;
+//            b = b / a;
+//        } 
         
         // return final result
-        boolean finalResult;
-        if ((result1 == false) && (result2 == false)) {
-        	finalResult = false;
-        } else {
-        	finalResult = true;
-        }
-        return finalResult;
+        // Hơi dài
+		
+//        boolean finalResult;
+//        if ((result1 == false) && (result2 == false)) {
+//        	finalResult = false;
+//        } else {
+//        	finalResult = true;
+//        }
+//        return finalResult;
+		
+		return result1;
 	}		
 }
