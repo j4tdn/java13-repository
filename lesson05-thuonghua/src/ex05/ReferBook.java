@@ -1,10 +1,9 @@
 package ex05;
 
-public class ReferBook extends Parent{
+public class ReferBook extends Book{
 	private float tax;
 	
 	public ReferBook() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public ReferBook(String bookCode, int price, String publishingCompany, float tax) {

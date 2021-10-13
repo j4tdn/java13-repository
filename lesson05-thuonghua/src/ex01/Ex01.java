@@ -1,5 +1,8 @@
 package ex01;
 
+/**
+ * 13đ
+ */
 public class Ex01 {
 	public static void main(String[] args) {
 		if (isPowerOf(4, 3)) {
@@ -9,19 +12,18 @@ public class Ex01 {
 		}
 	}
 
+	// A sửa lại code em 1 xíu như này có vẻ gọn hơn nha
 	private static boolean isPowerOf(int a, int b) {
-		
+		return a > b ? isPower(a, b) : isPower(b, a);
+	}
+	
+	private static boolean isPower(int a, int b) {
+		// Nên đặt tên biết có ý nghĩa hơn
 		double log = Math.log(a) / Math.log(b);
-		double log1 = Math.log(b) / Math.log(a);
-		
 		int logi = (int) (Math.floor(log));
-		int logi1 = (int) (Math.floor(log1));
 		
-		if (log - logi == 0 || log1 - logi1 == 0) {
-			return true;
-		} else {
-			return false;
-		}
+		// short version
+		return log - logi == 0;
 	}
 
 }

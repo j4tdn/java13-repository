@@ -1,10 +1,9 @@
 package ex05;
 
-public class TextBook extends Parent{
+public class TextBook extends Book{
 	private String status;
 	
 	public TextBook() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public TextBook(String bookCode, int price, String publishingCompany, String status) {

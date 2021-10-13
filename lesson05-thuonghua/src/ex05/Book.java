@@ -1,16 +1,15 @@
 package ex05;
 
-public class Parent {
+// Tên class nên là Book
+public class Book {
 	private String bookCode;
 	private int price;
 	private String publishingCompany;
 	
-	public Parent() {
-		// TODO Auto-generated constructor stub
+	public Book() {
 	}
 	
-	public Parent(String bookCode, int price, String publishingCompany) {
-		super();
+	public Book(String bookCode, int price, String publishingCompany) {
 		this.bookCode = bookCode;
 		this.price = price;
 		this.publishingCompany = publishingCompany;
