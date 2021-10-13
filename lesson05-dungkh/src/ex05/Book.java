@@ -6,7 +6,7 @@ public class Book {
 	protected String author;
 	
 	public Book() {
-		// TODO Auto-generated constructor stub
+		// Nhớ xóa những đoạn code, import thừa
 	}
 
 	public Book(int id, double price, String author) {

@@ -7,7 +7,6 @@ public class Cusomer {
 	private String address;
 	
 	public Cusomer() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Cusomer(int id, String name, String phone, String address) {

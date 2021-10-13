@@ -4,7 +4,6 @@ public class ReferenceBook extends Book {
 	private double tax;
 	
 	public ReferenceBook() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public ReferenceBook(int id, double price, String author,double tax) {

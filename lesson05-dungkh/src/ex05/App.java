@@ -1,5 +1,10 @@
 package ex05;
 
+/**
+ * 10đ
+ * @author qphan
+ *
+ */
 public class App {
 	public static void main(String[] args) {
 		TextBook t1 = new TextBook(01, 20000,"Kim Dong","old");
@@ -9,13 +14,10 @@ public class App {
 		ReferenceBook r1 = new ReferenceBook(04, 13000, "Nhi Dong",0.4);
 		ReferenceBook r2 = new ReferenceBook(05, 10000, "Nhi Dong", 1.0);
 		
-		Book[] book = new Book[5];
-		book[0] = t1;
-		book[1] = t2;
-		book[2] = t3;
-		book[3] = r1;
-		book[4] = r2;
-		
+		// shorter version
+		// Tên mảng đặt có s hoặc là bookArray
+		// Tránh nhầm với tên đối tượng book
+		Book[] books = {t1,t2,t3,r1,r2};
 	}
 	
 	

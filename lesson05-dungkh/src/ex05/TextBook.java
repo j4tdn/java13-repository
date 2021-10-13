@@ -4,7 +4,6 @@ public class TextBook extends Book {
 	private String status;
 	
 	public TextBook() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public TextBook(int id, double price, String author,String status) {
