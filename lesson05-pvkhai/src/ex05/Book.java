@@ -6,7 +6,6 @@ public class Book {
 	protected String publisher;
 	
 	public Book() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Book(String id, float price, String publisher) {
