@@ -1,7 +1,13 @@
 package ex05;
 
+/**
+ * 25đ Trừ convention và bố cục code
+ */
 public class App {
 	public static void main(String[] args) {
+		// Bài làm khá tốt
+		// A muốn e nên tách ra từng method nhỏ nữa
+		// Để nhìn code đẹp hơn là ok
 		TextBook t1= new TextBook("SGK1",45,"Nhi Đồng", "new");
 		TextBook t2= new TextBook("SGK2",12,"Nhi Đồng", "old");
 		TextBook t3= new TextBook("SGK3",100,"Kim Đồng", "new");
