@@ -2,26 +2,29 @@ package ex01;
 
 import static java.lang.Math.*;
 
+/**
+ * 13đ
+ */
 public class Ex01 {
 	public static void main(String[] args) {
-		System.out.println(isPowerOfTwo(8,2));
-		System.out.println(isPowerOfTwo(2,8));
-		System.out.println(isPowerOfTwo(6,2));
-		System.out.println(isPowerOfTwo(20,4));
-		System.out.println(isPowerOfTwo(64,4));
+		// method name chưa đúng
+		System.out.println(isPowerOf(8, 2));
+		System.out.println(isPowerOf(2, 8));
+		System.out.println(isPowerOf(6, 2));
+		System.out.println(isPowerOf(20, 4));
+		System.out.println(isPowerOf(64, 4));
+	}
+
+	private static boolean isPowerOf(double a, double b) {
+		return a > b ? isPower(a, b) : isPower(b, a);
 	}
 	
-	private static boolean isPowerOfTwo(double a, double b ) {
+	// code bị trùng nên a thay thế bằng cách trên nhé
+	private static boolean isPower(double a, double b) {
 		if (a == 0 || b == 0) {
 			return false;
 		}
-		double temp1 = log (a);
-		double temp2 = log (b);
-		double base = temp1 / temp2;
-		if(ceil(base) == floor(base)){
-			return true;
-		}
-		base = temp2 / temp1;
+		double base = log(a) / log(b);
 		return ceil(base) == floor(base);
 	}
 }
