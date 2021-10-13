@@ -1,9 +1,13 @@
 package ex05;
 
+/**
+ * 20đ
+ * Trừ >> Đặt tên class, method bằng tiếng việt
+ *     >> Sử dụng == thay vì equals
+ */
 public class App {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Sachgk s1= new Sachgk("SGK1",150,"kim dong",true);
 		Sachgk s2= new Sachgk("SGK2",40,"nhi dong",true);
 		Sachgk s3= new Sachgk("SGK3",30,"nhi dong",false);
@@ -22,6 +26,7 @@ public class App {
 	public static void nhidong (Sach[] a) {
 		System.out.println("sach nxb nhi dong");
 		for (int i=0; i<a.length ; i++) {
+			// equals để compare value
 			if(a[i].getNxb()== "nhi dong") {
 			System.out.println(a[i].toString());	
 			}

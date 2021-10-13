@@ -22,7 +22,6 @@ public class Sachgk extends Sach {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return " "+ ma+ " " + dongia + " " +nxb+ " "+tinhtrang ;
 	}
 	
