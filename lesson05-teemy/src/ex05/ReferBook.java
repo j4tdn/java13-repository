@@ -7,9 +7,8 @@ public class ReferBook extends Book {
 	}
 
 	public ReferBook(String id,double price,String publisher,double tax) {
-		this.id=id;
-		this.price=price;
-		this.publisher=publisher;
+		// quên bài kế thừa
+		super(id, price, publisher);
 		this.tax = tax;
 	}
 

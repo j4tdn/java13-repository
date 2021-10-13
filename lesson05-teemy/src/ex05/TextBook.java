@@ -1,15 +1,14 @@
 package ex05;
 
-public class TextBook extends Book{
+public class TextBook extends Book {
 	private String state;
-	
+
 	public TextBook() {
 	}
 
-	public TextBook(String id,double price,String publisher,String state) {
-		this.id=id;
-		this.price=price;
-		this.publisher=publisher;
+	public TextBook(String id, double price, String publisher, String state) {
+		// quên bài kế thừa
+		super(id, price, publisher);
 		this.state = state;
 	}
 
@@ -20,16 +19,14 @@ public class TextBook extends Book{
 	public void setState(String state) {
 		this.state = state;
 	}
-	
+
 	public double totalprice() {
-		return (price/100)*70;
+		return (price / 100) * 70;
 	}
-	
+
 	@Override
 	public String toString() {
-		return ""+id+","+price+","+publisher+","+state;
+		return "" + id + "," + price + "," + publisher + "," + state;
 	}
-	
-	
-	
+
 }
