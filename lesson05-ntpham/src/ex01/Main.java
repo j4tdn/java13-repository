@@ -3,7 +3,7 @@ package ex01;
 public class Main {
 	
 	public static void main(String[] args) {
-		System.out.println(isPowerOf(64 ,4));;
+		System.out.println(isPowerOf(64 ,4));
 	}
 	
 	public static boolean isPowerOf(int a, int b) {
