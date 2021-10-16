@@ -4,8 +4,8 @@ import java.time.Year;
 import java.util.Scanner;
 
 /**
- * Enter a year of birth >> calculate age of candidate Opt1: Validate before
- * processing function
+ * Enter a year of birth >> calculate age of candidate 
+ * Opt1: Validate before processing function
  */
 public class Ex01 {
 

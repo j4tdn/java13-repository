@@ -7,7 +7,6 @@ import java.util.Scanner;
  * Enter a year of birth >> calculate age of candidate
  */
 public class Ex00 {
-
 	private static Scanner ip = new Scanner(System.in);
 
 	public static void main(String[] args) {
