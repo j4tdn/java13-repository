@@ -11,15 +11,15 @@ public class Ex01 {
 	private static Scanner ip = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		//System.out.println("Enter year of birth: ");
-		//String yobAsString = ip.nextLine();
+		
 		String yobAsString = enterYear();
 		int yob = Integer.parseInt(yobAsString);
-
 		int cry = Year.now().getValue();
-
 		System.out.println("Aeg: " + (cry - yob));
-		/*String yobAsString = null;
+		
+		/*System.out.println("Enter year of birth: ");
+		String yobAsString = ip.nextLine();
+		  String yobAsString = null;
 		 do{System.out.println("Enter year of birth(invalid number): ");
 		 yobAsString = ip.nextLine();}
 	C1	while(true) {
