@@ -2,6 +2,7 @@ package ex01;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
+
 public class Main {
 	private static Scanner ip = new Scanner(System.in);
 	
