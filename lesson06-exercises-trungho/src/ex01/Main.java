@@ -1,7 +1,7 @@
 package ex01;
 
-import java.util.Scanner;
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
 public class Main {
 	private static Scanner ip = new Scanner(System.in);
@@ -11,31 +11,45 @@ public class Main {
         
         double root;
         
-		String inputA = enterNumber("a");
-		int a = Integer.parseInt(inputA);
+        Integer a = enterNumber("a");
+        boolean validateA = false;
+        
+        while (!validateA) {
+            try {
+            	a = enterNumber("a");
+            	validateA = validateA(a);
+            } catch (ArithmeticException e) {
+            	System.out.println(e.getMessage());
+            }
+        }
 		
-		String inputB = enterNumber("b");
-		int b = Integer.parseInt(inputB);
+		Integer b = enterNumber("b");
 		
         System.out.println("The equation you just entered: " + a + "x + " + b + " = 0.");
-        if (a == 0) {
-            if (b == 0) {
-                System.out.println("This equation has countless roots.");
-            } else {
-                System.out.println("This equation has no root.");
-            }
-        } else {
-        	root = (double) -b / a;
-            System.out.println("This equation has root x = " + decimalFormat.format(root) + ".");
-        }
+        
+    	root = (double)-b / a;
+        System.out.println("This equation has root x = " + decimalFormat.format(root) + ".");
     }
     
-	private static String enterNumber(String num) {
-		String numberString = null;
+	private static Integer enterNumber(String num) {
+		Integer number = null;
 		do {
-			System.out.println("Enter " + num + ": ");
-			numberString = ip.nextLine();
-		} while (!numberString.matches("\\d+"));
-		return numberString;
+			try {
+				System.out.println("Enter " + num + ": ");
+				number = Integer.parseInt(ip.nextLine());
+				return number;
+			} catch (NumberFormatException  e) {
+				System.out.println("Please enter a number");
+			}
+		} while (true);
+	}
+	
+	private static boolean validateA(Integer a) {
+		boolean result = true;
+		if (a == 0) {
+			result = false;
+			throw new ArithmeticException("a must be different from 0");
+		}
+		return result;
 	}
 }
