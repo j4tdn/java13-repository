@@ -11,7 +11,7 @@ public class Main {
         
         double root;
         
-        Integer a = enterNumber("a");
+        Integer a = 0;
         boolean validateA = false;
         
         while (!validateA) {
