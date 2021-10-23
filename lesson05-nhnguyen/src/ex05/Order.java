@@ -3,6 +3,7 @@ package ex05;
 import java.util.Arrays;
 
 public class Order {
+	// tên biến book >> Vì 1 cuốn sách
 	private Book books;
 	private int quantity;
 	
