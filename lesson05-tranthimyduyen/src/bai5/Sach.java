@@ -1,7 +1,7 @@
 package bai5;
 
 public class Sach {
-protected String Masach;
+protected String Masach; // sai convention hết VD: maSach hoặc bookId
 protected double Dongia;
 protected String NXB;
 public Sach() {}

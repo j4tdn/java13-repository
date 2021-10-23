@@ -4,11 +4,18 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
+/**
+ * Bài làm tốt. Sử dụng Map cũng ok. Lúc học đến map a sẽ sharing lại sau nha
+ * 18đ
+ */
 public class Mang {
 	   public static Scanner scanner = new Scanner(System.in);
 	     
 	   
 	    public static void main(String[] args) {
+	    	// E có thể cho mảng hoặc map trực tiếp cũng được
+	    	// Không cần phải nhập xuất mất thời gian
+	    	// Tương tự bài 3
 	        System.out.print("Nhập số phần tử của mảng: ");
 	        int n = scanner.nextInt();
 	    

@@ -1,5 +1,10 @@
 package bai5;
 
+/**
+ * Em hiểu bài code tốt. Nhưng
+ * Code đặt tên tiếng việt, code còn lộn xộn chưa format
+ * Rút kinh nghiệm lần sau: 20đ
+ */
 public class QLTV {
 public static void main(String[] args) {
 	

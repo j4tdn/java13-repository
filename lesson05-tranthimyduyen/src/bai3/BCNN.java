@@ -2,6 +2,7 @@ package bai3;
 
 import java.util.Scanner;
 
+// 14đ
 public class BCNN {
 public static void main(String[] args) {
 	int[] A = new int[1000];
@@ -16,19 +17,29 @@ public static void main(String[] args) {
     System.out.println(BCNNOfM(A,n));
 }
 public static int UCLN(int a, int b){
-   int m=0;
-	
-	if(a>b) 
-        UCLN(a-b,b);
-    else
-        {if(a<b) {UCLN(a,b-a);}else m=a; }
-return m;
+	// E dùng đệ quy nhưng đang lỗi
+	// Hoặc dùng cách này cũng được. A copy từ bài 1 bạn khác
+	// Có idea. Chỉ đang bị stuck chỗ UCLN
+	if (a == 0 || b == 0) {
+		return a + b;
+	}
+	while (a != b) {
+		if (a > b) {
+			a -= b;
+		} else {
+			b -= a;
+		}
+	}
+	return a;
 }
+
 public static int BCNN(int a, int b){
     return (a*b/UCLN(a,b) );
 }
 
 public static int BCNNOfM(int a[],int n){
+		// Nên kiểm tra độ dài của mảng a >= 2 trước khi truy cập a[0], a[1]
+	    // Tránh ArrayIndexOutOfBoundException
         int temp = BCNN(a[0], a[1] );
         for(int i=2;i<n;i++){
             temp = BCNN(temp, a[i]);    
