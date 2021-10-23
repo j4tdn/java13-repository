@@ -1,6 +1,6 @@
 package ex05;
 
-public class TextBook extends Book	{
+public class TextBook extends Book {
 	private String status;
 
 	public TextBook() {
@@ -23,11 +23,12 @@ public class TextBook extends Book	{
 	public String toString() {
 		return super.toString() + ", " + this.status;
 	}
-	
+
+	@Override
 	public double getPrice() {
-		if("Old".equals(this.status)){
-			return price*30/100;
+		if ("Old".equals(this.status)) {
+			return price * 30 / 100;
 		}
-		else return price;
+		return price;
 	}
-}	
+}

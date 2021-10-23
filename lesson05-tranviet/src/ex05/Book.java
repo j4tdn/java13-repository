@@ -1,6 +1,6 @@
 package ex05;
 
-public class Book {
+public abstract class Book {
 	protected String id;
 	protected double price;
 	protected String publisher;
@@ -22,10 +22,6 @@ public class Book {
 		this.id = id;
 	}
 
-	public double getPrice() {
-		return price;
-	}
-
 	public void setPrice(double price) {
 		this.price = price;
 	}
@@ -43,5 +39,5 @@ public class Book {
 		return id + ", " + price + ", " + publisher;
 	}
 	
-	
+	abstract double getPrice();
 }

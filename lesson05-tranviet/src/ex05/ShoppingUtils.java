@@ -6,11 +6,8 @@ public class ShoppingUtils {
 	}
 	public static double getToTalPrice(Shopping s) {
 		double toTalPrice = 0d;
-		for(TextBook tb: s.getTbs()) {
+		for(Book tb: s.getBooks()) {
 			toTalPrice += tb.getPrice();
-		}
-		for(ReferenceBook rb: s.getRbs()) {
-			toTalPrice += rb.getPrice();
 		}
 		return toTalPrice;
 	}

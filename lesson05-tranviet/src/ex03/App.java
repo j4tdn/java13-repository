@@ -1,8 +1,9 @@
 package ex03;
 
+// 17đ
 public class App {
 	public static void main(String[] args) {
-		int A[] = { 2, 3, 4, 5, 6, 8, 9 };
+		int A[] = { 2, 3, 4, 12, 8};
 		System.out.println("Bội chung nhỏ nhất của mảng A là: " + BCNN(A));
 	}
 
@@ -24,12 +25,15 @@ public class App {
 		return a * b / getCommomDivisor(a, b);
 	}
 
+	// KHÔNG được đặt tên hàm, biến bằng tiếng việt
+	// Em đặt getLeastCommonMultiple cũng được
 	public static int BCNN(int arr[]) {
-		int bcnn = 0;
-		for (int i = 0; i < arr.length - 1; i++) {
-			bcnn = getLeastCommonMultiple(arr[i], arr[i + 1]);
-			arr[i + 1] = bcnn;
+		// Nên kiểm tra length >= 2 trước rồi gán initial value = lcm(a[0], a[1])
+		int lcm = getLeastCommonMultiple(arr[0], arr[1]);
+		for (int i = 2; i < arr.length; i++) {
+			// short version
+			lcm = getLeastCommonMultiple(lcm, arr[i]);
 		}
-		return bcnn;
+		return lcm;
 	}
 }

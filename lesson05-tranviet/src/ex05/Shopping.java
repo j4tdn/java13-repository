@@ -2,16 +2,19 @@ package ex05;
 
 public class Shopping {
 	private Customer cs;
-	private ReferenceBook[] rbs;
-	private TextBook[] tbs;
+	
+	// Sao em không để chung 1 mảng Book luôn mà phải tách 2
+	// Trong class Book để 1 hàm getPrice rồi override lại trong
+	// TextBook và ReferenceBook
+	// Lúc compile cứ gọi getPrice rồi runtime nó sẽ vào TextBook hoặc ReferenceBook để tính
+	private Book[] books;
 
 	public Shopping() {
 	}
 
-	public Shopping(Customer cs, ReferenceBook[] rbs, TextBook[] tbs) {
+	public Shopping(Customer cs, Book[] books) {
 		this.cs = cs;
-		this.rbs = rbs;
-		this.tbs = tbs;
+		this.books = books;
 	}
 
 	public Customer getCs() {
@@ -22,20 +25,11 @@ public class Shopping {
 		this.cs = cs;
 	}
 
-	public ReferenceBook[] getRbs() {
-		return rbs;
+	public Book[] getBooks() {
+		return books;
 	}
-
-	public void setRbs(ReferenceBook[] rbs) {
-		this.rbs = rbs;
+	
+	public void setBooks(Book[] books) {
+		this.books = books;
 	}
-
-	public TextBook[] getTbs() {
-		return tbs;
-	}
-
-	public void setTbs(TextBook[] tbs) {
-		this.tbs = tbs;
-	}
-
 }

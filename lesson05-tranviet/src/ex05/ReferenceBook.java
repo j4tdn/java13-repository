@@ -24,6 +24,7 @@ public class ReferenceBook extends Book {
 		return super.toString() + ", " + this.tax;
 	}
 
+	@Override
 	public double getPrice() {
 		return price * (1 + tax);
 	}
