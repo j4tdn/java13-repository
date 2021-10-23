@@ -2,7 +2,7 @@ package ex05;
 
 public class Book {
 	private String bookCode;
-	private Double Price;
+	private Double Price; // price >> tên biến 1 chữ viết thường
 	private String bookSource;
 	
 	public Book() {

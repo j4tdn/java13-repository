@@ -9,7 +9,9 @@ public class ReferenceBook extends Book {
 	}
 	
 	public ReferenceBook(String bookCode, Double price, String bookSource,double tax) {
-		super();
+		// Chưa hiểu về kế thừa trong hướng đối tượng
+		// Khi khởi tạo con gọi đến cha. E dùng super như bên dưới để set lại value của 3 tham số từ cha nha
+		super(bookCode, price, bookSource);
 		this.tax = tax;
 	}
 
