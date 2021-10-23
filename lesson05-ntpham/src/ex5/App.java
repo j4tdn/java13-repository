@@ -1,5 +1,6 @@
 package ex5;
 
+// Loods good to me 27đ
 public class App {
 	public static void main(String[] args) {	
 		Book b1 = FactoryBook.CreateTextBook("SGK01", 40, "Nhi Đồng", false);

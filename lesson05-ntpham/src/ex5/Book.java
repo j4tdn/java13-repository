@@ -1,7 +1,7 @@
 package ex5;
 
 public abstract class Book {
-	protected String idBook;
+	protected String idBook; // bookId
 	protected float price;
 	protected String publisher;
 	

@@ -1,5 +1,6 @@
 package ex3;
 
+// 18đ
 public class App {
 	public static void main(String[] args) {
 		//int a[] = {2, 3};
@@ -13,14 +14,18 @@ public class App {
 		return getGreatestCommonDivisor(b, a % b);
 	}
 	
-	public static int LeastCommonMutiple(int a, int b) {
+	// tên hàm bắt đầu bằng kí tự viết thường là động từ
+	public static int getLeastCommonMutiple(int a, int b) {
 		return a * b / getGreatestCommonDivisor(a, b);
 	}
 	
 	public static int getLeastCommonMutiple(int[] a) {
-		int temp = LeastCommonMutiple(a[0], a[1]);
+		// Cách làm tốt
+		// Nên kiểm tra đội dài của mảng a >= 2 trước khi truy cập phần tử thứ 0, 1
+		// Tránh ArrayIndexOutOfBoundException
+		int temp = getLeastCommonMutiple(a[0], a[1]);
 		for (int i = 2; i < a.length; i++) {
-			temp = LeastCommonMutiple(temp, a[i]);
+			temp = getLeastCommonMutiple(temp, a[i]);
 		}
 		return temp;
 	}

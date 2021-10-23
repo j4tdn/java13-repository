@@ -7,6 +7,8 @@ public class BookUtils {
 	
 	public static void findBooksOfNhiDongPublisher(Book[] books) {
 		for (Book booki : books) {
+			// Lấy "Nhi Đồng".equals(booki.getPublisher())
+			// Avoid NullPointerException
 			if (booki.getPublisher().equals("Nhi Đồng")) {
 				System.out.println(booki);
 			}
