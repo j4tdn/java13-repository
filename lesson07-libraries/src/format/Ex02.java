@@ -16,5 +16,6 @@ public class Ex02 {
 		DecimalFormat df = new DecimalFormat(PATTERN);
 		System.out.println("df format: " + df.format(value));
 
-	}
+	} 
 }
+ 
