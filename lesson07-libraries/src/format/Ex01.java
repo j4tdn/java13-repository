@@ -28,7 +28,7 @@ public class Ex01 {
 		
 		System.out.println("=======================");
 		
-		// JAVA availables locale
+		// JAVA available locale
 		Locale[] locales = Locale.getAvailableLocales();
 		System.out.println(Arrays.toString(locales));
 	}
