@@ -54,13 +54,6 @@ public class Ex03Java07 {
 		return c.getActualMaximum(Calendar.DATE);
 	}
 
-	private static Date lastDayOfWeek() {
-		Calendar lastDayOfWeek = Calendar.getInstance();
-
-		lastDayOfWeek.add(Calendar.DAY_OF_MONTH, 7 - lastDayOfWeek.get(Calendar.DAY_OF_WEEK));
-		return lastDayOfWeek.getTime();
-	}
-
 	private static void firstAndLastDayOfWeek() {
 		Calendar firstDayOfWeek = Calendar.getInstance();
 		Calendar lastDayOfWeek = Calendar.getInstance();
