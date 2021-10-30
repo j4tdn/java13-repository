@@ -1,6 +1,8 @@
 package datetime;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 
@@ -62,6 +64,9 @@ public class Ex01 {
 		// Kiểm tra năm nhuận 
 		GregorianCalendar calendar = new GregorianCalendar();
 		System.out.println("isLeapYear: " + calendar.isLeapYear(2025));
+		
+		System.out.println("================");
+		Date date = new Date();
 		
 		
 		
