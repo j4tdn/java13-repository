@@ -1,6 +1,7 @@
 package datetime;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class Ex01 {
@@ -42,6 +43,11 @@ public class Ex01 {
 		c.add(Calendar.DAY_OF_MONTH, c.getFirstDayOfWeek()-c.get(Calendar.DAY_OF_WEEK));
 		System.out.println("first day of week:" +c.get(Calendar.DAY_OF_MONTH));
 		
+		System.out.println("=========");
+		Date date = new Date();  // = Calendar.getInstance();
+		System.out.println("date : " + date);
+		
+		System.out.println( "hours : "+date.getHours());
 	}
 
 }
