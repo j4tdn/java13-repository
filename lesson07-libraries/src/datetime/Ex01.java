@@ -1,6 +1,7 @@
 package datetime;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
@@ -70,5 +71,10 @@ public class Ex01 {
 		
 		GregorianCalendar calendar = new GregorianCalendar();
 		System.out.println("isLeapYear: " + calendar.isLeapYear(2000));
+		
+		System.out.println("===========================================");
+		Date date = new Date(); // == Calendar.getInstance()
+		System.out.println("Date: " + date);
+		
 	}
 }
