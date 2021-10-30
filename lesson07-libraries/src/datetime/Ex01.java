@@ -1,6 +1,7 @@
 package datetime;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
@@ -14,7 +15,7 @@ public class Ex01 {
 		System.out.println(c);
 		
 		// setTime
-		c.set(Calendar.DAY_OF_MONTH, 20);
+		// c.set(Calendar.DAY_OF_MONTH, 20);
 		
 		// syntax: >> c.get(giá trị cần lấy)
 		int day = c.get(Calendar.DAY_OF_MONTH);
@@ -69,5 +70,9 @@ public class Ex01 {
 		
 		GregorianCalendar calendar = new GregorianCalendar();
 		System.out.println("isLeapYear: " + calendar.isLeapYear(2000));
+		
+		System.out.println("=========================");
+		Date date = new Date();
+		System.out.println("date: " + date);
 	}
 }
