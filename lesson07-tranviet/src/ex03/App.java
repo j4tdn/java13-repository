@@ -5,7 +5,8 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Locale;
-import java.util.Scanner;
+import java.util.TimeZone;
+import java.util.stream.Stream;
 
 /**
  * Bài 3: Viết chương trình, mỗi chức năng một phương thức 1. Xem thời gian hiện
@@ -18,11 +19,11 @@ import java.util.Scanner;
  */
 public class App {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
 		Calendar c = Calendar.getInstance();
 		c.setMinimalDaysInFirstWeek(7);
 		// Khu vực bất kì
-		System.out.println("Thời gian hiện tại: " + getTimeOfCountry(Locale.CANADA));
+		System.out.println("Thời gian hiện tại: " + 
+				getTimeOfCountry(TimeZone.getTimeZone("Europe/Madrid"), Locale.FRANCE));
 
 		// Tháng 10 có 31 ngày
 		System.out.println("Ngày cuối cùng của tháng hiện tại: " + getLastDateOfMonth(c));
@@ -40,10 +41,12 @@ public class App {
 		Calendar c1 = Calendar.getInstance();
 		c1.set(2001, Calendar.OCTOBER, 07);
 		System.out.println("Bạn đã sống được " + daysYouLived(c1) + " ngày");
+		//String []tz = TimeZone.getAvailableIDs();
+		//Stream.of(tz).forEach(x->System.out.println(x));
 	}
 
-	public static String getTimeOfCountry(Locale locale) {
-		Calendar c1 = Calendar.getInstance(locale);
+	public static String getTimeOfCountry(TimeZone tz, Locale locale) {
+		Calendar c1 = Calendar.getInstance(tz, locale);
 		return dayAndTime(c1);
 	}
 
