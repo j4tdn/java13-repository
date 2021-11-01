@@ -4,6 +4,10 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
+import utils.DateUtils;
+import utils.DayAsString;
+import utils.MonthAsString;
+
 public class WeekdayCalculator {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -45,20 +49,20 @@ public class WeekdayCalculator {
 
 	private static void fact5(Calendar c) {
 		MonthAsString[] months = MonthAsString.values();
-		System.out.println("• " + months[c.get(Calendar.MONTH)] + " " + c.get(Calendar.YEAR) + " has "
+		System.out.println("ï¿½ " + months[c.get(Calendar.MONTH)] + " " + c.get(Calendar.YEAR) + " has "
 				+ c.getActualMaximum(Calendar.DAY_OF_MONTH) + " days.");
 	}
 
 	private static void fact4(Calendar c) {
 		GregorianCalendar gc = new GregorianCalendar();
 		int numberOfDays = gc.isLeapYear(c.get(Calendar.YEAR)) ? 366 : 365;
-		System.out.println("• Year " + c.get(Calendar.YEAR) + " has " + numberOfDays + " days.");
+		System.out.println("ï¿½ Year " + c.get(Calendar.YEAR) + " has " + numberOfDays + " days.");
 	}
 
 	private static void fact3(Calendar c) {
 		MonthAsString[] months = MonthAsString.values();
 		DayAsString[] days = DayAsString.values();
-		System.out.println("• It is " + days[c.get(Calendar.DAY_OF_WEEK) - 1] + " number "
+		System.out.println("ï¿½ It is " + days[c.get(Calendar.DAY_OF_WEEK) - 1] + " number "
 				+ c.get(Calendar.DAY_OF_WEEK_IN_MONTH) + " out of " + c.getActualMaximum(Calendar.DAY_OF_WEEK_IN_MONTH)
 				+ " in " + months[c.get(Calendar.MONTH)] + " " + c.get(Calendar.YEAR) + ".");
 	}
@@ -66,7 +70,7 @@ public class WeekdayCalculator {
 	private static void fact2(Calendar c) {
 		DayAsString[] days = DayAsString.values();
 		System.out
-				.println("• It is " + days[c.get(Calendar.DAY_OF_WEEK) - 1] + " number " + c.get(Calendar.WEEK_OF_YEAR)
+				.println("ï¿½ It is " + days[c.get(Calendar.DAY_OF_WEEK) - 1] + " number " + c.get(Calendar.WEEK_OF_YEAR)
 						+ " out of " + c.getWeeksInWeekYear() + " in " + c.get(Calendar.YEAR) + ".");
 	}
 
@@ -75,7 +79,7 @@ public class WeekdayCalculator {
 		int remainDay = gc.isLeapYear(c.get(Calendar.YEAR)) ? 366 - c.get(Calendar.DAY_OF_YEAR)
 				: 365 - c.get(Calendar.DAY_OF_YEAR);
 		System.out.println(
-				"• It is day number " + c.get(Calendar.DAY_OF_YEAR) + " of the year, " + remainDay + " days left.");
+				"ï¿½ It is day number " + c.get(Calendar.DAY_OF_YEAR) + " of the year, " + remainDay + " days left.");
 
 	}
 
