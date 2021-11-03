@@ -30,7 +30,10 @@ public static void main(String[] args) {
     		+seconds + " seconds \n";
     
     
-    System.out.println("result");
+    System.out.println(days +" days\n"
+    		+ hours + " hours\n"
+    		+ minutes+" minutes \n"
+    		+seconds + " seconds \n");
     
     
 }
