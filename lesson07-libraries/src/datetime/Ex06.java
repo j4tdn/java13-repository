@@ -14,7 +14,7 @@ public class Ex06 {
 		
 		LocalDateTime euTime = LocalDateTime.now(ZoneId.of("Europe/Berlin"));
 		System.out.println("euTime dateTime: " + euTime);
-		
+		 
 		System.out.println("============================================");
 		String[] zoneIds = TimeZone.getAvailableIDs();
 		for (String zoneId: zoneIds) {
