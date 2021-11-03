@@ -1,18 +1,21 @@
 package datetime;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
 public class Ex01 {
+	
 	public static void main(String[] args) {
-		//time in milliseconds : time=1634978190655
-		//epoch time : Midnight 01.01.1970 time=0
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy EEEE");
+//		time in milliseconds : time=1634978190655
+//		epoch time : Midnight 01.01.1970 time=0
 		
 		Calendar c = Calendar.getInstance();
 		
-		c.set(Calendar.DAY_OF_MONTH, 20);
-		c.set(Calendar.YEAR, 2022);
+//		c.set(Calendar.DAY_OF_MONTH, 20);
+//		c.set(Calendar.YEAR, 2022);
 		System.out.println(c);
 		
 		int day = c.get(Calendar.DAY_OF_MONTH);
@@ -58,5 +61,19 @@ public class Ex01 {
 		GregorianCalendar calendar = new GregorianCalendar();
 		System.out.println("isLeapYear: " + calendar.isLeapYear(2010));
 		
+		
+		System.out.println("=========================================");
+		int fdow = c.getFirstDayOfWeek();
+		System.out.println("fdow:" + fdow);
+		
+		c.add(Calendar.DAY_OF_MONTH, fdow - c.get(Calendar.DAY_OF_WEEK));
+		System.out.println("c:" + c.getTime());
+		
+		int dayIndex = 1;
+		while(dayIndex <= 7) {
+			System.out.println("C: " + sdf.format(c.getTime()));
+			c.add(Calendar.DAY_OF_MONTH, 1);
+			dayIndex++;
+		}
 	}
 }
