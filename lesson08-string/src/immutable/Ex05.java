@@ -22,5 +22,12 @@ public class Ex05 {
 	    // Create a Sub String
 	    String s4 = s.substring(2);
 	    System.out.println("s4 is sub-function of s: " + s4);
+	    
+	    String s5 = s.substring(0, 5); // khoang tu [a, b-1]
+	    System.out.println("s5 is sub-function of s: " + s5);
+	    
+	    // 
+	    System.out.println("s contains s1 ? " + s.contains(s1));
+	    System.out.println("s contains s2 ? " + s.contains(s2));
 	}
 }

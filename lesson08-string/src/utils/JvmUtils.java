@@ -4,7 +4,7 @@ public class JvmUtils {
 	private JvmUtils() {
 		
 	}
-	public static void hash(String text, String s) {
-		System.out.println(text + "s1 hash: " + System.identityHashCode(s));
+	public static void hash(String text, CharSequence sequence) {
+		System.out.println(text + " : " + System.identityHashCode(sequence));
 	}
 }
