@@ -13,14 +13,30 @@ public class Ex04 {
 
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern(pattern);
 		LocalDateTime start = LocalDateTime.parse("15:20:30 15/08/2018", dtf);
-		LocalDateTime end   = LocalDateTime.parse("20:25:24 15/06/2020", dtf);
+		LocalDateTime end   = LocalDateTime.parse("14:22:24 13/06/2020", dtf);
 		
-		Period period = Period.between(start.toLocalDate(), end.toLocalDate());
+		if(start.isAfter(end)) {
+			throw new IllegalArgumentException("Fail");
+		}
+		
+		LocalDate startDate = start.toLocalDate();
+		LocalDate endDate   = end.toLocalDate();
+		LocalTime startTime = start.toLocalTime();
+		LocalTime endTime   = end.toLocalTime();
+		
+		
 		Duration duration = Duration.between(start.toLocalTime(), end.toLocalTime());
-	
-		System.out.println(period.getYears() +" "+ period.getMonths() +" " + period.getDays());
-		System.out.println(duration.toHoursPart() +" "+
-				   duration.toMinutesPart() + " "+
+		
+		if(startDate.isBefore(endDate)) {
+			duration = duration.plusDays(1);
+			endDate = 	endDate.minusDays(1);
+		}
+		
+		Period period = Period.between(startDate, endDate);
+		
+		System.out.println(period.getYears() +"/"+ period.getMonths() +"/" + period.getDays());
+		System.out.println(duration.toHoursPart() +":"+
+				   duration.toMinutesPart() + ":"+
 				   duration.toSecondsPart());	
 	}
 }
