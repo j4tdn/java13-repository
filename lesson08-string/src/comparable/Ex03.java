@@ -2,8 +2,15 @@ package comparable;
 
 public class Ex03 {
 	public static void main(String[] args) {
-		// Compare address >>  .equal( : coding >> rarely use
-		// Compare content >> equal(Override from Object class), compareTo
+		// Compare content >> compareTo(Override from Object class)
+		// Return integer
+		// Compare the value in heap
+		/*
+		 * if(s1 < s2) return < 0; (base on Ascii)  >> Example : A - B = -1, A - D = -3
+		 * else if(s1 = s2) return 0;
+		 * else return > 0;
+		 */
+		
 		String s1 = "Hello";
 		String s2 = "Machine";
 		String s3 = "Hello";

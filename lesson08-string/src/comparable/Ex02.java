@@ -2,8 +2,9 @@ package comparable;
 
 public class Ex02 {
 	public static void main(String[] args) {
-		// Compare address >>  .equal( : coding >> rarely use
-		// Compare content >> equal(Override from Object class), compareTo
+		// Compare content >> equals(Override from Object class)
+		// Return true or false
+		// Compare the value in heap
 		String s1 = "Hello";
 		String s2 = "Machine";
 		String s3 = "Hello";

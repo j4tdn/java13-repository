@@ -3,6 +3,7 @@ package comparable;
 public class Ex01 {
 	public static void main(String[] args) {
 		// Compare address >>  == : coding >> rarely use
+		// Compare the value at stack
 		String s1 = "Hello";
 		String s2 = "Machine";
 		String s3 = "Hello";
@@ -15,9 +16,9 @@ public class Ex01 {
 		String o2 = new String("Machine");
 		String o3 = new String("Hello");
 		
-		System.out.println("o1, s2: " + o1 == o2);
-		System.out.println("o1, o3: " + o1 == o3);
-		System.out.println("o2, o3: " + o2 == o3);
+		System.out.println("o1, s2: " + (o1 == o2));
+		System.out.println("o1, o3: " + (o1 == o3));
+		System.out.println("o2, o3: " + (o2 == o3));
 		
 		// Compare content >> equal
 	}
