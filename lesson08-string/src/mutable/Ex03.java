@@ -28,7 +28,7 @@ public class Ex03 {
 		//multiple threads access this task with share data
 		//share data: StringBuilder || StringBuffer
 		private StringBuffer mutable;
-		private int count = 50000;
+		private int count = 100;
 		
 		public MutableTask() {
 			mutable = new StringBuffer();
