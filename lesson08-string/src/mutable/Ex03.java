@@ -21,8 +21,8 @@ public class Ex03 {
 	private static class MutableTast implements Runnable {
 		// multiple thread access this task with share data 
 		// Share data : StringBuider || StringBuffer
-//		private StringBuffer mutable;
-		private StringBuilder mutable;
+//		private StringBuffer mutable; >> multiple thread
+		private StringBuilder mutable; // single thread
 		private int count = 50000;
 		public MutableTast() {
 			mutable = new StringBuilder();
