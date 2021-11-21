@@ -2,7 +2,7 @@ package ex02;
 
 public class App {
 	public static void main(String[] args) {
-		int[] arr = {3, 2, 1, 6, 5};
+		int[] arr = {3, 7, 9, 2, 1, 6, 5, 4, 10};
 		System.out.println(getMissingNumber(arr));
 	}
 	
