@@ -28,7 +28,7 @@ public class Ex04 {
 		Period period = Period.between(startDate, endDate);
 		Duration duration = Duration.between(startTime, endTime);
 		if(endTime.isBefore(startTime)) {
-			duration = duration
+			duration = duration;
 		}
 		
 		
