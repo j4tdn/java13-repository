@@ -2,13 +2,14 @@ package ex05_review;
 
 import java.util.Arrays;
 
-public class App {
+public class AppLambda {
 
 	public static void main(String[] args) {
 		Book[] books = getBooks();
 		
 		//strategy pattern
 		//Tìm toàn bộ sách thuộc nhà xuất bản 'SWA'
+		//c1: anonymous class
 		Condition condition = new Condition() {
 			@Override
 			public boolean check(Book book) {
@@ -18,12 +19,26 @@ public class App {
 		
 		Book[] booksA = filter(books, condition);
 		System.out.println(Arrays.toString(booksA));
+		
+		System.out.println("=====================");
+		
+		//c2: implementation class from Stategy inteface
+		Condition publisherCondition = new PublisherCondition("SWA");
+		Book[] booksB = filter(books, publisherCondition);
+		System.out.println(Arrays.toString(booksB));
+		
+		System.out.println("=====================");
+		
+		//c3: anonymous function = lamda , required(at least JAVA 8)
+		//creating an instance(object) of Inteface
+//		Condition lambda = (Book book) -> {
+//			return book.getPrice() < 500;
+//		};
+		Book[] booksC = filter(books, book -> book.getPrice() < 500);
+		System.out.println(Arrays.toString(booksC));
 	}
 	
-	// stategy(behavior, function) pattern
-	// pass a parameter as a behavior, function
 	
-	//usual >> pass a parameter as a variable
 	private static Book[] filter(Book[] books, Condition condition) {
 		Book[] result = new Book[books.length];
 		
