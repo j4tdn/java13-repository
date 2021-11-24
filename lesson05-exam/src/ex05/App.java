@@ -69,8 +69,6 @@ public class App {
 		return Arrays.copyOfRange(result, 0, index);
 	}
 	
-	
-	
 	private static Book[] getBooks() {
 		TextBook tb1 = new TextBook("SGK123", 220, "PLS", Status.NEW);
 		TextBook tb2 = new TextBook("SGK258", 456, "STL", Status.OLD);

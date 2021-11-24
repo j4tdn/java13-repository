@@ -3,12 +3,13 @@ package ex05;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class AppAdv {
+public class AppStrategy {
 	public static void main(String[] args) {
 		Book[] books = getBooks();
 		// strategy pattern
 		
 		// Tìm toàn bộ sách thuộc nhà xuất bản 'SWA'
+		// Opt 1: anonymous class
 		Condition condition = new Condition() {
 			// publisherKw.equals(book.getPulisher())
 			// book.getPrice() < priceKw
@@ -22,7 +23,12 @@ public class AppAdv {
 		Book[] booksA = filter(books, condition);
 		System.out.println(Arrays.toString(booksA));
 		
+		System.out.println("\n=============\\\\\\\\\\=============\n");
 		
+		// Opt2: Implementation class from Strategy interface
+		Condition pcd = new PublisherCondition("SWA");
+		Book[] booksB = filter(books, pcd);
+		System.out.println(Arrays.toString(booksB));
 	}
 	
 	// strategy(behavior, function) pattern
@@ -40,6 +46,7 @@ public class AppAdv {
 	// book.getPrice() >= minPrice && book.getPrice() <= maxPrice
 	
 	// Condition#strategy
+	// filter >> Context
 	private static Book[] filter(Book[] books, Condition condition) {
 		Book[] result = new Book[books.length];
 		int index = 0;
