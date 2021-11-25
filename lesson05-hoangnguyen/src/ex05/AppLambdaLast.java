@@ -1,27 +1,20 @@
 package ex05;
 
 import java.util.Arrays;
-import java.util.Objects;
 
-public class AppAdvLamda {
+public class AppLambdaLast {
 
 	public static void main(String[] args) {
 		Book[] books = getBooks();
-		
-		// Strategy pattern
-		
-		// TODO >> Lambda expression
-		Condition condition = new Condition() {
 
-			@Override
-			public boolean check(Book book) {
-				return "SWA".equals(book.getPulisher());
-			}
-		};
-
-		// Tìm toàn bộ sách thuộc nhà xuất bản 'SWA'
-		Book[] booksA = filter(books, condition);
-		System.out.println(Arrays.toString(booksA));
+		Book[] lt600 = filter(books, book -> book.getPrice() < 600);
+		Book[] mt300 = filter(books, book -> book.getPrice() > 300);
+		Book[] swaBooks = filter(books, book -> "SWA".equalsIgnoreCase(book.getPulisher()));
+		System.out.println(Arrays.toString(lt600));
+		System.out.println("\n========////////////==========\n");
+		System.out.println(Arrays.toString(mt300));
+		System.out.println("\n========////////////==========\n");
+		System.out.println(Arrays.toString(swaBooks));
 		System.out.println("\n========////////////==========\n");
 
 	}

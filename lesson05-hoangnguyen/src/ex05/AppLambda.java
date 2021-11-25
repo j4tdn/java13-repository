@@ -1,32 +1,42 @@
 package ex05;
 
 import java.util.Arrays;
-import java.util.Objects;
 
-public class AppAdv {
+public class AppLambda {
 
 	public static void main(String[] args) {
 		Book[] books = getBooks();
-
+		
+		// Tìm toàn bộ sách có đơn giá nhỏ hơn 50
+		// Opt3: Anonymous function, required(at least JAVA 8)
+		// Anonymous function = Lambda
+		// Target: Concise representation to create an instance of Functional 
+		// Interface
+		Condition lessThan50 = (Book book) -> {
+			return book.getPrice() < 600;
+		};
+		
+		Book[] booksOpt3 = filter(books, lessThan50);
+		System.out.println(Arrays.toString(booksOpt3));
+		System.out.println("\n========////////////==========\n");
+						
+		// Op1: Anonymous Class
 		Condition condition = new Condition() {
-
 			@Override
 			public boolean check(Book book) {
-				return "SWA".equals(book.getPulisher());
+				return book.getPrice() >= 100 && book.getPrice() <= 600;
 			}
 		};
-		// Tìm toàn bộ sách thuộc nhà xuất bản 'SWA'
-		Book[] booksA = filter(books, condition);
+		
+		// Opt2: Implementation class
+		Book[] booksA = filter(books, new PublisherCondition("SWA"));
 		System.out.println(Arrays.toString(booksA));
 		System.out.println("\n========////////////==========\n");
-		Book[] booksB = filter(books, new filterPriceLessThan50() {
-		});
+		// Op1: Anonymous Class
+		Book[] booksB = filter(books, condition);
 		System.out.println(Arrays.toString(booksB));
 		System.out.println("\n========////////////==========\n");
-		Book[] booksC = filter(books, new filterPriceFrom100To200() {
-		});
-		System.out.println(Arrays.toString(booksC));
-		System.out.println("\n========////////////==========\n");
+
 
 	}
 
