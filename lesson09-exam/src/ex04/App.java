@@ -24,12 +24,12 @@ public class App {
 	}
 
 	public static boolean validate(String username, String password) {
-//		return atLeastNLetters(password, 8)
-//			&& containsDigit(password)
-//			&& containsUpperLetter(password)
-//			&& containsSpecialLetter(password)
-//			&& isExistedLessThanNLetters(password, username, 3);
-//		
+		return atLeastNLetters(password, 8)
+			&& containsDigit(password)
+			&& containsUpperLetter(password)
+			&& containsSpecialLetter(password)
+			&& isExistedLessThanNLetters(password, username, 3);
+		
 		// if (!atLeastNLetters(password, 8)) return false;
 		// if (!containsDigit(password)) return false;
 		// if (!containsUpperLetter(password)) return false;
