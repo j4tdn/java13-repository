@@ -11,6 +11,43 @@ public class Ex01 {
 		System.out.println("minMaxTuple: " + minMaxTuple);
 		int[] newArray = addElement(numbers, 5, 18);
 		System.out.println(Arrays.toString(newArray));
+		int[] removeArray = remove(numbers, 3);
+		System.out.println("remove: " + Arrays.toString(removeArray));
+		int[] deleteArray = delete(numbers, 3);
+		System.out.println("Delete: " + Arrays.toString(deleteArray));
+	}
+	
+	//4.1 Cach 1:
+	private static int[] remove(int[] origin, int k) {
+		if(k < 0 || k > origin.length - 1) {
+			throw new IllegalArgumentException(k + "Cannot out of range (0" + (origin.length-1) + ")");
+		}
+		
+		// B1: Create a new array with size = presize -1
+		int[] result = new int[origin.length - 1];
+		
+		// B2: Copy all elements from preArray to new Array
+		for(int i = 0; i < k; i++) {
+			result[i] = origin[i];
+		}
+		// B3: Copy all element from k+1 to length - 1, copy to new Array
+		for(int i = k; i < result.length; i++) {
+			result[i] = origin[i+1];
+		}
+		return result;
+	}
+	
+	// 4.1 Cach 2:
+	private static int[] delete(int[] origin, int k) {
+		// B1: Create a new array with size = preSize & copy all elements to new array
+		int[] result = Arrays.copyOfRange(origin, 0, origin.length);
+		
+		// B2: Shift left ONE UNIT k =3 to < length -1
+		for(int i = k; i < result.length-1; i++) {
+			result[i] = result[i+1];
+		}
+		
+		return Arrays.copyOfRange(result, 0, result.length-1);
 	}
 	
 	// 3.Add element
