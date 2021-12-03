@@ -1,5 +1,5 @@
 package sorting;
 
 public interface Strategy {
-boolean compare(int a,int b);
+int compare(int a,int b);
 }
