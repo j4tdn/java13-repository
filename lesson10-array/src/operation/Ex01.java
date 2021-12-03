@@ -5,12 +5,46 @@ import java.util.Arrays;
 public class Ex01 {
 	public static void main(String[] args) {
 		int[] numbers = { 1, 9, 5, 36, 12, 33 };
+		System.out.println("numbers" + Arrays.toString(numbers));
 		int sumOfOdd = sum(numbers, a -> a % 2 != 0);
+		System.out.println("===============================");
 		System.out.println("sum: " + sumOfOdd);
 		Tuple minMaxTuple = maxMin(numbers);
+		System.out.println("===============================");
 		System.out.println("minMaxTuple: " + minMaxTuple);
-		int[] newArray = addElement(numbers, 5, 18);
-		System.out.println(Arrays.toString(newArray));
+		System.out.println("===============================");
+		int[] newAddedArray = addElement(numbers, 5, 18);
+		System.out.println("addElentment: " + Arrays.toString(newAddedArray));
+		System.out.println("numbers: " + Arrays.toString(numbers));
+		System.out.println("===============================");
+		int[] newRemovedArray1 = delete(numbers, 3);
+		System.out.println("removeElement: " + Arrays.toString(newRemovedArray1));
+		System.out.println("===============================");
+		int[] newRemovedArray2 = remove(numbers, 2);
+		System.out.println("removeElement: " + Arrays.toString(newRemovedArray2));
+		System.out.println("===============================");
+	}
+
+	// 4.2 Remove element from index k
+	private static int[] remove(int[] numbers, int k) {
+		int[] result = new int[numbers.length - 1];
+		for (int i = 0; i < k; i++) {
+			result[i] = numbers[i];
+		}
+		for (int i = k; i < result.length; i++) {
+			result[i] = numbers[i + 1];
+		}
+		return result;
+	}
+
+	// 4.1 Remove element from index k
+	private static int[] delete(int[] origin, int k) {
+		int[] result = Arrays.copyOfRange(origin, 0, origin.length);
+		for (int i = k; i < origin.length - 1; i++) {
+			result[i] = result[i + 1];
+		}
+
+		return Arrays.copyOfRange(result, 0, result.length - 1);
 	}
 
 	// 3.Add element
