@@ -6,7 +6,9 @@ public class Ex01 {
 public static void main(String[] args) {
 	int[] origin = {1,5,11,9,4,6};
 	sort(origin,(int o1,int o2)->{
-		return o1>o2;
+		if(o1>o2)return 1;
+		if(o1==o2)return 0;
+			return -1;
 	});
 	
 		System.out.println("Bubble Sort-asc: "+Arrays.toString(origin));
@@ -15,7 +17,7 @@ public static void main(String[] args) {
 private static void sort(int[] origin,Strategy strategy) {
 	for(int round=0;round<origin.length;round++) {
 		for(int i=0;i<origin.length-round-1;i++) {
-			if(strategy.compare(origin[i], origin[i+1])) {
+			if(strategy.compare(origin[i], origin[i+1])>0) {
 				swap(origin,i,i+1);
 			}
 		}}
