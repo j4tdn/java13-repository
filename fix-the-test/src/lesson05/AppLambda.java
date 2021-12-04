@@ -6,33 +6,21 @@ public class AppLambda {
 	public static void main(String[] args) {
 		Book[] books = getBook();
 		
-		//Opt3 : anonymous function >> JAVA8
-		//Interface interface = (/* danh sách tham số của hàm trừu tượng >> Condition */) -> {
-			//override/thưc thi của abstract method
-		//}
-		//Anonymous function = Lambda
-		//Target: là 1 cách code ngắn gọn thể hiệ 1 đối tượng của Interface
-		Condition lt50 = (Book book) -> {
-			return book.getPrice() < 600;
-		};
-		Book [] booksC =filter(books, lt50);
+		//Condition lt50 = book -> book.getPrice() < 600;
+
+		Book [] booksC =filter(books, book -> book.getPrice() < 600);
+		Book [] booksD =filter(books, book -> book.getPrice() < 300);
+		Book [] booksE =filter(books, book -> "SWA".equals(book.getPulisher()));
+
+
 		System.out.println(Arrays.toString(booksC));
+		System.out.println(Arrays.toString(booksD));
+		System.out.println(Arrays.toString(booksE));
+
 		
-		//Opt1
-		Condition condition = new Condition() {
-			@Override
-			public boolean check(Book book) {
-				return book.getPrice() >= 200 && book.getPrice() <= 600;
-			}
-		};
-		Book[] booksA = filter(books, condition);
-		System.out.println(Arrays.toString(booksA));
-		System.out.println("====================================");
-		//Opt2 : Implementation class from Strategy interface
-		Condition pcd = new PublicherCondition("SWX");
-		Book[] booksB = filter(booksA, pcd);
-		System.out.println(Arrays.toString(booksB));
-	}
+
+		
+	}	
 
 	private static Book[] filter(Book[] books, Condition condition) {
 		Book[] result = new Book[books.length];

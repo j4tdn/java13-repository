@@ -15,7 +15,7 @@ public class Ex02 {
 		for(int round = origin.length -1;round >0;round--) {
 			for(int i =0;i< round;i++) {
 				if(origin[i] > origin[round]) {
-					
+					ArrayUtils.swap(origin, i, round);
 				}
 			}
 		}
