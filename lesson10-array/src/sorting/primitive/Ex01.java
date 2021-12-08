@@ -1,8 +1,8 @@
-package sorting;
+package sorting.primitive;
 
 import java.util.Arrays;
 
-import utils.Swap;
+import utils.Utils;
 
 public class Ex01 {
 	public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class Ex01 {
 		for (int round = 0; round < numbers.length; round++) {
 			for (int i = 0; i < numbers.length - round - 1; i++) {
 				if (c.check(numbers[i], numbers[i + 1]) > 0) {
-					Swap.swap(numbers, i, i + 1);
+					Utils.swap(numbers, i, i + 1);
 				}
 			}
 		}
