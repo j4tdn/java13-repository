@@ -1,4 +1,4 @@
-package sorting;
+package sorting.primitive;
 
 /**
  * Compare 2 values a and b

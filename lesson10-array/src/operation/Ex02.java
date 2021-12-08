@@ -11,7 +11,7 @@ public class Ex02 {
 		System.out.println("Reversed array: " + Arrays.toString(numbers));
 	}
 
-	private static void reverse(int[] origin) {
+	public static void reverse(int[] origin) {
 		int length = origin.length;
 
 		for (int i = 0; i < length / 2; i++) {
