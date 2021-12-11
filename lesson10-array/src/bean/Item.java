@@ -2,7 +2,7 @@ package bean;
 
 import java.time.LocalDate;
 
-public class Item {
+public class Item{
 	private int id;
 	private String name;
 	private double price;
@@ -54,7 +54,9 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", price=" + price + ", expiredDate=" + expiredDate + "]";
+		return "Item [id=" + id + ", name=" + name + ", price=" + price + ", expiredDate=" + expiredDate + "]\n";
 	}
+
+	
 	
 }
