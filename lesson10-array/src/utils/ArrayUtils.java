@@ -2,6 +2,7 @@ package utils;
 
 import java.util.Arrays;
 
+import bean.Item;
 import common.SortOrder;
 import operation.Ex02;
 
@@ -32,6 +33,10 @@ public class ArrayUtils {
 
 
 	public static void printf(String text, int[] arr) {
+		System.out.println(text + ": " + Arrays.toString(arr));
+	}
+	
+	public static void printf(String text, Item[] arr) {
 		System.out.println(text + ": " + Arrays.toString(arr));
 	}
 }
