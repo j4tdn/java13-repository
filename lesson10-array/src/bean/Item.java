@@ -2,7 +2,7 @@ package bean;
 
 import java.time.LocalDate;
 
-public class Item {
+public class Item implements Comparable<Item> {
 	private int id;
 	private String name;
 	private double price;
@@ -53,7 +53,29 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", price=" + price + ", expiredDate=" + expiredDate + "]";
+		return "Item [id=" + id + ", name=" + name + ", price=" + price + ", expiredDate=" + expiredDate + "]\n";
+	}
+
+	@Override
+	public int compareTo(Item that) {
+		//ID ASC
+		//return this.getId() - that.getId();
+		
+		//ID DSC
+		//return that.getId() - this.getId();
+		
+		//name ASC
+		//return this.getName().compareTo(that.getName());
+		
+		//expire date ASC 
+		//return this.getExpiredDate().compareTo(that.getExpiredDate());
+		
+		//Price ASC, ID DSC
+		if(this.getPrice() > that.getPrice()) return 1;
+		if(this.getPrice() < that.getPrice()) return -1;
+		
+		return that.getId() - this.getId();
+	
 	}
 	
 }
