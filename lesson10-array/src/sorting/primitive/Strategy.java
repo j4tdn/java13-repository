@@ -1,4 +1,4 @@
-package sorting;
+package sorting.primitive;
 
 @FunctionalInterface
 public interface Strategy {
