@@ -31,6 +31,7 @@ public class App {
 		System.out.println(Arrays.toString(primeNbrs));
 		
 		System.out.println("\n=========\\\\\\\\===========\n");
+		
 		int sum = operate(10, 4, (a, b) -> a + b);
 		int sub = operate(12, 4, (a, b) -> a - b);
 		int mul = operate(14, 4, (a, b) -> a * b);
