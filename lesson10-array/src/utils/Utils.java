@@ -2,6 +2,7 @@ package utils;
 
 import java.util.Arrays;
 
+import bean.Item;
 import common.SortOrder;
 
 public class Utils {
@@ -35,7 +36,11 @@ public class Utils {
 	public static void print(String text, String[] origin) {
 		System.out.println(text + ": " + Arrays.toString(origin));
 	}
-	
+
+	public static void print(String text, Item[] origin) {
+		System.out.println(text + ": " + Arrays.toString(origin));
+	}
+
 	public static void reversed(int[] numbers) {
 		for (int i = 0; i < numbers.length / 2; i++) {
 			int temp = numbers[i];
