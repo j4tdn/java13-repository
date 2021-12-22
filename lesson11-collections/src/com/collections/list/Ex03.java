@@ -3,6 +3,7 @@ package com.collections.list;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Basic operations SOT: construct, add, get, set, iterate,
@@ -34,5 +35,31 @@ public class Ex03 {
 		while(iterator.hasNext()) {
 			System.out.println(iterator.next());
 		}
+		
+		
+		System.out.println("\n\n==============================\n\n");
+		//contains, remove
+		System.out.println("is existed: " + statuses.contains("Order"));
+		
+		System.out.println("\n\n==============================\n\n");
+		//remove base on index
+		//statuses.remove(0);
+		
+		//remove base on object
+		//statuses.remove("Package");
+		
+		//remove if
+//		Predicate<String> predicate = new Predicate<String>() {
+//			@Override
+//			public boolean test(String str) {
+//				return str.length()<6;
+//			}
+//		};
+//		statuses.removeIf(predicate);
+		statuses.removeIf(x->x.startsWith("P"));
+		for(String status: statuses) {
+			System.out.println(status);
+		}
+		
 	}
 }
