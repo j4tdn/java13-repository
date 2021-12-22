@@ -26,31 +26,27 @@ import java.util.List;
  */
 public class Ex02 {
 	public static void main(String[] args) {
+		
 		// Required: List<Integer> List<String>
-		
+		//         : error at compile time
 		List<Integer> digits = new ArrayList<>();
-		
 		digits.add(14);
 		digits.add(22);
 		digits.add(36);
-		
-		// digits.add("10 triệu"); mandatory is Integer
-		
-		// error at compile time
-		
-		for (Integer digit: digits) {
-			System.out.println(digit * 2);
-		}
-		
-		System.out.println("\n\\\\\\\\==================\\\\\\\\\n");
+		// digits.add("wrong_type"); // mandatory is Integer
 		
 		
 		List<String> students = new ArrayList<>();
 		students.add("John smith");
 		students.add("Rivaldo");
+		// students.add(123); // mandatory is String
 		
 		for (String student: students) {
 			System.out.println(student);
+		}
+		
+		for (Integer digit: digits) {
+			System.out.println(digit * 2);
 		}
 	}
 }

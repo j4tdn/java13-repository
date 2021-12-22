@@ -10,18 +10,18 @@ import java.util.List;
 public class Ex01 {
 	public static void main(String[] args) {
 		// raw type
-		// default: list of objects
+		
 		
 		// required: list of integers
-		List salaries = new ArrayList();
+		List salaries = new ArrayList(); // default: list of objects
 		
 		// able to add any type: Integer, String, Double, Item
 		salaries.add(new Integer(2000));
 		salaries.add(new Integer(4000));
-		salaries.add("10 triệu"); 
+		salaries.add("wrong_type"); 
 		
 		// compile time >> no error
-		// runtime      >> java.lang.NumberFormatException: For input string: "10 triệu"
+		// runtime      >> java.lang.NumberFormatException: For input string: "wrong_type"
 		
 		// for each : JDK 1.5
 		for (Object salary: salaries) {
