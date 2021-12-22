@@ -3,6 +3,7 @@ package com.collections.list;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Basic operations SOT: construct, add, get, set, iterate, for each, size,
@@ -32,6 +33,23 @@ public class Ex03 {
 		Iterator<String> iterator = statues.iterator();
 		while(iterator.hasNext()) {
 			String status = iterator.next();
+			System.out.println("iterator:" + status);
+		}
+		
+		// ======= contains, remove =======
+		String word = "ORDER";
+//		for (String status : statues) {
+//			if (word.equals(status)) {
+//				System.out.println("statues contains: " + word);
+//			}
+//		}
+		System.out.println("is existed ? " + statues.contains(word));
+		
+		// statues.remove(1);
+		// statues.remove(word);
+		// statues.removeIf(t -> t.length()<6);
+		statues.removeIf(t -> t.startsWith("B"));
+		for(String status:statues) {
 			System.out.println(status);
 		}
 	}
