@@ -3,6 +3,7 @@ package com.collections.list;
 import static java.util.Comparator.comparing;
 import static java.util.Comparator.reverseOrder;
 
+import java.util.Collections;
 import java.util.List;
 
 import bean.Item;
@@ -25,10 +26,11 @@ public class Ex06 {
 	public static void main(String[] args) {
 		List<Item> items = DataProvider.getItems();
 		
-		// Collections.sort(items); required: T implement Comparable<T>
+		// Arrays.sort(itemArray) // non-require
+		Collections.sort(items); // required: T implement Comparable<T>
 		
-		// Collections.sort(items, comparing(Item::getStoreId)
-						   // .thenComparing(Item::getItemId, reverseOrder()));
+		Collections.sort(items, comparing(Item::getStoreId)
+						   .thenComparing(Item::getItemId, reverseOrder()));
 		
 		items.sort(comparing(Item::getStoreId)
 			  .thenComparing(Item::getItemId, reverseOrder()));
