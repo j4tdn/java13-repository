@@ -17,9 +17,13 @@ public class Ex03 {
 		// printf(months);
 		printf(objects);
 		
-		printg(numbers);
-		printg(digits);
+		// printg(numbers);
+		// printg(digits);
 		printg(months);
+		
+		// printw(numbers);
+		printw(months);
+		printw(objects);
 	}
 	
 	// Option 1: Idea of OOP - Inheritance
@@ -50,4 +54,11 @@ public class Ex03 {
 	// Benefit
 	// Pass an Object type
 	// Restrict Object type with "extends" keyword
+	
+	// Allow String or String's parent type: String, Object
+	public static void printw(List<? super String> elements) {
+		for (Object element: elements) {
+			System.out.println(element);
+		}
+	}
 }

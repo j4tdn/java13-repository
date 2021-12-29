@@ -1,7 +1,6 @@
 package ex05;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public class AppStrategy {
 	public static void main(String[] args) {
