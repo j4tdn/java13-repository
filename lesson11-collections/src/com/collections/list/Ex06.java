@@ -1,7 +1,8 @@
 package com.collections.list;
 
-import java.util.Collections;
-import static java.util.Comparator.*;
+import static java.util.Comparator.comparing;
+import static java.util.Comparator.reverseOrder;
+
 import java.util.List;
 
 import bean.Item;
