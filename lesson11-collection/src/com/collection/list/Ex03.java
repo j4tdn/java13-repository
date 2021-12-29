@@ -42,12 +42,28 @@ public class Ex03{
 				// _PACKAGE
 				// _DELIVERY
 				// _
-				Iterator<String> iterator = statuses.iterator();
-				while(iterator.hasNext()) {
-					String status = iterator.next();
-					System.out.println("iterator: " + status);
-				}
+		Iterator<String> iterator = statuses.iterator();
+		while(iterator.hasNext()) {
+			String status = iterator.next();
+			System.out.println("iterator: " + status);
+		}
 		
+		//==========contain, remove ============
+		System.out.println("==========Contain, remove ============");
+		String word = "ORDER";
+//		for(String status: statuses) {
+//			if(word.equals(status)) {
+//				System.out.println("statues contains: " + word);
+//			}
+//		}
+//		
+		System.out.println("is existed? " + statuses.contains(word));
 		
+//		statuses.remove(0);
+//		statuses.remove(word);
+		statuses.removeIf(status -> status.startsWith("B"));
+		for (String status: statuses) {
+			System.out.println(status);
+		}
 	}
 }

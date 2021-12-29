@@ -1,0 +1,13 @@
+package com.generic;
+
+public class Ex05 {
+	public static void main(String[] args) {
+		IList<Integer> numbers = new CustomList<Integer>();
+		numbers.add(5);
+		numbers.add(7);
+		numbers.add(3);
+		numbers.add(10);
+		numbers.add(15);
+		System.out.println("count: " + numbers.count(number -> number % 5 == 0));
+	}
+}
