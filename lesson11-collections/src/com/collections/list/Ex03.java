@@ -23,5 +23,13 @@ public class Ex03 {
 		for(String statu : status) {
 			System.out.println(statu);
 		}
+		
+		// ========= contains, remove ========
+		String word = "BOOM";
+		String key = "BOOM123";
+		
+		System.out.println("=====================");
+		System.out.println("Testing: " + word.contains(key));
+		
 	}
 }
