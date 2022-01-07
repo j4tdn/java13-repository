@@ -1,5 +1,5 @@
 
-package com.collection.list;
+package com.collections.list;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -47,6 +47,26 @@ public class Ex03 {
 		while (iterator.hasNext()) {
 			String status = iterator.next();
 			System.out.println("iterator: " + status);
+		}
+		
+		// ======= contains, remove ========
+		System.out.println("======= contains, remove ========");
+		String word = "ORDER";
+//		for (String status: statuses) {
+//			if (word.equals(status)) {
+//				System.out.println("Statues contains " + word);
+//			}
+//		}
+		System.out.println("Is existed ? " + statuses.contains(word));
+
+		// statuses.remove(1);
+		// statuses.remove("BOOM");
+		
+		statuses.removeIf(status -> status.startsWith("B"));
+		
+		
+		for (String status : statuses) {
+			System.out.println(status);
 		}
 	}
 }
