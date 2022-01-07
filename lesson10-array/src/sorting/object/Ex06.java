@@ -1,4 +1,8 @@
 package sorting.object;
+import static java.util.Comparator.comparing;
+import static java.util.Comparator.reverseOrder;
+import static java.util.function.Function.identity;
+
 /*
  * Sorting with String[] Array
  * DESC || ASC
@@ -6,12 +10,8 @@ package sorting.object;
  * >> handle null value
  */
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.function.Function;
 
 import utils.ArrayUtils;
-import static java.util.function.Function.*;
-import static java.util.Comparator.*;
 public class Ex06 {
 	public static void main(String[] args) {
 		String[] students = {

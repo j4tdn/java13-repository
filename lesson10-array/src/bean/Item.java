@@ -59,7 +59,7 @@ public class Item implements Comparable<Item> {
 	@Override
 	public int compareTo(Item that) {
 		//ID ASC
-		//return this.getId() - that.getId();
+		return this.getId() - that.getId();
 		
 		//ID DSC
 		//return that.getId() - this.getId();
@@ -71,10 +71,10 @@ public class Item implements Comparable<Item> {
 		//return this.getExpiredDate().compareTo(that.getExpiredDate());
 		
 		//Price ASC, ID DSC
-		if(this.getPrice() > that.getPrice()) return 1;
-		if(this.getPrice() < that.getPrice()) return -1;
-		
-		return that.getId() - this.getId();
+//		if(this.getPrice() > that.getPrice()) return 1;
+//		if(this.getPrice() < that.getPrice()) return -1;
+//		
+//		return that.getId() - this.getId();
 	
 	}
 	
