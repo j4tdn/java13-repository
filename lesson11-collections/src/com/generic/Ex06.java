@@ -3,7 +3,6 @@ package com.generic;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.print.attribute.standard.Copies;
 
 public class Ex06 {
 	public static void main(String[] args) {
@@ -13,17 +12,17 @@ public class Ex06 {
 		List<Float> floatList1 = new ArrayList<>();
 		List<Float> floatList2 = new ArrayList<>();
 		
-		copy(intList1, floatList1);
+//		copy(intList1, floatList1);
 		
 		move(intList1, floatList1);
 	}
-	
+	//T phai cung kieu du lieu
 	public static <T extends Number> void copy(List<T> dest, List<T> src) {
 		dest.addAll(src);
 	}
-	
+	//? co the khac kieu du lieu
 	public static void move(List<? extends Number> dest, List<? extends Number> src) {
-		dest.addAll(src);
+//		dest.addAll(src);
 	}
 	
 }
