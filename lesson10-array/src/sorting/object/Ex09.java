@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Comparator.*;
 import java.util.function.Function;
-
+import static java.util.Comparator.comparing;
+import static java.util.Comparator.reverseOrder;
 import bean.Item;
 import utils.ArraysUtils;
 
@@ -37,7 +38,7 @@ public class Ex09 {
 		
 		
 //		Comparator<Item> comparator = Comparator.comparing(keyExtractor);
-		Arrays.sort(items,comparing(Item::getPrice).themComparing(Item::getId,reservese()));
+		Arrays.sort(items,comparing(Item::getPrice).thenComparing(Item::getId,reverseOrder()));
 		
 		ArraysUtils.print("Sort Items: ", items);
 		
