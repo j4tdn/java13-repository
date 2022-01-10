@@ -56,5 +56,12 @@ public class Item {
 		return "Item [id=" + id + ", name=" + name + ", price=" + price + "]";
 	}
 	
+	//@Override
+	// compare 2 items
+	//public int compareTo(Item that) {
+		//return this.getPrice() - that.getPrice();
+	//}
+	
+	
 
 }
