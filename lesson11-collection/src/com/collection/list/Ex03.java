@@ -41,5 +41,6 @@ public class Ex03 {
 		String status = iterator.next();
 		System.out.println("iterator: " + status);
 	}
-
+	String word ="ORDER";
+	System.out.println("\n\\\\\\\\===================\\\\\\\\\\\\\\\\\n");
 }
