@@ -49,6 +49,10 @@ public class Ex03 {
 		while(iterator.hasNext()) {
 			String status = iterator.next();
 			System.out.println("iterator: " + status);
+			
 		}
+		
+		
 	}
+	
 }
