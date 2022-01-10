@@ -48,6 +48,13 @@ public static void main(String[] args) {
 		String status = iterator.next();
 		System.out.println("iterator: " + status);
 	}
+System.out.println("=====contains, remove=======");
+String word = "ORDER";
+System.out.println("is existed ? "+ statuses.contains(word));
+statuses.removeIf(status -> status.startsWith("B"));
+for(String status: statuses) {
+	System.out.println(status);
+}
 
 }
 }
