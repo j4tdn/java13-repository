@@ -6,7 +6,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import ex02.Disk;
-import ex04.Vocab;
 
 public class Utils {
 	private Utils() {
@@ -27,10 +26,10 @@ public class Utils {
 		return sum;
 	}
 	
-	public static <T, U> void printMap(Map<T, U> vocabs) {
-		Set<Entry<T, U>> setVocabs = vocabs.entrySet();
-		for(Entry<T, U> setVocab : setVocabs) {
-			System.out.println(setVocab.getKey() + " => " + setVocab.getValue());
+	public static <T, U> void printMap(Map<T, U> items) {
+		Set<Entry<T, U>> entries = items.entrySet();
+		for(Entry<T, U> entry : entries) {
+			System.out.println(entry.getKey() + " => " + entry.getValue());
 		}
 	}
 }
