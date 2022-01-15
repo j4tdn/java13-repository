@@ -53,4 +53,9 @@ public class Apple {
 	public String toString() {
 		return "Apple [id=" + id + ", color=" + color + ", weight=" + weight + ", country=" + country + "]";
 	}
+	
+	//Any class
+	public static String transfer(Apple apple) {
+		return apple.getCountry();
+	}
 }
