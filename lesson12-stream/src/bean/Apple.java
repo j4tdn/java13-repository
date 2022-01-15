@@ -47,9 +47,14 @@ public class Apple {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Apple [id=" + id + ", color=" + color + ", weight=" + weight + ", country=" + country + "]";
+	}
+	
+	// Any Class
+	public static String transfer(Apple apple) {
+		return apple.getCountry();
 	}
 }

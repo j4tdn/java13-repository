@@ -1,6 +1,6 @@
 package utils;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Utility class
@@ -12,7 +12,7 @@ public class Printable {
 	}
 	
 	// generic method
-	public static <Element> void print(List<Element> elements) {
+	public static <Element> void print(Collection<Element> elements) {
 		for(Element element: elements) {
 			System.out.println(element);
 		}
