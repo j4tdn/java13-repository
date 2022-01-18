@@ -43,7 +43,7 @@ public class Ex03 {
 	}
 
 	/*
-	 * @predicate is a function call by Interface
+	 * @predicate is a function called by Interface
 	 */
 	private static List<Apple> filter(List<Apple> inventory, ApplePredicate predicate) {
 		List<Apple> apples = new ArrayList<>();
