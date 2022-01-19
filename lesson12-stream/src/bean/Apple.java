@@ -5,12 +5,27 @@ public class Apple {
 	private String color;
 	private double weight;
 	private String country;
-	
+
 	public Apple() {
+
+		System.out.println(">>>> Apple No Parameter");
+	}
+
+	public Apple(int id) {
+
+		System.out.println("\n>>>> Apple 01");
+		this.id = id;
+	}
 	
+	public Apple(int id, String country) {
+
+		System.out.println("\n>>>> Apple 02");
+		this.id = id;
+		this.country = country;
 	}
 
 	public Apple(int id, String color, double weight, String country) {
+		System.out.println("\n>>>> Apple 03");
 		this.id = id;
 		this.color = color;
 		this.weight = weight;
@@ -53,6 +68,5 @@ public class Apple {
 	public String toString() {
 		return "Apple [id=" + id + ", color=" + color + ", weight=" + weight + ", country=" + country + "]";
 	}
-	
-	
+
 }

@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.function.Function;
 
 import bean.Apple;
-import model.AppleData;
+import model.DataModel;
 
 /**
  * Input: List<Apple> inventory Write methods to 1. Get origin country of apples
@@ -16,7 +16,7 @@ import model.AppleData;
 public class Ex01 {
 
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DataModel.getApples();
 		
 		// Function<Apple, String> functionL = apple -> apple.getCountry();
 		// Function<Apple, String> functionM = Apple::getCountry;

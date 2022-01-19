@@ -1,4 +1,4 @@
-package view;
+package view.apple;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +11,13 @@ import functional.HevyWeightApplePredicate;
 import functional.LightWeightApplePredicate2;
 import functional.RedApplePredicate;
 import functional.WeightAndColorApplePredicate;
-import model.AppleData;
+import model.DataModel;
 import utils.AppleUtils;
 
 public class Ex05 {
 
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DataModel.getApples();
 		
 		// Lambda: (data_type parameters) -> {body}
 		// (data_type parameters)
