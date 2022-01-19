@@ -1,4 +1,4 @@
-package view;
+package view.apple;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,49 +11,64 @@ import functional.HeavyWeightApplePredicate;
 import functional.LightWeightApplePredicate;
 import functional.RedApplePredicate;
 import functional.WeightAndColorApplePredicate;
-import model.AppleData;
+import model.DataModel;
 import utils.Printable;
 
-public class Ex05 {
+public class Ex04 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
-		
-		// Opt3: Anonymous function = Lambda expression
-		// >>> Lambda expression syntax (parameters) -> {body}
-		// >>> Lambda expression: create an instance(object) of Function Interface
-		// >>> (parameters) -> {body} >> code to override abstract method in Function Interface
+		List<Apple> inventory = DataModel.getApples();
 
 		System.out.println("1st : find all green apples in his inventory");
-		List<Apple> greenApples = findApples(inventory, (Apple apple) -> {
-			return "green".equals(apple.getColor());
+		List<Apple> greenApples = findApples(inventory, new ApplePredicate() {
+
+			@Override
+			public boolean test(Apple apple) {
+				return "green".equals(apple.getColor());
+			}
 		});
 		Printable.print(greenApples);
 
 		System.out.println("============================");
 		System.out.println("2nd : find all red apples in his inventory");
-		List<Apple> redApples = findApples(inventory, (Apple apple) -> {
-			return "red".equals(apple.getColor());
+		List<Apple> redApples = findApples(inventory, new ApplePredicate() {
+
+			@Override
+			public boolean test(Apple apple) {
+				return "red".equals(apple.getColor());
+			}
 		});
 		Printable.print(redApples);
 
 		System.out.println("============================");
-		System.out.println("3rd: find all apples heavier than 300 g");
-		List<Apple> heavyApples = findApples(inventory, (Apple apple) -> {
-			return apple.getWeight() > 300;
+		System.out.println("3rd: find all apples heavier than 150 g");
+		List<Apple> heavyApples = findApples(inventory, new ApplePredicate() {
+			
+			@Override
+			public boolean test(Apple apple) {
+				return apple.getWeight() > 150;
+			}
 		});
 		Printable.print(heavyApples);
 
 		System.out.println("============================");
 		System.out.println("4th: find all apples lighter than 200g");
-		List<Apple> lightApples = findApples(inventory, (Apple apple) -> {
-			return apple.getWeight() < 200;
+		List<Apple> lightApples = findApples(inventory, new ApplePredicate() {
+			
+			@Override
+			public boolean test(Apple apple) {
+				return apple.getWeight() < 200;
+			}
 		});
 		Printable.print(lightApples);
 
 		System.out.println("============================");
 		System.out.println("5th: find all apples that are red and heavier than 400 g");
-		List<Apple> applesMatchedColorAndWeight = findApples(inventory, (Apple apple) -> {
-			return "red".equals(apple.getColor()) && apple.getWeight() > 400;
+		List<Apple> applesMatchedColorAndWeight = findApples(inventory, new ApplePredicate() {
+			
+			@Override
+			public boolean test(Apple apple) {
+				return "red".equals(apple.getColor()) && apple.getWeight() > 400;
+			}
 		});
 		Printable.print(applesMatchedColorAndWeight);
 	}
@@ -71,13 +86,7 @@ public class Ex05 {
 	  		    return "green".equals(apple.getColor()); 
 	        } 
 	     } 
-	  * Opt3: Anonymous function = Lambda expression
-	  * >>> Lambda expression syntax (parameters) -> {body}
-	  * >>> Lambda expression: create an instance(object) of Function Interface
-	  * >>> (parameters) -> {body} >> code to override abstract method in Function Interface
-	  * ApplePredicate predicate = (Apple apple) -> {
-			return "green".equals(apple.getColor());
-		}
+	  * Opt3: Anonymous function
 	 */
 	private static List<Apple> findApples(List<Apple> inventory, ApplePredicate predicate) {
 		List<Apple> result = new ArrayList<>();
@@ -88,4 +97,9 @@ public class Ex05 {
 		}
 		return result;
 	}
+	// 1st : find all green apples in his inventory
+	// 2nd: find all red apples in his inventory
+	// 3rd: find all apples heavier than 150 g
+	// 4th: find all apples lighter than 200g
+	// 5th: find all apples that are red and heavier than 400 g
 }

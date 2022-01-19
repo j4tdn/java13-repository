@@ -1,16 +1,16 @@
-package view;
+package view.apple;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import bean.Apple;
 import bean.WeightType;
-import model.AppleData;
+import model.DataModel;
 import utils.Printable;
 
 public class Ex02 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DataModel.getApples();
 		
 		System.out.println("1st : find all green apples in his inventory");
 		List<Apple> greenApples = findApplesByColor(inventory, "green");

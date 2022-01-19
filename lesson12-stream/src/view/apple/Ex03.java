@@ -1,4 +1,4 @@
-package view;
+package view.apple;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +11,12 @@ import functional.HeavyWeightApplePredicate;
 import functional.LightWeightApplePredicate;
 import functional.RedApplePredicate;
 import functional.WeightAndColorApplePredicate;
-import model.AppleData;
+import model.DataModel;
 import utils.Printable;
 
 public class Ex03 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DataModel.getApples();
 		
 		System.out.println("1st : find all green apples in his inventory");
 		List<Apple> greenApples = findApples(inventory, new GreenApplePredicate());

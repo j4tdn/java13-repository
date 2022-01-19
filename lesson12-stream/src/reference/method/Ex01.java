@@ -1,7 +1,7 @@
 package reference.method;
 
 import bean.Apple;
-import model.AppleData;
+import model.DataModel;
 import utils.Printable;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.function.Function;
  */
 public class Ex01 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DataModel.getApples();
 
 		// Lambda
 		Set<String> countriesX = map(inventory, apple -> apple.getCountry());
