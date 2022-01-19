@@ -1,15 +1,15 @@
-package view;
+package view.apple;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import bean.Apple;
-import model.AppleData;
+import model.DateModel;
 import utils.Printable;
 
 public class Ex01 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DateModel.getApples();
 
 		System.out.println("1st: find all green apples in inventory");
 		List<Apple> greenApples = findGreenApples(inventory);

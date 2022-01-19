@@ -9,6 +9,15 @@ public class Apple {
 	public Apple() {
 	}
 
+	public Apple(int id) {
+		this.id = id;
+	}
+
+	public Apple(int id, String color) {
+		this.id = id;
+		this.color = color;
+	}
+
 	public Apple(int id, String color, double weight, String country) {
 		this.id = id;
 		this.color = color;

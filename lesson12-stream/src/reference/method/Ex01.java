@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Function;
 
 import bean.Apple;
-import model.AppleData;
+import model.DateModel;
 import utils.Printable;
 
 /**
@@ -17,7 +17,7 @@ import utils.Printable;
  */
 public class Ex01 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DateModel.getApples();
 		
 		//Opt1: non-static method
 		//List<String> countries = filter(inventory, apple->apple.getCountry());

@@ -5,11 +5,11 @@ import java.util.List;
 
 import bean.Apple;
 
-public class AppleData {
-	private AppleData() {
+public class DateModel {
+	private DateModel() {
 		
 	}
-	public static List<Apple> getAll() {
+	public static List<Apple> getApples() {
         // new ArrayList<>() >>> add(...) >> return dynamic-size ArrayList
         // Arrays.asList >> return fixed-size ArrayList
         return Arrays.asList(
@@ -21,4 +21,6 @@ public class AppleData {
                 new Apple(6, "green", 100, "Thailand")
         );
     }
+	
+	
 }
