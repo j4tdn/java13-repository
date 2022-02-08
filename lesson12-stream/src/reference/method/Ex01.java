@@ -7,7 +7,7 @@ import java.util.function.Function;
 
 import Utils.Printable;
 import bean.Apple;
-import model.AppleData;
+import model.DataModel;
 
 /*
  * +Input: List<Apple> inventory
@@ -16,7 +16,7 @@ import model.AppleData;
  */
 public class Ex01 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DataModel.getApples();
 		
 		
 		Function<Apple, String> function1 = apple->apple.getCountry();

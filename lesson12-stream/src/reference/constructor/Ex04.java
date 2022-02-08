@@ -1,0 +1,35 @@
+package reference.constructor;
+
+import java.util.function.BiFunction;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+import bean.Apple;
+
+/*
+ * Shorthand way to create instance of FI return Object
+ * Using ClassName::new
+ * + Supplier<R> => R get()
+ * + Function<T, R> => R get(T t)
+ */
+public class Ex04 {
+	public static void main(String[] args) {
+		
+		//support to create instance of Apple with no parameter
+		//Supplier<Apple>  spl01 = () -> new Apple();
+		Supplier<Apple>  spl01 = Apple::new;
+		
+		Apple apple1 = spl01.get();
+		System.out.println(apple1);
+		
+		//Function<Integer, Apple> fcn02 = id -> new Apple(id);
+		Function<Integer, Apple> fcn02 = Apple::new;
+		Apple apple2 = fcn02.apply(123);
+		System.out.println(apple2);
+		
+		//BiFunction<Integer, String, Apple> bfn02 = (id, country) -> new Apple(id, country);
+		BiFunction<Integer, String, Apple> bfn02 = Apple::new;
+		Apple apple03 = bfn02.apply(234, "VietNam");
+		System.out.println(apple03);
+	}
+}

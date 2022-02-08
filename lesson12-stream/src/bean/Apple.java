@@ -7,9 +7,19 @@ public class Apple {
     private String country;
     
     public Apple() {
-		
+		System.out.println(">>> Apple00");
 	}
 
+    public Apple(int id) {
+    	System.out.println(">>> Apple01");
+    	this.id = id;
+    }
+    
+    public Apple(int id, String country) {
+    	this.id = id;
+    	this.country = country;
+    }
+    
 	public Apple(int id, String color, double weight, String country) {
 		super();
 		this.id = id;
