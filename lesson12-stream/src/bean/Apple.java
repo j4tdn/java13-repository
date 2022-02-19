@@ -25,7 +25,7 @@ public class Apple {
 	}
 
 	public Apple(int id, String color, double weight, String country) {
-		System.out.println("\n>>>> Apple 03");
+		// ystem.out.println("\n>>>> Apple 03");
 		this.id = id;
 		this.color = color;
 		this.weight = weight;

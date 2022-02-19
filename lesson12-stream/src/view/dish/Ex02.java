@@ -38,6 +38,10 @@ public class Ex02 {
 		streamResult.forEach(System.out::println);
 	}
 	
+	// Steam<T>
+	// filter(Predicate<T> predicate)
+	// map(Function<T, R> function)
+	
 	// manual, any class and condition
 	private static <E> List<E> filter(List<E> elements, Predicate<E> predicate) {
 		List<E> result = new ArrayList<>();
