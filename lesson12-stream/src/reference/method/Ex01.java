@@ -6,12 +6,12 @@ import java.util.Set;
 import java.util.function.Function;
 
 import bean.Apple;
-import model.AppleData;
+import model.DataModel;
 import utils.Printable;
 
 public class Ex01 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DataModel.getApples();
 		
 		//Lamda
 		Set<String> countriesX = map(inventory, apple -> apple.getCountry());

@@ -1,16 +1,16 @@
-package view;
+package view.apple;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import bean.Apple;
 import functional.ApplePredicate;
-import model.AppleData;
+import model.DataModel;
 import utils.Printable;
 
 public class Ex05 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DataModel.getApples();
 		
 		// Opt3: Anonymous function = Lambda expression
 		// >>> Lambda expression syntax (parameters) -> {body}
