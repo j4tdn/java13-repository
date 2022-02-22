@@ -24,6 +24,7 @@ public class Ex05 {
 		teams.put(new Employee(2, "Smith", 150, null), slist);
 		teams.put(new Employee(3, "Andy", 200, null), tlist);
 
+		//require: override equal(), hashCode()
 		teams.put(new Employee(1, "John", 100, null), tlist);
 		
 		// 2 cases: update, addNew
