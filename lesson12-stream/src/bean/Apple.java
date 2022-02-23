@@ -7,8 +7,19 @@ public class Apple {
     private String country;
     
     public Apple() {
-		
+		System.out.println("\n>>>>Apple 00");
 	}
+    
+    public Apple(int id) {
+    	System.out.println("\n>>>>Apple 01");
+    	this.id = id;
+    }
+    
+    public Apple(int id, String country) {
+    	System.out.println("\n>>>>Apple 02");
+    	this.id = id;
+    	this.country = country;
+    }
     
 	public Apple(int id, String color, double weight, String country) {
 		super();
@@ -46,4 +57,8 @@ public class Apple {
 		return "Apple [id=" + id + ", color=" + color + ", weight=" + weight + ", country=" + country + "]";
 	}
     
+	public static String transfer(Apple apple) {
+		return apple.getCountry();
+	}
+	
 }
