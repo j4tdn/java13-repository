@@ -28,6 +28,8 @@ public class DataModel {
 	public static List<Dish> getDishes() {
         return Arrays.asList(new Dish("1", "D1", 308, Kind.FISH, false),
                 new Dish("2", "D2", 620, Kind.OTHER, true),
+                new Dish("2", "D2", 620, Kind.OTHER, true),
+                new Dish("3", "D3", 329, Kind.OTHER, true),
                 new Dish("3", "D3", 329, Kind.OTHER, true),
                 new Dish("4", "D4", 308, Kind.MEAT, false),
                 new Dish("5", "D5", 480, Kind.MEAT, false),
