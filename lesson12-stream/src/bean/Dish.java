@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.Objects;
+
 public class Dish {
 	// internal enum in class
 	public enum Kind {
@@ -68,5 +70,57 @@ public class Dish {
 	public String toString() {
 		return "Dish [id=" + id + ", name=" + name + ", calories=" + calories + ", kind=" + kind + ", vegetarian="
 				+ vegetarian + "]";
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Dish)) {
+			return false;
+		}
+		Dish that = (Dish) obj;
+		return getId() == that.getId();
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+	
+	public boolean distinctByKey(String key) {
+		return id == key;
+	}
+	
+	public static class NameCaloriesParaMeter {
+		private String name;
+		private double calories;
+		
+		public NameCaloriesParaMeter(String name, double calories) {
+			this.name = name;
+			this.calories = calories;
+		}
+		
+		public String getName() {
+			return name;
+		}
+		
+		public void setName(String name) {
+			this.name = name;
+		}
+		
+		public double getCalories() {
+			return calories;
+		}
+				
+		public void setCalories(double calories) {
+			this.calories = calories;
+		}
+		
+		@Override
+		public String toString() {
+			return "Name: " + name + ", Calories: " + calories;
+		}
 	}
 }

@@ -60,4 +60,6 @@ public class Trader {
 	public String toString() {
 		return "Trader [id=" + id + ", name=" + name + ", city=" + city + "]";
 	}
+	
+
 }

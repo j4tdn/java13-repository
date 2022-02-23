@@ -36,7 +36,9 @@ public class Ex01 {
 		streamResult.forEach(System.out::println);
 	}
 	
-	// Manual 
+	
+	
+	// Manual, any class and condition
 	private static <E> List<E> filter(List<E> elements, Predicate<E> predicate) {
 		List<E> result = new ArrayList<>();
 		for (E element : elements) {
