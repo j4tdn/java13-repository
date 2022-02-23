@@ -26,8 +26,6 @@ public class Ex04 {
 		List<Integer> uniqueElements = statDigits.entrySet().stream().filter(entry -> entry.getValue() == 1).map(entry -> entry.getKey())
 				.collect(Collectors.toList());
 		
-		
-		
 //		List<Integer> uniqueElements = numbers.stream() // Stream<Integer>
 //				.collect(Collectors.groupingBy(number -> number, Collectors.counting())) // Map<K,V>
 //				.entrySet() // Set<Entry<K,V>>
