@@ -1,0 +1,18 @@
+Strategy Pattern 
+Implementation class
+Anonymous class
+Anonymous funciton === Lamda
+Method, constructor reference
+
+===========================================
+
+filter			Predicate<T>						T -> boolean
+map				Function<T, R>  					T -> R
+reduce 			T identity, BinaryOperator<T>		(T, T) -> T
+flatMap			Function<T, Stream<T>>				T -> R
+foreach			Consumer<T>							T -> void
+sorted 			Comparator<T>						(T, T0) -> int
+
+distinct		
+limit
+skip

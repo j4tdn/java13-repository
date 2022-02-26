@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.Objects;
+
 public class Dish {
 	// internal enum in class
     public enum Kind {
@@ -67,22 +69,60 @@ public class Dish {
         this.vegetarian = vegetarian;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-
-        if (!(o instanceof Dish)) {
-            return false;
-        }
-
-        Dish dish = (Dish) o;
-        return getCalories() == dish.getCalories();
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) {
+//            return true;
+//        }
+//
+//        if (!(o instanceof Dish)) {
+//            return false;
+//        }
+//
+//        Dish dish = (Dish) o;
+//        //return getCalories() == dish.getCalories();
+//        return getId() == dish.getId();
+//    }
+//    
+//    @Override
+//    public int hashCode() {
+//    	return Objects.hash(id);
+//    }
 
     @Override
     public String toString() {
         return id + ", " + name + ", " + calories + ", " + kind + ", " + vegetarian;
+    }
+    
+    public static class NameCaloriesParameter{
+    	private String name;
+    	private double calories;
+    	
+    	public NameCaloriesParameter(String name, double calories) {
+			this.name = name;
+			this.calories = calories;
+		}  
+    	
+    	public String getName() {
+			return name;
+		} 
+    	
+    	public double getCalories() {
+			return calories;
+		}
+    	
+    	public void setName(String name) {
+			this.name = name;
+		}
+    	
+    	public void setCalories(double calories) {
+			this.calories = calories;
+		}
+    	
+    	@Override
+    	public String toString() {
+    		return name + ", " + calories;
+    	}
+    	
     }
 }
