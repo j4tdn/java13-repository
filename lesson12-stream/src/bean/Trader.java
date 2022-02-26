@@ -4,7 +4,7 @@ public class Trader {
 	private int id;
 	private String name;
 	private String city;
-	
+
 	public Trader(String line) {
 		String[] elements = line.split(", ");
 		if (elements.length == 3) {
@@ -23,12 +23,12 @@ public class Trader {
 		return trader;
 	}
 	
-	public Trader() {
-
+	public Trader(String name, String city) {
+		this.name = name;
+		this.city = city;
 	}
 
 	public Trader(int id, String name, String city) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.city = city;
@@ -57,12 +57,9 @@ public class Trader {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	
 
 	@Override
 	public String toString() {
 		return "Trader [id=" + id + ", name=" + name + ", city=" + city + "]";
 	}
-	
-	
 }
