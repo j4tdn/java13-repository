@@ -1,0 +1,15 @@
+Stategy Pattern
+Implementation class --> Anonymous class --> Anonymous Function(Lamda)
+--> Method, ConStructor References
+
+Stream
+============================
+filter    Predicate<T>                    T -> boolean
+map       Function<T, R>                  T -> R
+flatMap   Function<T, stream<T>>          T ->R
+reduce    T identity, BinaryOperator<T>   (T, T) -> T
+forEach   Consumer<T>                     T -> void
+distinct
+limit
+skip
+sorted    Comparetor                      (T, T) -> int
