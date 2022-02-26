@@ -1,5 +1,6 @@
 package view.exercise;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -17,7 +18,7 @@ public class App {
 		// 1. Find all transactions in the year 2011 and sort them by value (small to high).
 		List<Transaction> ex01 = transactions.stream()
 											 .filter(transaction -> transaction.getYear() == 2011)
-											 .sorted((o1, o2) -> o1.getValue() - o2.getValue())
+											 .sorted(Comparator.comparing(Transaction::getValue))
 											 .collect(Collectors.toList());
 		ex01.forEach(System.out::println);
 		
@@ -26,7 +27,7 @@ public class App {
 		// 2. Find all transactions have value greater than 300 and sort them by trader’s city
 		List<Transaction> ex02 = transactions.stream()
 											 .filter(transaction -> transaction.getValue() > 300)
-											 .sorted((o1, o2) -> o1.getTrader().getCity().compareTo(o2.getTrader().getCity()))
+											 .sorted(Comparator.comparing(transaction -> transaction.getTrader().getCity()))
 											 .collect(Collectors.toList());
 		ex02.forEach(System.out::println);
 		
@@ -44,7 +45,7 @@ public class App {
 		// 4. Find all traders from Cambridge and sort them by name desc.
 		List<Trader> ex04 = traders.stream()
 								   .filter(trader -> "Cambridge".equals(trader.getCity()))
-								   .sorted((o1, o2) -> o2.getName().compareTo(o1.getName()))
+								   .sorted(Comparator.comparing(Trader::getName, Comparator.reverseOrder()))
 								   .collect(Collectors.toList());
 		ex04.forEach(System.out::println);
 		
@@ -93,7 +94,7 @@ public class App {
 		
 		System.out.println("=====================================================");
 		
-		// Find the transaction with the smallest value.
+		// 10.Find the transaction with the smallest value.
 		Optional<Integer> ex10 = transactions.stream()
 				.map(transaction -> transaction.getValue())
 				.reduce(Integer::min);
