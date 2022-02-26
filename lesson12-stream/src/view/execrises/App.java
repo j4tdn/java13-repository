@@ -27,10 +27,11 @@ public class App {
 		//2-> transaction value >300 sort
 		List<Transaction> rs2 = transactions.stream()
 				  .filter(transaction -> transaction.getValue() > 300)
-				  .sorted(Comparator.comparing(transaction -> transaction.getCity()))
-				  								//Transaction::getValue 
+				  .sorted(Comparator.comparing(transaction->transaction.getTrader().getCity()))
 				  .collect(Collectors.toList());
-		System.out.println("2: "+rs);
+		System.out.println("2: "+rs2);
+		
+		
 											
 	}
 }
