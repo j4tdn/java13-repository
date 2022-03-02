@@ -3,6 +3,7 @@ package view.exercises;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -15,30 +16,87 @@ import model.DataModel;
 
 public class App {
 	public static void main(String[] args) {
-		List<Transaction> listTran = DataModel.getTransactions();
+		List<Transaction> transactions = DataModel.getTransactions();
+		List<Trader> traders = DataModel.getTraders();
 		// 1. Find all transactions in the year 2011 and sort them by value (small to high).
-		List<Transaction> TranY2011 = listTran.stream()
+		List<Transaction> TranY2011 = transactions.stream()
 							.filter(trans -> trans.getYear() == 2011)
 							.sorted(Comparator.comparing(Transaction::getYear))
 							.collect(Collectors.toList());
 		TranY2011.forEach(System.out::println);
 		
-		// 2 Find all transactions have value greater than 300 and sort them by trader�s city
-		List<Transaction> T2 = listTran.stream()
-				.filter(trans -> trans.getValue() > 2011)
+		// 2 Find all transactions have value greater than 300 and sort them by trader’s city
+		List<Transaction> T2 = transactions.stream()
+				.filter(trans -> trans.getValue() > 300)
+				.sorted((o1, o2) -> o1.getTrader().getCity().compareTo(o2.getTrader().getCity()))
 				.collect(Collectors.toList());
 		T2.forEach(System.out::println);
 		
-		// What are all the unique cities where the traders work?
-//		List<Trader> resultList = listTran.stream()
-//				.filter(distinctByKey(Trader::getCity))
-//				.collect(Collectors.toList());		
-//			resultList.forEach(System.out::println);
-	}
-	
-	private static <C, P>Predicate<C> distinctByKey(Function<C, P> function){
-		Set<P> set = new HashSet<>();
-		return trader -> set.add(function.apply(trader));
-	}
+		//3 What are all the unique cities where the traders work?
+		List<String> resultList = traders.stream()
+				.map(Trader::getCity)
+				 .distinct()	
+				 .collect(Collectors.toList());
+			resultList.forEach(System.out::println);
+		// 4. Find all traders from Cambridge and sort them by name desc.
+			List<Trader> ex04 = traders.stream()
+									   .filter(trader -> "Cambridge".equals(trader.getCity()))
+									   .sorted(Comparator.comparing(Trader::getName, Comparator.reverseOrder()))
+									   .collect(Collectors.toList());
+			ex04.forEach(System.out::println);
+
+			System.out.println("=====================================================");
+			
+		// 5. Return a string of all traders’ names sorted alphabetically.
+			String ex05 = traders.stream()
+									   .map(Trader::getName) // trả về Stream <String>
+									   .sorted()
+									   .collect(Collectors.joining(", "));
+			System.out.println("all traders’ names: " + ex05);
+			
+			System.out.println("=====================================================");
+			
+		// 6. Are any traders based in Milan?
+			
+			boolean ex06 = traders.stream()
+									   .anyMatch(trader -> "Milan".equals(trader.getCity()));
+			System.out.println("Are any traders based in Milan ? " + ex06);
+			
+			System.out.println("=====================================================");
+			
+		// 7. Count the number of traders in Milan.
+			long ex07 = traders.stream()
+					   .filter(trader -> "Milan".equals(trader.getCity()))
+					   .count();
+			System.out.println("Count the number of traders in Milan: " + ex07);
+			
+			System.out.println("=====================================================");
+			
+		// 8. Print all transactions’ values from the traders living in Cambridge.
+			
+			List<Integer> ex08 = transactions.stream()
+						.filter(transaction -> "Cambridge".equals(transaction.getTrader().getCity()))
+						.map(transaction -> transaction.getValue())
+						.collect(Collectors.toList());
+			ex08.forEach(System.out::println);				   
+			
+			System.out.println("=====================================================");
+			
+			// 9.What’s the highest value of all the transactions?
+			Optional<Integer> ex09 = transactions.stream()
+						.map(transaction -> transaction.getValue())
+						.reduce(Integer::max);
+			if(ex09.isPresent()) System.out.println(ex09);
+
+			System.out.println("=====================================================");
+
+			// Find the transaction with the smallest value.
+			// 10.Find the transaction with the smallest value.
+			int ex10 = transactions.stream()
+					.map(transaction -> transaction.getValue())
+					.reduce(Integer.MAX_VALUE, Math::min);
+			System.out.println("Transaction with the smallest value: " + ex10);
+		
+		}
 	
 }
