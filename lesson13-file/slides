@@ -1,0 +1,12 @@
+FILE: data
+===> extension file: 
+     + 13-File: txt, properties
+     + non, txt, pdf, xlsx(s), csv, properties, json, xml, xhtml  
+
+===> readable, editable
+===> Operation
++ DDL: Data Definition Language   =>>> CREATE, DELETE, RENAME, FILTER
++ DML: Data Manipulation Language =>>> WRITE, READ, UPDATE
+
+
+FOLDER
