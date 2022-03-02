@@ -52,10 +52,11 @@ public class App {
 		System.out.println("==================================");
 
 		// 5 -> Return a string of all traders’ names sorted alphabetically.
-		traders.stream()
+		String trunderNames = traders.stream()
 			   .map(Trader::getName)
 			   .sorted()
-			   .forEach(System.out::println);
+			   .collect(Collectors.joining(", "));
+		System.out.println(trunderNames);
 		
 		System.out.println("==================================");
 		
@@ -85,9 +86,7 @@ public class App {
 		// 9 -> What’s the highest value of all the transactions?
 		int max = transactions.stream()
 					.map(Transaction::getValue)
-					.reduce(Integer.MIN_VALUE, (initialMax, element) -> {
-						   return initialMax > element ? initialMax : element;
-					   });
+					.reduce(Integer.MIN_VALUE, Math::max);
 		System.out.println("The highest value of all the transactions: " + max);
 		
 		System.out.println("==================================");
