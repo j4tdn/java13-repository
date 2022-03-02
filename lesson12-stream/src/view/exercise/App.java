@@ -63,7 +63,7 @@ public class App {
 		// 6. Are any traders based in Milan?
 		
 		boolean ex06 = traders.stream()
-								   .anyMatch(trader -> "Milan".equals(trader.getCity()));
+							  .anyMatch(trader -> "Milan".equals(trader.getCity()));
 		System.out.println("Are any traders based in Milan ? " + ex06);
 		
 		System.out.println("=====================================================");
