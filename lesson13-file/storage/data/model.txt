@@ -1,0 +1,4 @@
+--> Line 3, Item 03, Store 03
+--> Line 4, Item 04, Store 04
+--> Line 5, Item 03, Store 03
+--> Line 6, Item 04, Store 04
