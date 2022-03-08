@@ -1,11 +1,78 @@
 package utils;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class FileUtils {
 	private FileUtils() {
 
+	}
+	public static <E> List<E> readLines(String path, Function<String, E> function){
+		return readLines(path).stream()
+		//.map(Transaction::transfer)			//method reference
+		//.map(Transaction::new)					//constructor reference
+		.map(function)
+		.filter(Objects::nonNull)
+		.collect(Collectors.toList());
+	}
+	public static List<String> readLines(String path) {
+		List<String> lines = new ArrayList<>();
+		File file = createNewFile(path);
+
+		if (file != null) {
+			FileReader fr = null;
+			BufferedReader br = null;
+			try {
+				fr = new FileReader(file);
+				br = new BufferedReader(fr);
+				String line = "";
+				while ((line = br.readLine()) != null) {
+					lines.add(line);
+				}
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			} finally {
+				FileUtils.close(br, fr);
+			}
+		}
+		return lines;
+
+	}
+
+	public static boolean writeLines(List<String> lines, String path) {
+		File file = FileUtils.createNewFile(path);
+		boolean isOk = false;
+		if (file != null) {
+			FileWriter fw = null;
+			BufferedWriter bw = null;
+			try {
+				fw = new FileWriter(file, true);
+				bw = new BufferedWriter(fw);
+
+				for (String line : lines) {
+					bw.write(line);
+					bw.newLine();
+					System.out.println("Writing ... " + line);
+				}
+				isOk = true;
+			} catch (IOException e) {
+				e.printStackTrace();
+
+			} finally {
+				close(bw, fw);
+			}
+
+		}
+		return isOk;
 	}
 
 	public static boolean createNewFolder(String path) {
@@ -15,20 +82,32 @@ public class FileUtils {
 	public static File createNewFile(String path) {
 		boolean isCreated = false;
 		File file = new File(path);
+		if (file.exists()) {
+			return file;
+		}
+
 		File parent = file.getParentFile();
 
 		if (!parent.exists()) {
 			parent.mkdirs();
 		}
 
-		if (!file.exists()) {
+		try {
+			isCreated = file.createNewFile();
+			System.out.println("isCreated: " + isCreated);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return isCreated ? file : null;
+	}
+
+	public static void close(AutoCloseable... autoCloseables) {
+		for (AutoCloseable autoCloseable : autoCloseables) {
 			try {
-				isCreated = file.createNewFile();
-				System.out.println("isCreated: " + isCreated);
-			} catch (IOException e) {
+				autoCloseable.close();
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		return isCreated ? file : null;
 	}
 }
