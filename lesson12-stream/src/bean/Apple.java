@@ -21,6 +21,7 @@ public class Apple {
     	this.country = country;
     }
     
+    
 	public Apple(int id, String color, double weight, String country) {
 		super();
 		this.id = id;
