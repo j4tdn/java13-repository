@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class Ex05 {
 	public static void main(String[] args) {
 		Calendar start = Calendar.getInstance();
-		start.set(2020, Calendar.FEBRUARY, 22, 19, 15);
+		start.set(2020, Calendar.FEBRUARY, 29, 19, 15, 0 );
 		
 		Calendar now = Calendar.getInstance();
 		long startInMs = start.getTimeInMillis();
@@ -28,10 +28,12 @@ public class Ex05 {
 		duration -= TimeUnit.MINUTES.toMillis(minutes);
 		
 		long seconds = TimeUnit.MILLISECONDS.toSeconds(duration);
+		//duration -= TimeUnit.MINUTES.toMillis(seconds);
 		
 		String result = days + "days\n"
 						+ hours + "hours\n"
-						+ minutes + "minutes\n";
+						+ minutes + "minutes\n"
+						+ seconds + "seconds";
 		System.out.println(result);
 						
 	}

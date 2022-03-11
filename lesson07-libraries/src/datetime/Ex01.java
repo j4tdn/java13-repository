@@ -32,6 +32,7 @@ public class Ex01 {
 		System.out.println("dmy: " + (day + "/" + month + "/" + year + " " + hour + ":" + minute + ":" + second));
 		
 		int dow = c.get(Calendar.DAY_OF_WEEK);
+		System.out.println(dow);
 		
 		String[] dayOfWeeks= {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 		//index:0-6

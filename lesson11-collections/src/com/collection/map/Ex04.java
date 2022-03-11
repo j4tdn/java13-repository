@@ -43,7 +43,7 @@ public class Ex04 {
 		//3. Sort List<Entry> by Entry
 		// Anonymous class and override compareTo Method
 		//sortedList.sort(comparing(Entry::getValue));
-		sortedList.sort(Entry.comparingByValue(reverseOrder()));
+		sortedList.sort(Comparator.comparing(Entry::getValue, Comparator.reverseOrder()));
 		
 		//4. Put elements from sortedList to sortedMap
 		Map<Integer, String> sortedMap = new LinkedHashMap<>();

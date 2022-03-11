@@ -10,7 +10,7 @@ public class Ex02 {
 		//thread will execute a task
 		
 		Thread t0 = new Thread(new Task(),"thread-0");
-		t0.start(); // automatically call Thread#rub >> Runnable#run
+		t0.start(); // automatically call Thread#run >> Runnable#run
 		
 		//execute task took 2s
 		doATask(2);

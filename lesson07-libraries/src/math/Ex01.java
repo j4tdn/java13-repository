@@ -9,7 +9,7 @@ public class Ex01 {
 		int min = Math.min(a, b);
 		int max = Math.max(a, b);
 		
-		float c = 7.5f;
+		float c = 7.49f;
 		//commercial round
 		int round = Math.round(c);
 		double ceil = Math.ceil(c);

@@ -19,6 +19,8 @@ public class Ex03 {
 		
 		//cannot change original String HEAP value
 		//Reassign to new String memory
+		
+		//Immutable: cannot change original String HEAP value
 		s1 = "home";
 		System.out.println("=========after=========");
 		

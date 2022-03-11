@@ -21,7 +21,7 @@ public class Ex02 {
 		String dateAsString = df.format(date);
 		System.out.println("ddMMyyyy: " + dateAsString);
 		
-		//calendar - date - String
+		//calendar - date -> calendar.getTime()
 		
 		
 	}
