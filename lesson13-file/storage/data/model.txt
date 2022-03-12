@@ -1,0 +1,4 @@
+-->Line 3: Item 1, Store 02
+-->Line 4: Item 1, Store 03
+-->Line 5: Item 1, Store 02
+-->Line 6: Item 1, Store 03
