@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
-public class Ex02 {
+public class Ex04 {
 	public static void main(String[] args) {
 		// Create 2 ways array
 		int[][] array = create2waysArray(4, 5);
