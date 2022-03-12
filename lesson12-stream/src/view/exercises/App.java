@@ -1,17 +1,12 @@
-package view.exercies;
+package view.exercises;
+
+import static java.util.Comparator.comparing;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 import bean.Trader;
 import bean.Transaction;
-
-
-import static java.util.Comparator.*;
 
 public class App {
 	public static void main(String[] args) {
@@ -36,7 +31,9 @@ public class App {
 				transactions.stream().filter(p -> (p.getValue() >= 300))
 						.sorted((a, b) -> a.getTrader().getCity().compareTo(b.getTrader().getCity()))
 						.forEach(System.out::println);
+		// 3. 
+		// 4.
+		// 5.
+				
 	}
-
-
 }
