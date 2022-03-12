@@ -19,7 +19,6 @@ public class App {
 		int cols = sc.nextInt();
 
 		int[][] arr = createTwoDimensionsArray(rows, cols);
-//		log(arr, rows, cols);
 
 		System.out.println("===================================");
 		List<String> strings = convertToListString(arr, rows, cols);
@@ -28,7 +27,8 @@ public class App {
 		File readme = FileUtils.createFile(path);
 		FileUtils.writeToFile(readme, strings);
 		
-		FileUtils.outputData(readme);
+		List<String> lines = FileUtils.readFromFile(readme);
+		lines.forEach(System.out::println);
 		sc.close();
 
 	}
@@ -55,13 +55,4 @@ public class App {
 		}
 		return strings;
 	}
-
-//	private static void log(int[][] arr, int rows, int cols) {
-//		for (int i = 0; i < rows; i++) {
-//			for (int j = 0; j < cols; j++) {
-//				System.out.print(arr[i][j] + " ");
-//			}
-//			System.out.println();
-//		}
-//	}
 }
