@@ -1,10 +1,12 @@
-package bin;
+package bean;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
-public class Transaction {
+public class Transaction implements FileTransfer, Serializable{
+	private static final long serialVersionUID = -7866861893904363367L;
+	
 	private int id;
 	private String Tradername;
 	private double value;
@@ -19,6 +21,11 @@ public class Transaction {
 		Tradername = tradername;
 		this.value = value;
 		this.date = date;
+	}
+	
+	@Override
+	public String toLine() {
+		return id + ", " + Tradername + ", " + value + ", " + date;
 	}
 
 	public int getId() {
@@ -55,7 +62,7 @@ public class Transaction {
 
 	@Override
 	public String toString() {
-		return "Transaction [id=" + id + ", Tradername=" + Tradername + ", value=" + value + ", date=" + date + "]";
+		return "Transaction [id=" + id + ", Tradername=" + Tradername + ", value=" + value + ", date=" + date + "]\n";
 	}
 	
 	public static Transaction transfer(String line) {
@@ -68,4 +75,6 @@ public class Transaction {
 		}
 		return transaction;
 	}
+	
+	
 }

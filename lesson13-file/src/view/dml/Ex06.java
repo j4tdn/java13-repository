@@ -3,7 +3,7 @@ package view.dml;
 import java.io.File;
 import java.util.List;
 
-import bin.Apple;
+import bean.Apple;
 import utils.FileUtils;
 
 public class Ex06 {
