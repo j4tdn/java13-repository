@@ -1,6 +1,11 @@
 package utils;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.Closeable;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -25,7 +30,8 @@ public class FileUtils {
 		}
 
 		File parent = file.getParentFile();
-		if (!parent.exists()) {
+
+		if (parent != null && !parent.exists()) {
 			parent.mkdirs();
 		}
 
@@ -57,7 +63,8 @@ public class FileUtils {
 				// file.renameTo(new File(to + File.separator + file.getName())));
 				{
 					try {
-						Files.copy(Paths.get(file.getPath()), Paths.get(to + File.separator + file.getName()),  StandardCopyOption.REPLACE_EXISTING);
+						Files.copy(Paths.get(file.getPath()), Paths.get(to + File.separator + file.getName()),
+								StandardCopyOption.REPLACE_EXISTING);
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -80,4 +87,53 @@ public class FileUtils {
 	public static List<File> getAllFilesByExtension(String path, Extension extension) {
 		return Arrays.asList(new File(path).listFiles(file -> extension.toString().equals(getFileExtension(file))));
 	}
+
+	public static void writeToFile(File file, List<String> strings) {
+		System.out.println("Writing data to file " + file.getName());
+		FileWriter fw = null;
+		BufferedWriter bw = null;
+		try {
+			fw = new FileWriter(file);
+			bw = new BufferedWriter(fw);
+			for (String string : strings) {
+				bw.write(string);
+				bw.newLine();
+				System.out.println("Writing..." + string);
+			}
+			System.out.println("Write data succesfully!");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			close(bw, fw);
+		}
+	}
+
+	public static void outputData(File file) {
+		System.out.println("Data from file " + file.getName());
+		FileReader fr = null;
+		BufferedReader br = null;
+		try {
+			fr = new FileReader(file);
+			br = new BufferedReader(fr);
+			String str = "";
+			while ((str = br.readLine()) != null) {
+				System.out.println(str);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			close(br, fr);
+		}
+	}
+
+	private static void close(Closeable... closeables) {
+		for (Closeable closeable : closeables) {
+			try {
+				closeable.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 }
