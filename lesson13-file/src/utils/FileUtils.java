@@ -3,27 +3,76 @@ package utils;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import bean.FileTransfer;
+
 public class FileUtils {
 	private FileUtils() {
 
 	}
-	public static <E> List<E> readLines(String path, Function<String, E> function){
-		return readLines(path).stream()
-		//.map(Transaction::transfer)			//method reference
-		//.map(Transaction::new)					//constructor reference
-		.map(function)
-		.filter(Objects::nonNull)
-		.collect(Collectors.toList());
+
+	public static Object readObject(File file) {
+		FileInputStream fis = null;
+		ObjectInputStream ois = null;
+		Object object = null;
+		try {
+			fis = new FileInputStream(file);
+			ois = new ObjectInputStream(fis);
+			object = ois.readObject();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(ois, fis);
+		}
+		return object;
+
 	}
+
+	public static void writeObject(File file, Object object) {
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
+		try {
+			fos = new FileOutputStream(file);
+			oos = new ObjectOutputStream(fos);
+			oos.writeObject(object);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			FileUtils.close(oos, fos);
+		}
+	}
+
+	public static <E extends FileTransfer> void writeLines(String path, List<E> elements) {
+		List<String> lines = elements.stream().map(FileTransfer::toLine).collect(Collectors.toList());
+		try {
+			Files.write(Paths.get(path), lines, StandardOpenOption.APPEND);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static <E> List<E> readLines(String path, Function<String, E> function) {
+		return readLines(path).stream()
+				// .map(Transaction::transfer) //method reference
+				// .map(Transaction::new) //constructor reference
+				.map(function).filter(Objects::nonNull).collect(Collectors.toList());
+	}
+
 	public static List<String> readLines(String path) {
 		List<String> lines = new ArrayList<>();
 		File file = createNewFile(path);

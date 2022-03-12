@@ -12,5 +12,7 @@ public class Ex06 {
 	public static void main(String[] args) {
 		List<Apple> apples = FileUtils.readLines(path, Apple::new);
 		apples.forEach(System.out::println);
+		
+		
 	}
 }
