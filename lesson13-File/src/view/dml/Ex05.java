@@ -4,6 +4,7 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -40,5 +41,8 @@ public class Ex05 {
 //		
 		List<Transaction> linesOp2 = FileUtils.readLines(pathname, Transaction::new);
 		linesOp2.forEach(System.out::println);
+		List<Transaction> transactionByDate = linesOp2.stream().filter(t -> t.getDate().isAfter(LocalDate.of(2022, 03, 10)))
+														.collect(Collectors.toList());
+				
 	}
 }

@@ -21,5 +21,7 @@ public class Ex06 {
 			e.printStackTrace();
 		}
 		linesOp2.forEach(System.out::println);
+		
+		
 	}
 }
