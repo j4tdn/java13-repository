@@ -52,7 +52,5 @@ public class Ex01 {
 		File[] txtFiles = FileUtils.getFile(path, "txt");
 		Arrays.stream(txtFiles).forEach(file -> file.delete());
 		
-		
-		
 	}
 }
