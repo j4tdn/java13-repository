@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
@@ -56,7 +55,7 @@ public class FileUtils {
 		}
 	}
 	
-	public static <E extends FileTransfer> void writeLinesToFile(List<E> elements, String path){
+	public static <E extends FileTransfer> void writeLines(String path, List<E> elements){
 		List<String> lines = elements.stream()
 								.map(FileTransfer::toLine)
 								.collect(Collectors.toList());
@@ -64,7 +63,6 @@ public class FileUtils {
 		try {
 			Files.write(Paths.get(path), lines, StandardOpenOption.APPEND);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

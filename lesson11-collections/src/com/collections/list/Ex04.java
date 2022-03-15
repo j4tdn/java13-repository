@@ -22,7 +22,7 @@ public class Ex04 {
 		//addAll(Hợp), removeAll(Hiệu), retainAll(Giao)
 		List<Integer> combinedItems = new ArrayList<Integer>();
 		combinedItems.addAll(storeAItems);
-		combinedItems.removeAll(storeBItems);
+		combinedItems.retainAll(storeBItems);
 		printf(combinedItems);
 	}
 	

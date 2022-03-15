@@ -12,6 +12,10 @@ public class Transaction implements FileTransfer, Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
+	
 	private int id;
 	private String trader;
 	private double value;
@@ -95,7 +99,6 @@ public class Transaction implements FileTransfer, Serializable{
 
 	@Override
 	public String toLine() {
-		
 		return id + ", " + trader + ", " + value + ", " + date;
 	}
 
