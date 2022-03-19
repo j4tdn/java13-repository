@@ -14,7 +14,7 @@ public class Main {
 		System.out.println("Is 'String 3' and 'String 4' anagram? ---> " + anagram(str3, str4));
 
 		System.out.println("------------------------------------------------");
-		String inputString = "aaaccdcee";
+		String inputString = "aaaababbbddc";
 
 		System.out.println("Character with highest frequency in the string: "
 				+ getCharacterWithMaxFrequency(splitSameStringToArray(inputString)));
