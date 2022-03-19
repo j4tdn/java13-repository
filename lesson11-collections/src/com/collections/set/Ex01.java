@@ -9,6 +9,7 @@ public class Ex01 {
 		//Set<Integer> numbers = new LinkedHashSet<>();
 		//Set<Integer> numbers = new TreeSet<>();
 		numbers.add(12);
+		numbers.add(12);
 		numbers.add(8);
 		numbers.add(6);
 		numbers.add(40);

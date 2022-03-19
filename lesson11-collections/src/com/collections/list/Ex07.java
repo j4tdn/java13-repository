@@ -23,6 +23,9 @@ public class Ex07 {
 		List<Integer> combinedStoreItems = new LinkedList<>(storeAItems);
 		combinedStoreItems.retainAll(storeBItems);
 		printf(combinedStoreItems);
+		
+		
+		
 	}
 	
 	private static void printf(List<Integer> items) {

@@ -21,7 +21,7 @@ public class Ex04 {
 		model.put(74, "Quảng Trị");
 		model.put(92, "Quảng Nam");
 		model.put(43, "Đà Nẵng");
-
+		
 		Map<Integer, String> sortedMap = sort(model);
 
 		print(sortedMap);
