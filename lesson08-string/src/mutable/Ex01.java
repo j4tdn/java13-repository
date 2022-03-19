@@ -20,6 +20,7 @@ public class Ex01 {
 		JvmUtils.hash("m", m);
 		//System.out.println("m: " + m.toString());
 		
+		//m = new StringBuffer("ABC");
 		m.append(" Pattern").append(" Java");
 		JvmUtils.hash("m", m);
 		System.out.println("m: " + m);
