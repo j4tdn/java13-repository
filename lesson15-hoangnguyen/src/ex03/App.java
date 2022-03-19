@@ -19,7 +19,7 @@ public class App {
 	
 	public static char countingChar(String str) {
 				
-		int count[] = new int[256];
+		int[] count = new int[256];
 	      
         int len = str.length();
         for (int i=0; i<len; i++)
