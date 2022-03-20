@@ -1,4 +1,4 @@
-package view;
+package view.apple;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,18 +11,13 @@ import functional.HeavyWeightApplePredicate;
 import functional.LightWeightApplePredicate;
 import functional.RedApplePredicate;
 import functional.WeightAndColorApplePredicate;
-import model.AppleData;
+import model.DataModel;
 import utils.Printable;
 
-public class Ex06 {
+public class Ex05 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
-		// Lambda: (data_type parameters) -> {body}
-		// (data_type parameters)
-		// REQUIRE: amount of parameters must same as amount in abstract method
-		// IGNORE data type --> (parameters)
-		// IGNORE () if only ONE parameter --> parameters
-		// IGNORE {} and 'return' and ';' if body only has ONE line of code
+		List<Apple> inventory = DataModel.getApples();
+		
 		System.out.println("1st: find all green apples in his inventory");
 		List<Apple> greenApples = findApples(inventory, apple -> "green".equals(apple.getColor()));
 		Printable.printf(greenApples);
@@ -49,6 +44,27 @@ public class Ex06 {
 		
 	}
 	
+	/**
+	 * predicate could be "green apples", "red apples", "heavy, light apples"
+	 * 3 ways to pass ApplePredicate
+	 * >> Pass content(require) of test method in ApplePredicate
+	 * + Opt1: Implementation class
+	 * >> ApplePredicate predicate = new GreenApplePredicate();
+	 * + Opt2: Anonymous class
+	 * >> ApplePredicate predicate = new ApplePredicate();
+	 * 		@Override
+			public boolean test(Apple apple) {
+				// TODO Auto-generated method stub
+				return false;
+			}
+	 * + Opt3: Anonymous function = Lambda expression
+	 * >> Lambda expression syntax (parameters) -> {body}
+	 * >> Lambda expression: create an instance of Functional Interface
+	 * >> (parameters) -> {body} >> code to override abstract method in Function Interface
+	 * ApplePredicate predicate = (Apple apple) -> {
+	 * 		return "green".equals(apple.getColor());
+	 * }
+	 */
 	private static List<Apple> findApples (List<Apple> inventory, ApplePredicate predicate){
 		List<Apple> result = new ArrayList<>();
 		for(Apple apple : inventory) {

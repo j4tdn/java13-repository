@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+    <employee>
+        <name>Huynh Thanh Phong</name>
+        <phone>01656152042</phone>
+    </employee>
+    <employee>
+        <name>Vo Thi Phuong Loan</name>
+        <phone>01655654534</phone>
+    </employee>
+    <employee>
+        <name>Tran Thi Bao Quyen</name>
+        <phone>0981234567</phone>
+    </employee>
+    <employee>
+        <name>Nguyen Thi Thao Uyen</name>
+        <phone>0978976665</phone>
+    </employee>
+    <employee>
+        <name>Nguyen Van C</name>
+        <phone>0901334556</phone>
+    </employee>
+</employees>

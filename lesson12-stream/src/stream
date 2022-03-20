@@ -1,0 +1,16 @@
+*Strategy Pattern
++ Implementation class --> Anonymous class --> Anonymous Function(Lambda)
+--> Method, Constructor Reference
+
+=======================================================
+*Stream
+filter        Predicate<T>                     T -> boolean
+map           Function<T, R>                   T -> R
+flatMap       Function<T, Stream<T>>           T -> R
+reduce        T identity, BinaryOperator<T>   (T, T) -> T
+forEach       Consumer<T>                      T -> void
+
+distinct
+limit
+skip
+sorted        Comparator<T>                    (T, T) -> int 

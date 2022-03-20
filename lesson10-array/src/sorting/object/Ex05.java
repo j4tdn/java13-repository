@@ -25,7 +25,8 @@ public class Ex05 {
 		};
 		Comparator<String> comparator = comparing(keyExtractor, reverseOrder());
 		
-		Arrays.sort(students, comparator);
+		// Arrays.sort(students, comparator);
+		Arrays.sort(students, Comparator.comparing(string -> string, Comparator.reverseOrder()));
 		
 		ArrayUtils.print("Array Sorting", students);
 	}

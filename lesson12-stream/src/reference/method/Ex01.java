@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Function;
 
 import bean.Apple;
-import model.AppleData;
+import model.DataModel;
 import utils.Printable;
 
 /**
@@ -15,7 +15,7 @@ import utils.Printable;
  */
 public class Ex01 {
 	public static void main(String[] args) {
-		List<Apple> inventory = AppleData.getAll();
+		List<Apple> inventory = DataModel.getApples();
 		
 		// apple -> apple.getCountry();    >>>>   Apple:getCountry (Non-static method)
 		List<String> countries = map(inventory, Apple::getCountry);
@@ -31,5 +31,8 @@ public class Ex01 {
 			}
 		}
 		return result;
+	}
+	private Function<Apple, String> transfer(){
+		return Apple::getCountry;
 	}
 }
