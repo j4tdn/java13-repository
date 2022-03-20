@@ -8,9 +8,10 @@ import ex02.CD;
 public class Ex03 {
 
 	public static void main(String[] args) {
+		
 		List<Card> listCard = new ArrayList<>();
-		listCard.add(new Card(2, "rô"));
-		listCard.add(new Card(2, "rô"));
+		listCard.add(new Card(2, rô));
+		listCard.add(new Card(3, bích));
 		printf(listCard);
 		
 		for(Num num: Num.values()) {
