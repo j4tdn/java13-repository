@@ -27,6 +27,8 @@ public class Ex02 {
 	}
 
 	public static void timeWakeUp(int age, int[] ts, int[] tss) {
+		// A thử testing với 1 số case thì có đúng có sai
+		// Chưa cover hết toàn bộ, mà cái code ghê quá nhìn rối
 		int[] twu = new int[2];
 		int[] tns = new int[2];
 

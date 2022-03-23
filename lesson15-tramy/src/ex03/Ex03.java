@@ -2,11 +2,12 @@ package ex03;
 
 public class Ex03 {
 	public static void main(String[] args) {
+		// Đặt tên biết (angry)
 		String st1 = "Word";
 		String st2 = "orWd";
 		st1 = st1.toLowerCase();
 		st2 = st2.toLowerCase();
-		String st = "aaaababbbddc";
+		String st = "aaaababbbbddc";
 		check1(st1, st2);
 		check2(st);
 
@@ -20,6 +21,7 @@ public class Ex03 {
 			return;
 		}
 		int[] c1 = new int[st1.length()];
+		// st1 với st11 là gì vậy em ...
 		String st11 = "";
 		int tmp;
 		for (int i = 0; i < n1; i++) {
@@ -37,9 +39,10 @@ public class Ex03 {
 				st11 = st11 + a1;
 			}
 		}
-
+		
+		// Code logic tốt nhưng code còn trùng lặp nhiều
+		// E nên tạo hàm truyền tham số vào để code gọn và dễ đọc hơn
 		int[] c2 = new int[st1.length()];
-		String st22 = "";
 		for (int i = 0; i < n2; i++) {
 			tmp = 0;
 			char a1 = st2.charAt(i);

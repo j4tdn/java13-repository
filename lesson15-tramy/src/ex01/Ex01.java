@@ -13,12 +13,14 @@ output: 7 9F
  */
 public class Ex01 {
 	public static void main(String[] args) {
-		int[] a= {1,2,3,4,5,6,5,5,3,1};
+		int[] a= {1,1,2,2,3,4,5};
+		// A hiểu cách làm - good và kết quả chính xác nhưng
+		// Vì sao lại là 21 vậy em ...
 		int[] b=new int[21];
-		int maxai=a[0];
 		for (int i=0;i<a.length;i++) {
 			b[a[i]]+=1;
 		}
+		// nhớ reformat code
 		System.out.println("element only appear one time ");
 		for(int i=1;i<=20;i++) {
 			if(b[i]==1) {
