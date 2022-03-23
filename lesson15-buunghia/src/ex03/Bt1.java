@@ -3,6 +3,9 @@ import java.util.Arrays;
 
 
 public class Bt1 {
+	// Bài làm đúng rồi
+	// E chỉ cần đưa lên hàm main in ra là xong
+	
 	//1. Kiểm tra 2 chuỗi Strings có phải là đảo ngữ (anagram) của nhau không
 	public static boolean isAnargram(String s1,String s2) {
 		s1= s1.replaceAll(" ","").toLowerCase();

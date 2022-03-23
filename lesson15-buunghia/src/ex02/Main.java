@@ -27,6 +27,7 @@ public class Main {
 		if (a < 0) a = 0;
 		b = a / 60;
 		c = a % 60;
+		// good solution
 		System.out.print("Ban nen thuc day luc "+(startTime+b)%24+":");
 		if (c < 10) System.out.print("0");
 		System.out.println(c);
