@@ -14,6 +14,9 @@ public class Ex3_1{
 
 	    int value = 0;
 	    for(int i = 0; i < s.length(); i++){
+	    	// Kết quả chính xác nhưng ...
+	    	// cách này là e chuyển từ char sang int(bye) xong bình phương
+	    	// +- thì a hiểu mà ^2 để làm gì vậy Tú Anh
 	        value += ((int)s.charAt(i))^2;
 	        value -= ((int)t.charAt(i))^2;
 	    }

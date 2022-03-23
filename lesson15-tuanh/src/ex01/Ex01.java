@@ -35,7 +35,8 @@ public class Ex01 {
 		}
 		return null;
 	}
-
+	
+	// Cách làm giống 1 bạn a đã review trước đó
 	private static List<Integer> findMoreThanOneTimeElements(List<Integer> element) {
 		List<Integer> ls = new ArrayList<>();
 		for (int i = 0; i < element.size() - 1; i++) {

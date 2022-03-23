@@ -6,6 +6,7 @@ public class Ex3_2 {
 		String str = "aaaababbbddc";
 		System.out.println("String is: "+ str);
 		characterCount(str);
+		// E tìm ra chính xác rồi, chỉ cần tìm phần tử có count là max in ra là xong
 	}
 	public static void characterCount(String str)
 	{
