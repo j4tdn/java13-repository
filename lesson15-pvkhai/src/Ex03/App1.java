@@ -1,20 +1,26 @@
+// Tên package nhớ viết thường toàn bộ
 package Ex03;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class App1 {
 	public static void main(String[] args) {
 		String s = "aaaccdcee";
 		String[] elements = s.split("");
+		
+		long max = max(elements);
 
 		Arrays.stream(elements)
-		.collect(Collectors.groupingBy(student -> student, Collectors.counting()))
+		.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
 		.entrySet()
 		.stream()
-		.filter(entry -> entry.getValue() == max(elements))
-		.map(entry -> entry.getKey())
+		// Kết quả chính xác nhưng ...
+		// Viết kiểu này thì e sẽ phải tìm max rất nhiều lần
+		.filter(entry -> entry.getValue() == max)
+		.map(entry -> entry.getKey()) // Entry::getKey
 		.forEach(System.out::println);
 
 
