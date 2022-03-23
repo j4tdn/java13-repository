@@ -1,6 +1,5 @@
 package ex04.bean;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -21,9 +20,9 @@ public class App {
 		}
 
 		System.out.println(
-				"1. Sắp xếp danh sách sinh viên tăng dần theo ĐTB. Nếu DTB bằng nhau sắp xếp tăng dần theo họ tên.");
+				"1. Sắp xếp danh sách sinh viên tăng dần theo ĐTB. Nếu ĐTB bằng nhau sắp xếp tăng dần theo họ tên.");
 		students.stream()
-				.sorted(Comparator.comparing(Student::getScores).thenComparing(Comparator.comparing(Student::getName)))
+				.sorted(Comparator.comparing(Student::getScores).thenComparing(Student::getName))
 				.forEach(System.out::println);
 
 		System.out.println("============================================================================");
