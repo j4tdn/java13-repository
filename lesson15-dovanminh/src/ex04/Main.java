@@ -42,6 +42,8 @@ public class Main {
 	}
 	
 	public static List<Student> getStudentsOnly(List<Student> lists){
+		// Cách làm này em đã áp dùng đến 3 lần
+		// Tốt - Nhưng a nghĩ có thể cải thiện - A có comment phía dưới nha
 		Map<String, Integer> maps = new HashMap<>();
 		lists.get(0).getId();
 		for (int i = 0; i < lists.size(); i++) {
@@ -74,6 +76,7 @@ public class Main {
 		getStudentsBySex(lists, "Nu").forEach(System.out::println);
 //		Cau 4
 		System.out.println("========Cau 4========");
+		// Em có thể dùng toSet hoặc distinct, override hashcode, equals trong class Student
 		getStudentsOnly(lists).forEach(System.out::println);
 	}
 }

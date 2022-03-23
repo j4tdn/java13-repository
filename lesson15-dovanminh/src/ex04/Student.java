@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Student {
 	private String id;
 	private String name;
-	private double scores;
-	private String sex;
+	private double scores; // *score
+	private String sex; // should be boolean or enum
 	
 	public Student() {
 		

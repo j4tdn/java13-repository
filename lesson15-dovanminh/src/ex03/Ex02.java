@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Ex02 {
 	public static void main(String[] args) {
-		String str = "aaaccdcee";
+		String str = "aaacccdcee";
 		Map<String, Integer> maps = new HashMap<>();
 		for (int i = 0; i < str.length(); i++) {
 			if (maps.containsKey(str.charAt(i) + "")) {

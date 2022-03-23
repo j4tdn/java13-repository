@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class Ex02 {
 	public static void main(String[] args) {
+		// ok - good
 		int[] arr = { 5, 7, 9, 10, 20, 9, 7, 11 };
 		Map<Integer, Integer> maps = new HashMap<>();
 		for (int i = 0; i < arr.length; i++) {
