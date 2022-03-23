@@ -1,17 +1,19 @@
 package ex01;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 
 public class App {
 	
 	public static void main(String[] args) {
-		List<Integer> numbers = inputData();
+		List<Integer> numbers = Arrays.asList(1,1,2,2,3,4,5);
 		List<Integer> uniqueNumbers = numbers.stream()
-											.collect(Collectors.groupingBy(number -> number, Collectors.counting()))
+											.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
 											.entrySet()
 											.stream()
 											.filter(entry -> entry.getValue() == 1)
@@ -22,7 +24,7 @@ public class App {
 		uniqueNumbers.forEach(number -> System.out.print(number + ", "));
 		
 		List<Integer> duplicateNumbers = numbers.stream()
-				.collect(Collectors.groupingBy(number -> number, Collectors.counting()))
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
 				.entrySet()
 				.stream()
 				.filter(entry -> entry.getValue() > 1)
@@ -34,6 +36,8 @@ public class App {
 		duplicateNumbers.forEach(number -> System.out.print(number + ", "));
 	}
 	
+	// Anh Nguyên có thể cho sẵn một mảng dữ liệu và tập trung vào xử lý logic
+	// Không cần nhập ở bước này
 	public static List<Integer> inputData() {
 		Scanner sc = new Scanner(System.in);
 		int n = 0;

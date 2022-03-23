@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Student {
 	private int id;
 	private String name;
-	private double scores;
-	private String sex;
+	private double scores; // *score
+	private String sex; // should be boolean
 
 	public Student() {
 
