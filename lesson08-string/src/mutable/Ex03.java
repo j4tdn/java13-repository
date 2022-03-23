@@ -28,19 +28,19 @@ public class Ex03 {
 		// multiple threads access this task with share data
 		// share data: StringBuilder || StringBuffer
 		
-		// private StringBuffer mutable; // >> multiple thread
-		private StringBuilder mutable;   // >> single thread
+		private StringBuffer mutable; // >> multiple thread
+		// private StringBuilder mutable;   // >> single thread
 		private int count = 50000;
 		
 		public MutableTask() {
-			// mutable = new StringBuffer();
-			mutable = new StringBuilder();
+			mutable = new StringBuffer();
+			// mutable = new StringBuilder();
 		}
 		
 		@Override
 		public void run() {
 			for (int i = 1; i <= count; i++) {
-				System.out.println(Thread.currentThread().getName() + "-->" + i);
+				// System.out.println(Thread.currentThread().getName() + "-->" + i);
 				mutable.append("A");
 			}
 		}
