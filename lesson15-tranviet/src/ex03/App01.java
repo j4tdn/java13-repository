@@ -23,7 +23,8 @@ public class App01 {
 
 		Arrays.sort(s1Chars);
 		Arrays.sort(s2Chars);
-
+		
+		// có thể sử dụng method equals để thay thế
 		for (int i = 0; i < s1Chars.length; i++) {
 			if (s1Chars[i] != s2Chars[i]) {
 				return false;

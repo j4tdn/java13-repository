@@ -9,7 +9,7 @@ import java.util.Scanner;
 	Còn lại: 8H - 1H15P = 6H45P
 	Đi ngủ: 23H
 	=> Bạn nên thức dậy: 23H + 6H45 = 5H45 sáng
- *
+ * ==> Good
  */
 public class App {
 	private static Scanner sc = new Scanner(System.in);

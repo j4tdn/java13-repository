@@ -28,6 +28,10 @@ public class App {
 
 	private static List<Integer> findOneTimeElements(List<Integer> nums) {
 		List<Integer> newData = new ArrayList<Integer>(nums);
+		// Đặt tên biến chưa tốt ...
+		// Kết quả đúng nhưng cách làm chưa hợp lý
+		// 1. Câu này phụ thuộc vào hàm dưới
+		// 2. Tìm kiếm khác với xóa phần tử
 		boolean x = newData.removeAll(findMoreThanOneTimeElements(nums));
 		if (x) {
 			return newData;
@@ -36,6 +40,11 @@ public class App {
 	}
 
 	private static List<Integer> findMoreThanOneTimeElements(List<Integer> nums) {
+		// good thinking
+		// a hiểu cách làm - nhưng sau khi e đã học qua những available methods của Java
+		// a nghĩ e nên áp dụng vào làm sẽ nhanh hơn
+		// cách làm này ok: trường hợp 1 số công ty ko cho e sử dụng method có sẵn lúc phỏng vấn thì e hãy sử dụng
+		// còn làm nhanh dễ hiểu thì như a nói: sử dụng hàm có sẵn ....
 		List<Integer> rs = new ArrayList<>();
 		for (int i = 0; i < nums.size() - 1; i++) {
 			if (!rs.contains(nums.get(i))) {

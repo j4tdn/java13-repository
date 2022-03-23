@@ -23,6 +23,7 @@ public class App02 {
 		});
 	}
 
+	// Replace by Collectors.groupingBy(Function.identity, Collectors.counting());
 	private static Map<Character, Integer> getCommonCharacters(String string) {
 		Map<Character, Integer> map = new HashMap<>();
 		int count = 1;
