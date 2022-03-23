@@ -15,11 +15,12 @@ import java.util.function.BinaryOperator;
  */
 public class Ex03 {
 	public static void main(String[] args) {
-		System.out.println("isEqual: " + isEqual("DoRw", "orWd"));
+		System.out.println("isEqual: " + isAnagram("DoRw", "orWd"));
 		 Map<String, Integer> rs = countChar("aaaccdcee");
 		 int max = rs.entrySet()
 			.stream()
 			.map(entry -> entry.getValue())
+			// Sao em không dùng lambda
 			.reduce(0, new BinaryOperator<Integer>() {
 				public Integer apply(Integer t, Integer u) {
 					return t > u ? t : u;
@@ -35,21 +36,20 @@ public class Ex03 {
 		 
 	}
 	
-	private static boolean isEqual(String a, String b) {
-		if (a == null || b == null) {
+	private static boolean isAnagram(String a, String b) {
+		if (a == null || b == null || a.length() != b.length()) {
 			return false;
 		}
 		if (a == b) {
 			return true;
 		}
-		if (a.length() != b.length()) {
-			return false;
-		}
-		a = a.toUpperCase(); b = b.toUpperCase();
-		char[] chara = a.toCharArray();
-		char[] charb = b.toCharArray();
+
+		char[] chara = a.toUpperCase().toCharArray();
+		char[] charb = b.toUpperCase().toCharArray();
+		
 		Arrays.sort(chara);
 		Arrays.sort(charb);
+		// replace by equals method
 		for (int i = 0; i < chara.length; i++) {
 			if (chara[i] != charb[i]) {
 				return false;
@@ -58,6 +58,7 @@ public class Ex03 {
 		return true;
 	}
 	
+	// Thay thế bằng .collect(Collectors.groupingBy(Funtion.identity(), Collectors.counting));
 	private static Map<String, Integer> countChar(String s) {
 		Map<String, Integer> counting = new HashMap<String, Integer>();
 		for (int i = 0; i < s.length(); i++) {

@@ -37,6 +37,8 @@ public class Ex04 {
 			.forEach(System.out::println);
 		// 4. Tìm kiếm sinh viên chỉ xuất hiện một lần trong student.txt. Biết rằng 2 sinh viên được
 		// phân biệt với nhau thông qua MSSV	
+		
+		// Chưa đúng yêu cầu đề bài
 		System.out.println("List students have appeared one time: ");
 		students.stream()
 			.collect(Collectors.toSet())

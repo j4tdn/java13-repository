@@ -16,6 +16,9 @@ public class Ex01 {
 	public static void main(String[] args) {
 		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 5, 5, 3, 1);
 		// Liệt kê các phần tử chỉ xuất hiện một lần duy nhất trong dãy N
+		
+		// good thinking - nhưng code trùng lặp e có thể tạo 1 method ra để xử lý
+		
 		System.out.println("Number has appeared one : ");
 		numbers.stream()
 			   .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
