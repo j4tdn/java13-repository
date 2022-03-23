@@ -9,6 +9,9 @@ public class Main {
 		List<Integer> numberList1 = Arrays.asList(1, 2, 3, 4, 5, 6, 5, 5, 3, 1);
 		
 		System.out.println("Numbers display 1 time in the input list:");
+		// good thinking
+		// 2 đoạn code dài chỉ khác nhau chỗ entry -> entry.getValue() == 1 && > 1
+		// a Trung có thể viết 1 method và truyền tham số vào
 		List<Integer> resultList1 = numberList1.stream()
 			   .collect(Collectors.groupingBy(number -> number, Collectors.counting()))
 			   .entrySet()

@@ -16,6 +16,9 @@ public class Main {
 		System.out.println("------------------------------------------------");
 		String inputString = "aaaababbbddc";
 
+		// A có thể thay thế đoạn này getCharacterWithMaxFrequency(splitSameStringToArray(inputString))
+		// với code collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+		// nhưng cách này cũng ok và quá tốt rồi
 		System.out.println("Character with highest frequency in the string: "
 				+ getCharacterWithMaxFrequency(splitSameStringToArray(inputString)));
 	}
@@ -24,6 +27,7 @@ public class Main {
 		String str1AfterProcess = sortInline(str1.replaceAll("\\s+", "").toLowerCase());
 		String str2AfterProcess = sortInline(str2.replaceAll("\\s+", "").toLowerCase());
 
+		
 		if (str1AfterProcess.length() != str2AfterProcess.length()) {
 			return false;
 		}
@@ -39,6 +43,7 @@ public class Main {
 
 	public static String[] splitSameStringToArray(String input) {
 		String s1 = sortInline(input);
+		// good solution
 		String[] out = s1.split("(?<=(.))(?!\\1)");
 		Arrays.sort(out);
 		return out;
