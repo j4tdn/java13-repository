@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Ex01 {
 	public static void main(String[] args) {
+		// Tham khảo cách a đã sửa nhé
 		Scanner sc = new Scanner(System.in);
 		int time = 0;
 

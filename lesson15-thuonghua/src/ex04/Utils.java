@@ -10,6 +10,8 @@ public class Utils {
 		
 	}
 	
+	// Hôm sau nên để file trong project để a dễ check nhé
+	// Vì có thể e để structure của file kiểu khác
 	private static final String PATH = "D:\\student.txt";
 	public static List<String> readFile() {
 		try {

@@ -18,6 +18,9 @@ public class Main {
 		findUniqueStudent(listStudents);
 	}
 	
+	// Kết quả thì đúng nhưng cách làm chưa hay
+	// A đã từng hướng dẫn bên xử lý file rồi
+	// Đưa đoạn code xử lý này qua chỗ FileUtils hay hơn rồi code generic nữa 
 	private static List<Student> convertListStudent(){
 		List<String> listString = Utils.readFile();
 		List<Student> result = new ArrayList<>();
@@ -60,6 +63,8 @@ public class Main {
 	}
 	
 	private static void findUniqueStudent(List<Student> students) {
+		// Hiểu sai đề - A có giải thích rồi
+		// unique khác với distinct
 		List<Student> result = students.stream()
 								.distinct()
 								.collect(Collectors.toList());

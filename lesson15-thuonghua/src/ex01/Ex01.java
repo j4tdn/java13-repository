@@ -7,7 +7,8 @@ import java.util.stream.Collectors;
 public class Ex01 {
 	public static void main(String[] args) {
 		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 4, 3, 5);
-
+		// good solution em
+		// number -> number có thể thay bằng Function.identity()
 		List<Integer> result = numbers.stream()
 				   .collect(Collectors.groupingBy(number -> number, Collectors.counting()))
 				   .entrySet()
