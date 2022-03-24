@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class Ex01 {
 	public static void main(String[] args) {
-		List<Integer> numbers = Arrays.asList(1,2,3,2,4,6,4,8,3,5,7,5,7,9,11);
+		List<Integer> numbers = Arrays.asList(1,1,2,2,2,3,4,5);
 	    List<Integer> uniqueNbrs = numbers.stream()
 	                        .filter(nbr -> Collections.frequency(numbers, nbr)==1  )
 	                  // Stream<Integer>
@@ -18,7 +18,7 @@ public class Ex01 {
 	    System.out.println("---------Cau 2:-----------");
 	    
 	    List<Integer> Nbrs = numbers.stream()
-	            .filter(nbr -> Collections.frequency(numbers,nbr) == 2 )
+	            .filter(nbr -> Collections.frequency(numbers,nbr) > 1 ) // chính xác hơn là > 1 Dũng nha, vì có thể phần tử xuất hiện nhiều hơn 2 lần
 	            .distinct()
 	            // Stream<Integer>
 	            .collect(Collectors.toList());

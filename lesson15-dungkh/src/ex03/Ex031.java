@@ -15,6 +15,8 @@ public class Ex031 {
 
 	}
 	public static boolean isAnagram(String s1,String s2) {
+		// Good solution
+		// E trim với replace space nữa là ok nha
 		s1= s1.toLowerCase();
 		s2= s2.toLowerCase();
 		if (s1.length() != s2.length()) 
