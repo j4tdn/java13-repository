@@ -45,9 +45,11 @@ public class Ex03 {
 		s1 = s1.toLowerCase().replaceAll("[\\s]+", "");
 		s2 = s2.toLowerCase().replaceAll("[\\s]+", "");
 
+		// Từ dòng 48 đến 66 chỗ return a nghĩ e có thể thay bằng sorting sau đó dùng hàm compareTo hoặc equals sẽ gọn code hơn
 		if (s1.length() != s2.length())
 			return false;
 
+		// đoạn này cũng hay như a nghĩ không cần thiết lắm ;)
 		if (doCharToInt(s1) != doCharToInt(s2))
 			return false;
 

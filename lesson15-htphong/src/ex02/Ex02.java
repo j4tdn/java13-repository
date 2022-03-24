@@ -11,6 +11,16 @@ import java.util.Scanner;
     B4. In ra thời gian bạn nên thức dậy để có một sức khỏe tốt */
 
 public class Ex02 {
+	// Có 1 số TH bị sai
+	// VD
+	// Nhap so tuoi hien tai: 70
+	// Nhap thoi gian da ngu: 
+	// Gio: 1
+	// Phut: 0
+	// Nhap thoi gian bat dau ngu: 22
+	// Thoi gian thuc day: 10:37
+	
+	// Tham khảo cách làm hồi tối a đã sửa thử e nha
 	public static void main(String[] args) {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
 		Scanner input = new Scanner(System.in);
