@@ -32,6 +32,11 @@ public class Ex04 {
 		
 		
 }
+	
+	// Code những các như này rất tốt và ok - A hiểu
+	// Nhưng kiểu khi vào làm dự án - E code thế này khả năng sẽ bị review -1 -2.
+	// Vì code thể code những code đơn giản dễ hiểu hơn với các available methods
+	// A k phải chê code logic nhưng thường ngôn ngữ ko hỗ trợ thì mình mới nghĩ đến logic e nha
 	private static List<Student> findNonDuplicateStudent(List<Student> students) {
 		List<Student> rs = new ArrayList<>();
 		for (int i = 0; i < students.size(); i++) {

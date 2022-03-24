@@ -16,6 +16,7 @@ public class Ex03 {
 		else {System.out.println("không phải");}
 		}
 
+	// Good
 	private static boolean anagram(String s1, String s2) {
 		char[] c1 = s1.toLowerCase().trim().toCharArray();
 		char[] c2 = s2.toLowerCase().trim().toCharArray();
@@ -26,7 +27,8 @@ public class Ex03 {
 
 		Arrays.sort(c1);
 		Arrays.sort(c2);
-
+		
+		// Có thể replace với Arrays.compare hoặc dùng String.equals
 		for (int i = 0; i < c1.length; i++) {
 			if (c1[i] != c2[i]) {
 				return false;

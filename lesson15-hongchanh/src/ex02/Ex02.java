@@ -17,6 +17,7 @@ public class Ex02 {
 		wakeUpTime(age, sleptTime, startSleepTime);
 	}
 
+	// good way - e có thể tham khảo cách a làm để biết thêm solution nha
 	private static void wakeUpTime(int age, LocalTime time1, LocalTime time2) {
 		LocalTime wakeUpTime = null;
 		LocalTime sleep = null;

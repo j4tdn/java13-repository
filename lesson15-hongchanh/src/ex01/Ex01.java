@@ -26,11 +26,13 @@ public class Ex01 {
 		System.out.println();
 	}
 	
+	// code logic tốt
+	// nhưng sao Chánh không áp dụng mấy cách mới a có hướng dẫn để làm
 	private static List<Integer> oneTime(List<Integer> arr) {
 		
 		List<Integer> result = new ArrayList<>();
 		for (int i = 0; i < arr.size(); i++) {
-				
+				// Từ dòng 36 đến 45 em có thể tách ra 1 method mới thì code sẽ gọn hơn
 				int k = 0;
 				for (int j = 0; j < arr.size(); j++) {
 					
@@ -47,7 +49,9 @@ public class Ex01 {
 
 	private static List<Integer> moreTime(List<Integer> arr) {
 		List<Integer> result = new ArrayList<Integer>(arr);
-		
+		// Kết quả chính xác như cách làm này chưa hợp lý
+		// Nó phụ thuộc vào hàm oneTime
+		// Như vào test bằng code hàm moreTime e phải code thêm oneTime thì hơi mất công và chưa tốt
 		if (result.removeAll(oneTime(arr))) {
 			return result;
 		}

@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Ex03b {
 
 	public static void main(String[] args) {
-		String string = "aaaababbbddc";
+		String string = "aaaababbbbddc";
 		maxTimeChar(string);
 		
 		String string1 = "aaaababbbddcbbbbfffffffffff";
@@ -13,7 +13,7 @@ public class Ex03b {
 	}
 	
 	private static void maxTimeChar(String s) {
-		
+		// E cần handle trường hợp trong mảng có các kí tự có số lần bằng nhau nữa là ok
 		System.out.println("chuỗi " + s);
 		char[] c = s.toLowerCase().trim().toCharArray();
 		
