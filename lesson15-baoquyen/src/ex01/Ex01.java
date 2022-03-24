@@ -18,6 +18,8 @@ import java.util.stream.Collectors;
  */
 public class Ex01 {
 	public static void main(String[] args) {
+		// Phong với Quyên code logic khác giống nhau
+		// Từ dùng hàm đến logic :P
 			List<Integer> digits = getList(100);
 			System.out.println(digits);
 			List<Integer> uniqueDigits =  digits.stream()
@@ -31,7 +33,7 @@ public class Ex01 {
 						   return count == 1;
 					   })
 					   .distinct()
-					   .toList(); 
+					   .toList(); // stream.toList() JAVA16 = stream.collecto(Collectors.toList()) JAVA08
 			System.out.println("================");
 			System.out.println(uniqueDigits);
 			//xuất hiện nhiều hơn 1 lần trong dãy

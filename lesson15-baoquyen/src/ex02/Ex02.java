@@ -35,6 +35,8 @@ public class Ex02 {
 		LocalTime result = wakeUpTime(age, sleptedTime, startSleptTime);
 		System.out.println("" + result);
 	}
+	
+	// Good solution - E có thể tham khảo thêm cách hồi tối a hướng dẫn nha
 	public static LocalTime wakeUpTime(int age, LocalTime sleptTime, LocalTime startSleptTime) {
 		LocalTime wakeUpTime = null;
 		long duration = 0;

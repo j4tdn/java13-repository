@@ -22,6 +22,7 @@ public class Ex03 {
 		longestDigits(s);
 	}
 	
+	// Code tốt lắm em
 	public static boolean isAnagram(String s1, String s2) {
 		s1 = s1.replaceAll("\\s", "").toLowerCase();
 		s2 = s2.replaceAll("\\s", "").toLowerCase();
@@ -35,6 +36,7 @@ public class Ex03 {
 		return Arrays.equals(c1, c2);
 	}
 	
+	// OK
 	public static void longestDigits(String string) {
 		char[] digits = string.toCharArray();
 		Arrays.sort(digits);
@@ -54,6 +56,7 @@ public class Ex03 {
 			}
 			
 		}
+		// Anh không biết hàm này luôn - Thanks em
 		int max = Collections.max(map.values());
 		map.forEach((key,value) -> {
 			if(value == max ) {
