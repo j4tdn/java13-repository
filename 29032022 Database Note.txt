@@ -1,6 +1,5 @@
 Cơ sở dữ liệu: 
    + Lưu trữ và tương tác với dữ liệu
-
 Lưu trữ 
     --> Tại sao không trữ trong file ? --> Vẫn có thể lữu trữ trong file nhưng
         File: Lưu trữ những dữ liệu đơn giản, rời rạc
