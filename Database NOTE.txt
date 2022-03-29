@@ -1,0 +1,38 @@
+Cơ sở dữ liệu: 
+   + Lưu trữ và tương tác với dữ liệu
+
+Lưu trữ 
+    --> Tại sao không trữ trong file ? --> Vẫn có thể lữu trữ trong file nhưng
+        File: Lưu trữ những dữ liệu đơn giản, rời rạc
+           >> Xuất dữ liệu, export file ở style format
+
+           + Các file khó liên kết với nhau
+           + Lưu trữ truy cập tuần tự: csv, txt, xlsx
+             Truy vấn và cập nhật dữ liệu khó khăn
+           + Khó lưu trữ lượng dữ liệu lớn ...
+
+        Database(RDBMS): Lưu trữ dữ liệu có cấu trúc, hệ thống
+           >> Lưu trữ và truy vấn dữ liệu lớn, có cấu trúc 
+
+           + Các table sẽ liên kế với nhau thông qua khóa ngoại
+           + Cung cấp ngôn ngữ truy vấn: 
+                +    SQL:    Structure Query Language ==> Dễ dàng truy vấn dữ liệu từ database
+                + No SQL: No Structure Query Language
+           + Tập hệ các bảng-table dữ liệu có cấu trúc
+           + Table gồm nhiều columns
+                   lưu trữ dữ liệu lớn
+                   có KDL rõ ràng
+
+           ===> Database Design
+                + Các bước để xây dựng, thiết kế CSDL
+           ===> Database Query Language
+                + DDL - Data Definition Language: 
+                   >> CREATE DATABSE || SCHEMA || TABLE
+                   >> ALTER || TRUNCATE
+                + DML - Data Manipulation Language:  
+                   >> SELECT, INSERT, UPDATE, DELETE               
+                   
+
+Tương tác như thế nào ?
+
+Dữ liệu là gì ?
