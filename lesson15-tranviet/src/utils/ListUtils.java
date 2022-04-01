@@ -1,8 +1,8 @@
 package utils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class ListUtils {
 	private ListUtils() {
@@ -18,12 +18,6 @@ public class ListUtils {
 	}
 
 	public static <E> List<E> suitableElements(List<E> elements, Predicate<E> pre) {
-		List<E> rs = new ArrayList<>();
-		for (E element : elements) {
-			if (pre.test(element)) {
-				rs.add(element);
-			}
-		}
-		return rs;
+		return elements.stream().filter(element->pre.test(element)).collect(Collectors.toList());
 	}
 }

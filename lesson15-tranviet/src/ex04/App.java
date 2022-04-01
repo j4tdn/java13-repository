@@ -15,7 +15,7 @@ public class App {
 		File file = new File(path);
 		List<Student> students = FileUtils.readLines(file, Student::new);
 		ListUtils.print(students, "Du lieu tu file student.txt:");
-		
+//		1. Sap xep tang dan theo DTB, sau do tang dan theo Ho Ten
 		students.sort(Comparator.comparing(Student::getScore).thenComparing(Student::getName));
 		ListUtils.print(students, "Danh sach sinh vien tang dan theo DTB. Neu bang DTB thi tang dan theo ho ten: ");
 
@@ -29,30 +29,38 @@ public class App {
 
 //		4. Tìm kiếm sinh viên chỉ xuất hiện một lần trong student.txt. Biết rằng 2 sinh viên được
 //		phân biệt với nhau thông qua MSSV
-		List<Student> nonDuplicateStudent = findNonDuplicateStudent(students);
+		List<Student> nonDuplicateStudent = ListUtils.suitableElements(students, student -> !isDuplicated(student, students));
 		ListUtils.print(nonDuplicateStudent, "Danh sach sinh vien chi xuat hien 1 lan: ");
 	}
-
-	private static List<Student> findNonDuplicateStudent(List<Student> students) {
-		List<Student> rs = new ArrayList<>();
-		for (int i = 0; i < students.size(); i++) {
-			if (!isRepeated(students, i)) {
-				rs.add(students.get(i));
+	private static boolean isDuplicated(Student s, List<Student> students){
+		int count = 0;
+		for(Student student: students){
+			if(student.equals(s)){
+				count++;
 			}
 		}
-		return rs;
+		return count > 1;
 	}
-
-	private static boolean isRepeated(List<Student> students, int index) {
-		for (int i = 0; i < students.size(); i++) {
-			if (i == index) {
-				continue;
-			}
-			if (students.get(i).equals(students.get(index))) {
-				return true;
-			}
-		}
-		return false;
-	}
+//	private static List<Student> findNonDuplicateStudent(List<Student> students) {
+//		List<Student> rs = new ArrayList<>();
+//		for (int i = 0; i < students.size(); i++) {
+//			if (!isRepeated(students, i)) {
+//				rs.add(students.get(i));
+//			}
+//		}
+//		return rs;
+//	}
+//
+//	private static boolean isRepeated(List<Student> students, int index) {
+//		for (int i = 0; i < students.size(); i++) {
+//			if (i == index) {
+//				continue;
+//			}
+//			if (students.get(i).equals(students.get(index))) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
 
 }

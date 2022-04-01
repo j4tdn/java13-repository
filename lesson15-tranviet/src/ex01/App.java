@@ -24,6 +24,7 @@ public class App {
 		System.out.println("Liệt kê các phần tử xuất nhiều hơn một lần trong dãy N: ");
 		List<Integer> moreThanOneTimeAppearance = findMoreThanOneTimeElements(nums);
 		moreThanOneTimeAppearance.forEach(x -> System.out.print(x + " "));
+
 	}
 
 	private static List<Integer> findOneTimeElements(List<Integer> nums) {
