@@ -1,7 +1,7 @@
 package factory;
 
 public class Shape {
-	void drawing() {
+	public void drawing() {
 		System.out.println("Shape >> drawing ...");
 	}
 }
