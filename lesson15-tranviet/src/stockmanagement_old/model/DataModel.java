@@ -1,6 +1,6 @@
-package stockmanagement.model;
+package stockmanagement_old.model;
 
-import stockmanagement.allocation.Store;
+import stockmanagement_old.allocation.Store;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -22,13 +22,12 @@ public class DataModel {
                 new Store(7L, 2L, bd(15), null, Boolean.TRUE),
                 new Store(8L, null, bd(12), bd(19), Boolean.TRUE),
                 new Store(9L, null, bd(17), bd(26), Boolean.TRUE),
-                new Store(10L, 7L, bd(18), null, Boolean.TRUE),
-                new Store(11L, null, bd(22), null, Boolean.FALSE)
-                // new Store(12L, null, bd(22), null, Boolean.TRUE)
+                new Store(10L, 7L, bd(18), null, Boolean.TRUE)
+                //new Store(11L, null, bd(22), null, Boolean.FALSE)
         );
     }
 
-    public static BigDecimal bd(long value) {
+    private static BigDecimal bd(long value) {
         return BigDecimal.valueOf(value);
     }
 }

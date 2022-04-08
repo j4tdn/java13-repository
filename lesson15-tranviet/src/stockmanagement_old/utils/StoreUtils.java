@@ -1,6 +1,6 @@
-package stockmanagement.utils;
+package stockmanagement_old.utils;
 
-import stockmanagement.allocation.Store;
+import stockmanagement_old.allocation.Store;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
