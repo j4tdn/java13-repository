@@ -149,5 +149,3 @@ DROP NgayTaoLoaiHang;
 -- INSERT INTO chucvu(MaCV, TenCV) values('1', 'abc');
 -- INSERT INTO chucvu(MaCV, TenCV) values('2', 'bdc');
 -- TRUNCATE chucvu;
-INSERT INTO chucvu(MaCV, TenCV) values('1', 'abc');
-
