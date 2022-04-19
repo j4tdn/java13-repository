@@ -10,16 +10,14 @@ public class App02 {
 	public static void main(String[] args) {
 		String string = "aaaababbbbddc";
 		Map<Character, Long> map = getCommonCharacters(string);
-
 		System.out.println(map);
 
 		long max = Collections.max(map.values());
 		System.out.println("Ki tu co so lan xuat hien nhieu nhat trong chuoi la: ");
-		map.forEach((key, value) -> {
-			if (value == max) {
-				System.out.println(key + "," + value);
-			}
-		});
+		map.entrySet().stream()
+				.filter(x -> (x.getValue() == max)) //
+				.map(Entry::getKey)
+				.forEach(System.out::println);
 	}
 
 	// Replace by Collectors.groupingBy(Function.identity, Collectors.counting());
@@ -42,12 +40,12 @@ public class App02 {
 
 	}
 
-	private static boolean isRepeat(String string, int index) {
-		for (int i = index - 1; i >= 0; i--) {
-			if (string.charAt(i) == string.charAt(index)) {
-				return true;
-			}
-		}
-		return false;
-	}
+//	private static boolean isRepeat(String string, int index) {
+//		for (int i = index - 1; i >= 0; i--) {
+//			if (string.charAt(i) == string.charAt(index)) {
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
 }
