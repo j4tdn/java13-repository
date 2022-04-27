@@ -56,7 +56,8 @@ CREATE TABLE LoaiHinhThanhToan(
 );
 
 ALTER TABLE DonHang
-ADD CONSTRAINT FK_DonHang_LHTT FOREIGN KEY (MaLHTT) REFERENCES LoaiHinhThanhToan(MaLHTT);
+ADD CONSTRAINT FK_DonHang_LHTT FOREIGN KEY (MaLHTT) REFERENCES LoaiHinhThanhToan(MaLHTT)
+-- ON DELETE CASCADE ;
 
 -- 7. Tạo table ChiTietDonHang
 -- 8. Tạo ràng buộc PK, FK trong bảng ChiTietDonHang
