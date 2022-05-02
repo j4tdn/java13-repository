@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `java11_shopping` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `java11_shopping`;
+CREATE DATABASE  IF NOT EXISTS `java13_shopping` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `java13_shopping`;
 -- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
 --
 -- Host: localhost    Database: java11_shopping

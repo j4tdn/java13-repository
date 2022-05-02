@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/JAVA 13.iml" filepath="$PROJECT_DIR$/.idea/JAVA 13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/design-patterns/design-patterns.iml" filepath="$PROJECT_DIR$/design-patterns/design-patterns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/interview_/interview_.iml" filepath="$PROJECT_DIR$/interview_/interview_.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson02-datastructure/lesson02-datastructure.iml" filepath="$PROJECT_DIR$/lesson02-datastructure/lesson02-datastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson03-oop/lesson03-oop.iml" filepath="$PROJECT_DIR$/lesson03-oop/lesson03-oop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson04-oop-features/lesson04-oop-features.iml" filepath="$PROJECT_DIR$/lesson04-oop-features/lesson04-oop-features.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson05-exam/lesson05-exam.iml" filepath="$PROJECT_DIR$/lesson05-exam/lesson05-exam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson06-exception/lesson06-exception.iml" filepath="$PROJECT_DIR$/lesson06-exception/lesson06-exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson07-libraries/lesson07-libraries.iml" filepath="$PROJECT_DIR$/lesson07-libraries/lesson07-libraries.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson08-string/lesson08-string.iml" filepath="$PROJECT_DIR$/lesson08-string/lesson08-string.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson09-exam/lesson09-exam.iml" filepath="$PROJECT_DIR$/lesson09-exam/lesson09-exam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson10-array/lesson10-array.iml" filepath="$PROJECT_DIR$/lesson10-array/lesson10-array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson11-collections/lesson11-collections.iml" filepath="$PROJECT_DIR$/lesson11-collections/lesson11-collections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson12-stream/lesson12-stream.iml" filepath="$PROJECT_DIR$/lesson12-stream/lesson12-stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson13-file/lesson13-file.iml" filepath="$PROJECT_DIR$/lesson13-file/lesson13-file.iml" />
+    </modules>
+  </component>
+</project>
