@@ -81,17 +81,17 @@
     BETWEEN STR_TO_DATE('28/11/2019', '%d/%m/%Y') AND STR_TO_DATE('05/01/2021', '%d/%m/%Y'); 
 
 -- ==============================================================
-WITH RESULT AS( 
-SELECT mh.TenMH, ctmh.MaKC, ctmh.GiaBan FROM `MatHang` mh
-    JOIN `ChiTietMatHang` ctmh
-    ON mh.MaMH = ctmh.MaMH)
-SELECT * FROM RESULT;
--- 11. Sắp xếp các mặt hàng với giá bán tăng dần
-	SELECT mh.TenMH, ctmh.MaKC, ctmh.GiaBan 
-    FROM `MatHang` mh
-    JOIN `ChiTietMatHang` ctmh
-    ON mh.MaMH = ctmh.MaMH
-    ORDER BY ctmh.GiaBan;
+	WITH RESULT AS( 
+	SELECT mh.TenMH, ctmh.MaKC, ctmh.GiaBan FROM `MatHang` mh
+		JOIN `ChiTietMatHang` ctmh
+		ON mh.MaMH = ctmh.MaMH)
+	SELECT * FROM RESULT;
+	-- 11. Sắp xếp các mặt hàng với giá bán tăng dần
+		SELECT mh.TenMH, ctmh.MaKC, ctmh.GiaBan 
+		FROM `MatHang` mh
+		JOIN `ChiTietMatHang` ctmh
+		ON mh.MaMH = ctmh.MaMH
+		ORDER BY ctmh.GiaBan;
     
 -- 12. Sắp xếp các mặt hàng với giá mua giảm dần
 	SELECT mh.TenMH, ctmh.MaKC, ctmh.GiaBan 
@@ -139,7 +139,11 @@ SELECT * FROM RESULT;
     );
     
 -- 18. Tìm mặt hàng có giá bán cao nhất của mỗi loại hàng
-	
+	SELECT MAX(GiaBan) FROM `chitietmathang` ctmh
+    JOIN `mathang` mh ON ctmh.MaMH = mh.MaMH
+    JOIN `loaihang` lh ON lh.MaLH = mh.MaLH
+    GROUP BY lh.MaLH;
+    
 -- 19. Hiển thị tổng số lượng mặt hàng của mỗi loại hàng trong hệ thống >> 160
 	WITH RESULT AS(
 		SELECT lh.*, SUM(ctmh.SoLuong) AS 'TongSoLuong' FROM `chitietmathang` ctmh
@@ -160,7 +164,11 @@ SELECT * FROM RESULT;
 	HAVING TongSoLuong > 200;
     
 -- 21. Hiển thị mặt hàng có số lượng nhiều nhất trong mỗi loại hàng    
-
+	SELECT MAX(SoLuong) FROM `chitietmathang` ctmh
+    JOIN `mathang` mh ON ctmh.MaMH = mh.MaMH
+    JOIN `loaihang` lh ON lh.MaLH = mh.MaLH
+    GROUP BY lh.MaLH;
+    
 -- 22. Hiển thị giá bán trung bình của mỗi loại hàng
 	SELECT SUM(GiaBan)/Count(GiaBan) AS 'Giá bán trung bình' FROM `chitietmathang` ctmh
     JOIN `mathang` mh ON mh.MaMH = ctmh.MaMH
@@ -232,6 +240,16 @@ SELECT * FROM RESULT;
 
 -- 31. Tính tổng tiền cho đơn hàng 02
 --     Với tổng tiền được tính bằng tổng các sản phẩm và số lượng của sản phẩm tương ứng
+	SELECT dh.MaDH, GROUP_CONCAT(CONCAT(mh.TenMH, '-', ctmh.MaKC, '-', ctdh.SoLuong) SEPARATOR ',') HoaDon, 
+					SUM(ctdh.SoLuong*ctmh.GiaBan) TongTien
+    FROM `donhang` dh
+    JOIN `chitietdonhang` ctdh ON dh.MaDH = ctdh.MaDH
+    JOIN `mathang` mh ON ctdh.MaMH = mh.MaMH
+	JOIN `chitietmathang` ctmh ON mh.MaMH = ctmh.MaMH
+    WHERE dh.MaDH = 2
+    GROUP BY dh.MaDH;
+    -- => Thêm vào bảng chi tiết đơn hàng mã kích cỡ
+    
 -- 32. Xuất thông tin hóa đơn của đơn hàng 02 với thông tin như sau.
 -- 	SoDH ChiTietDonHang           TongTien
 --         02   TenMH:GiaBan:SoLuong     100
