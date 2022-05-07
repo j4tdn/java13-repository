@@ -210,11 +210,33 @@
 	GROUP BY lh.MaLH
 	HAVING TongSoLuong > 200;
     
--- 21. Hiển thị mặt hàng có số lượng nhiều nhất trong mỗi loại hàng    
-	SELECT MAX(SoLuong) FROM `chitietmathang` ctmh
-    JOIN `mathang` mh ON ctmh.MaMH = mh.MaMH
-    JOIN `loaihang` lh ON lh.MaLH = mh.MaLH
-    GROUP BY lh.MaLH;
+-- 21. Hiển thị mặt hàng có số lượng nhiều nhất trong mỗi loại hàng
+	WITH RESULT AS(
+		WITH SoLuongNhieuNhat AS (
+			WITH MatHang_SoLuong AS
+				(
+				SELECT  mh.*,
+						SUM(ctmh.SoLuong) AS TongSoLuong
+				FROM `chitietmathang` ctmh
+				JOIN `mathang` mh ON ctmh.MaMH = mh.MaMH
+				JOIN `loaihang` lh ON lh.MaLH = mh.MaLH
+				GROUP BY mh.MaMH
+				)
+			SELECT lh.*,
+				   MAX(mhsl.TongSoLuong) AS MAX
+			FROM MatHang_SoLuong mhsl
+			JOIN `loaihang` lh ON lh.MaLH = mhsl.MaLH
+			GROUP BY mhsl.MaLH
+		)
+		SELECT mh.*, MAX,  SUM(ctmh.SoLuong) AS TongSoLuong
+			FROM `chitietmathang` ctmh
+			JOIN `mathang` mh ON ctmh.MaMH = mh.MaMH
+			JOIN `loaihang` lh ON lh.MaLH = mh.MaLH
+			JOIN SoLuongNhieuNhat slnn ON slnn.MaLH = lh.MaLH
+			GROUP BY mh.MaMH
+	)
+	SELECT rs.MaMH, rs.TenMH, rs.TongSoLuong FROM RESULT rs
+    WHERE rs.MAX = rs.TongSoLuong;
     
 -- 22. Hiển thị giá bán trung bình của mỗi loại hàng
 	SELECT SUM(GiaBan)/Count(GiaBan) AS 'Giá bán trung bình' FROM `chitietmathang` ctmh
@@ -223,12 +245,14 @@
     GROUP BY lh.MaLH;
     
 -- 23. In ra 3 loại hàng có số lượng hàng còn lại nhiều nhất ở thời điểm hiện tại
-	SELECT lh.MaLH, SUM(SoLuong) FROM `loaihang` lh
+	SELECT lh.MaLH, SUM(SoLuong) AS TongSoLuong
+    FROM `loaihang` lh
     JOIN `mathang` mh ON lh.MaLH = mh.MaLH
     JOIN `chitietmathang` ctmh ON mh.MaMH = ctmh.MaMH 
     GROUP BY lh.MaLH
-	ORDER BY SUM(SoLuong) DESC
+	ORDER BY TongSoLuong DESC
     LIMIT 3;
+    
 -- 24. Liệt kê những mặt hàng có MaLoai = 2 và thuộc đơn hàng 100100
 	SELECT * FROM `mathang` mh
     JOIN `loaihang` lh ON mh.MaLH = lh.MaLH
