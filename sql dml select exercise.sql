@@ -179,21 +179,61 @@ WHERE ctmh.GiaBan = lhln.GiaBanLonNhat;
 -- 19. Hiển thị tổng số lượng mặt hàng của mỗi loại hàng trong hệ thống >> 16
 SELECT *
 FROM MatHang mh
-
+JOIN ChiTietMatHang ctmh ON mh.MaMH = ctmh.MaMH
+GROUP BY mh.MaLH
+HAVING ctmh.SoLuong > 16;
 -- 20. Hiển thị tổng số lượng mặt hàng của mỗi loại hàng trong hệ thống
 --     Điều kiện tổng số lượng > 20 mặt hàng >> HAVING
 -- ==============================================================
 -- 21. Hiển thị mặt hàng có số lượng nhiều nhất trong mỗi loại hàng
+WITH MatHang_SoLuong AS
+(SELECT lh.TenLH,
+	   mh.*,
+       SUM(ctmh.SoLuong) SoLuong
+FROM MatHang mh
+JOIN LoaiHang lh ON  mh.MaLH = lh.MaLH
+JOIN ChiTietMatHang ctmh ON ctmh.MaMH = mh.MaMH
+GROUP BY mh.MaMH)
+SELECT MaLH,
+	   TenLH,
+       MAX(SoLuong) SoLuongNhieuNhat
+FROM MatHang_SoLuong
+GROUP BY MaLH;
 
 -- 22. Hiển thị giá bán trung bình của mỗi loại hàng
+SELECT lh.TenLH,
+	   mh.*,
+       
 -- 23. In ra 3 loại hàng có số lượng hàng còn lại nhiều nhất ở thời điểm hiện tại
+SELECT lh.*,
+	   SUM(ctmh.SoLuong) TongSoLuong
+FROM LoaiHang lh
+JOIN MatHang mh ON lh.MaLH = mh.MaLH
+JOIN ChiTietMatHang ctmh ON mh.MaMH = ctmh.MaMH
+GROUP BY lh.MaLH
+ORDER BY TongSoLuong DESC, MaLH
+LIMIT 3;
+
 -- 24. Liệt kê những mặt hàng có MaLoai = 2 và thuộc đơn hàng 100100
+-- JOIN(AND), UNION(OR)
+
 -- 25. Tìm những mặt hàng có Mã Loại = 2 và đã được bán trong ngày 28/11
+-- SAME AS 24
+
 -- 26. Liệt kê những mặt hàng là 'Mũ' không bán được trong ngày 14/02/2019
+-- NOT IN
+
 -- 27. Cập nhật giá bán của tất cả các mặt hàng thuộc loại hàng 'Áo' thành 199
+UPDATE ChiTietMatHang
+SET GiaBan = 199
+WHERE MaMH IN (SELECT MaMH
+			   FROM MatHang mh
+               JOIN LoaiHang lh ON mh.MaLH = lh.MaLH
+               WHERE lh.TenLH = 'Áo');
 -- 28. Backup data. Tạo table LoaiHang_SaoLuu(MaLoai, TenLoai)
 --     Sao chép dữ liệu từ bảng LoaiHang sang LoaiHang_SaoLuu
-
+INSERT INTO backup(ITEMGROUP_ID, ITEMGROUP_NAME)
+SELECT * FROM LoaiHang;
 -- 30. Liệt kê 2 sản phẩm (có số lượng tồn kho nhiều nhất) của loại hàng 'Áo' và 'Quần'
 -- -- B1: Tìm số lượng hàng còn lại của mỗi mặt hàng thuộc loại hàng 'Áo', 'Quần'
 -- -- B2: ORDER BY SoLuongTon DESC
@@ -201,6 +241,61 @@ FROM MatHang mh
 
 -- 31. Tính tổng tiền cho đơn hàng 02
 --     Với tổng tiền được tính bằng tổng các sản phẩm và số lượng của sản phẩm tương ứng
+ALTER TABLE ChiTietDonHang
+DROP FOREIGN KEY fk_DonHang_has_MatHang_MatHang1;
+
+ALTER TABLE ChiTietDonHang DROP PRIMARY KEY;
+
+ALTER TABLE ChiTietDonHang
+ADD MaKC VARCHAR(10) NOT NULL AFTER MaMH;
+
+ALTER TABLE ChiTietDonHang
+ADD CONSTRAINT PK_CTDH PRIMARY KEY (MaDH, MaMH, MaKC);
+
+ALTER TABLE ChiTietDonHang
+ADD CONSTRAINT FK__CTDH_CTMH FOREIGN KEY (MaMH, MaKC) REFERENCES ChiTietMatHang(MaMH, MaKC);
+
+SELECT ctdh.MaDH,
+	   mh.MaMH,
+       mh.TenMH,
+       ctmh.GiaBan,
+       ctdh.SoLuong
+FROM ChiTietDonHang ctdh
+JOIN ChiTietMatHang ctmh ON ctmh.MaKC = ctdh.MaKC
+						 AND ctdh.MaMH = ctmh.maMH
+JOIN MatHang mh ON mh.MaMH = ctdh.MaMH
+WHERE ctdh.MaDH = 2;
+
+SELECT ctdh.MaDH,
+	   GROUP_CONCAT(concat(mh.TenMH, ', ', ctmh.GiaBan, ', ', ctdh.SoLuong) SEPARATOR ' - ') DanhSacMatHang,
+	   SUM(ctmh.GiaBan * ctdh.SoLuong) TongTien,
+       mh.TenMH,
+       ctmh.GiaBan,
+       ctdh.SoLuong
+FROM ChiTietDonHang ctdh
+JOIN ChiTietMatHang ctmh ON ctmh.MaKC = ctdh.MaKC
+						 AND ctdh.MaMH = ctmh.maMH
+JOIN MatHang mh ON mh.MaMH = ctdh.MaMH
+WHERE ctdh.MaDH = 2;
+
+-- -------------------------------------------------
+INSERT INTO HoaDon(MaHD, MaDH, NgayXuatHoaDon, SoTienCanThanhToan)
+WITH DuLieu_HoaDon AS (
+SELECT ctdh.MaDH,
+	   GROUP_CONCAT(concat(mh.TenMH, ', ', ctmh.GiaBan, ', ', ctdh.SoLuong) SEPARATOR ' - ') DanhSacMatHang,
+	   SUM(ctmh.GiaBan * ctdh.SoLuong) TongTien,
+       mh.TenMH,
+       ctmh.GiaBan,
+       ctdh.SoLuong
+FROM ChiTietDonHang ctdh
+JOIN ChiTietMatHang ctmh ON ctmh.MaKC = ctdh.MaKC
+						 AND ctdh.MaMH = ctmh.maMH
+JOIN MatHang mh ON mh.MaMH = ctdh.MaMH
+GROUP BY ctdh.MaDH
+)
+SELECT MaDH, MaDH, current_date(), TongTien
+FROM DuLieu_HoaDon;
+
 -- 32. Xuất thông tin hóa đơn của đơn hàng 02 với thông tin như sau.
 -- 	SoDH ChiTietDonHang           TongTien
 --         02   TenMH:GiaBan:SoLuong     100
