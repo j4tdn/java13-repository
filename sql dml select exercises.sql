@@ -299,29 +299,61 @@
 	ORDER BY SoLuong DESC
     LIMIT 2;
     
-    SELECT * FROM chitietmathang;
+    
     SELECT * FROM `loaihang` lh
     JOIN `mathang` mh ON lh.MaLH = mh.MaLH
     JOIN `chitietmathang` ctmh ON mh.MaMH = ctmh.MaMH 
     WHERE lh.TenLH = 'Quần'
 	ORDER BY SoLuong DESC
     LIMIT 2;
--- B1: Tìm số lượng hàng còn lại của mỗi mặt hàng thuộc loại hàng 'Áo', 'Quần'
--- B2: ORDER BY SoLuongTon DESC
--- B3: LIMIT 2
 
 -- 31. Tính tổng tiền cho đơn hàng 02
 --     Với tổng tiền được tính bằng tổng các sản phẩm và số lượng của sản phẩm tương ứng
-	SELECT dh.MaDH, GROUP_CONCAT(CONCAT(mh.TenMH, '-', ctmh.MaKC, '-', ctdh.SoLuong) SEPARATOR ',') HoaDon, 
+
+-- 	=> Thêm vào bảng chi tiết đơn hàng mã kích cỡ
+	ALTER TABLE `chitietdonhang`
+    DROP FOREIGN KEY FK_CTDH_MH;
+	
+    ALTER TABLE `chitietdonhang`
+    DROP PRIMARY KEY;
+    
+    ALTER TABLE `chitietdonhang`
+    ADD MaKC VarChar(10) NOT NULL AFTER MaMH;
+    
+	ALTER TABLE `chitietdonhang`
+    ADD CONSTRAINT PK_CTDH PRIMARY KEY(MaDH, MaMH, MaKC);
+    
+    ALTER TABLE `chitietdonhang`
+    ADD CONSTRAINT FK_CTDH_CTMH FOREIGN KEY(MaMH, MaKC)
+    REFERENCES chitietmathang(MaMH, MaKC);
+    
+	SELECT dh.MaDH, GROUP_CONCAT(CONCAT(mh.TenMH, '-', ctmh.MaKC, '-', ctmh.GiaBan, '-', ctdh.SoLuong) SEPARATOR ',') HoaDon, 
 					SUM(ctdh.SoLuong*ctmh.GiaBan) TongTien
     FROM `donhang` dh
     JOIN `chitietdonhang` ctdh ON dh.MaDH = ctdh.MaDH
     JOIN `mathang` mh ON ctdh.MaMH = mh.MaMH
-	JOIN `chitietmathang` ctmh ON mh.MaMH = ctmh.MaMH
-    WHERE dh.MaDH = 2
+	JOIN `chitietmathang` ctmh ON ctdh.MaMH = ctmh.MaMH AND ctdh.MaKC = ctmh.MAKC
+--     WHERE dh.MaDH = 2;
     GROUP BY dh.MaDH;
-    -- => Thêm vào bảng chi tiết đơn hàng mã kích cỡ
+    
     
 -- 32. Xuất thông tin hóa đơn của đơn hàng 02 với thông tin như sau.
 -- 	SoDH ChiTietDonHang           TongTien
 --         02   TenMH:GiaBan:SoLuong     100
+
+-- 33. Thêm dữ liệu vào bảng hóa đơn từ dữ liệu vừa tính được 
+	INSERT INTO HoaDon(MaHD, MaDH, NgayXuatHoaDon, SoTienCanThanhToan) 
+	WITH DuLieu_HoaDon AS(
+		SELECT dh.MaDH, GROUP_CONCAT(CONCAT(mh.TenMH, '-', ctmh.MaKC, '-', ctmh.GiaBan, '-', ctdh.SoLuong) SEPARATOR ',') HoaDon, 
+						SUM(ctdh.SoLuong*ctmh.GiaBan) TongTien
+		FROM `donhang` dh
+		JOIN `chitietdonhang` ctdh ON dh.MaDH = ctdh.MaDH
+		JOIN `mathang` mh ON ctdh.MaMH = mh.MaMH
+		JOIN `chitietmathang` ctmh ON ctdh.MaMH = ctmh.MaMH AND ctdh.MaKC = ctmh.MAKC
+	--     WHERE dh.MaDH = 2;
+		GROUP BY dh.MaDH
+    )
+    SELECT MaDH, MaDH, CURRENT_DATE(), TongTien
+    FROM DuLieu_HoaDon;
+    
+    SELECT * FROM HoaDon;
