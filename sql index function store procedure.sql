@@ -24,6 +24,7 @@ END;
 $$ DELIMITER 
 
 CALL selectItems();
+
 -- Viết phương thức liệt kê các mặt hàng theo loại hàng
 DELIMITER $$
 CREATE PROCEDURE selectItemsByIgId(p_igid INT)
@@ -34,6 +35,8 @@ END;
 $$ DELIMITER 
 
 CALL selectItemsByIgId(1);
+
+
 -- Viết phương thức thêm N dòng dữ liệu cho bảng loại hàng
 DELIMITER $$
 CREATE PROCEDURE addItemGroup(n INT)
@@ -52,13 +55,13 @@ CALL addItemGroup(5);
 
 -- Viết phương thức liệt kê các phần tử chẵn nhỏ hơn N
 DELIMITER $$
-CREATE PROCEDURE lessthanN(n INT)
+CREATE PROCEDURE EvenLessThanN(n INT)
 BEGIN
 	DECLARE i INT DEFAULT 0;
     DECLARE arr VARCHAR(100) DEFAULT '';
     WHILE i < n DO
 		IF i % 2 = 0
-			THEN SET arr = concat(arr, ',' , i);
+			THEN SET arr = concat(arr, i);
         END IF;
 		SET i = i + 1;
     END WHILE;
@@ -66,8 +69,9 @@ BEGIN
 END
 $$ DELIMITER ;
 
-CALL lessthanN(10);
+CALL EvenLessThanN(10);
 
+-- FUNCTION
 -- Viết phương thức trả về tập các phần tử chẵn nhỏ hơn N
 DELIMITER $$
 CREATE FUNCTION EvenLessThanN(n INT)
@@ -77,13 +81,29 @@ BEGIN
 	DECLARE rs VARCHAR(100) DEFAULT '';
     WHILE i < n DO
 		IF i % 2 = 0
-			THEN SET rs = concat(rs, ',', i);
+			THEN SET rs = concat(rs, i);
         END IF;
 		SET i = i + 1;
 	END WHILE;
     
     RETURN rs;
 END $$ DELIMITER ;
-
 SELECT EvenLessThanN(10);
 
+-- Viết phương thức trả về tập các phần tử chẵn nhỏ hơn N
+SET GLOBAL log_bin_trust_function_creators = 1;
+DELIMITER $$
+CREATE FUNCTION sumOfNValues(n int)
+RETURNS int
+BEGIN
+	DECLARE i int DEFAULT 1;
+    DECLARE sumOf int DEFAULT 0;
+    WHILE i <= n DO
+		SET sumOf = sumOf + i;
+        SET i = i + 1;
+    END WHILE;
+    
+    RETURN sumOf;
+END $$ DELIMITER ;
+
+SELECT sumOfNValues(10);
