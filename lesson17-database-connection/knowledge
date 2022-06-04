@@ -1,0 +1,12 @@
+Statement 
++ Query without parameter
+
+
+PrepareStatement 
++ Query without parameter
++ Advantages: Handle query with many parameter
+Query 
++ Select: #exercuteQuery --> resultSet
++ Reject SQL Injection
+
++ INSERT/ DELETE/ UPDATE --> int
