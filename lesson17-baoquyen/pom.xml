@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.persistence</groupId>
+  <artifactId>lesson17-baoquyen</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>lesson17-baoquyen</name>
+  <properties>
+		<mysql-connector-java.version>8.0.29</mysql-connector-java.version>
+		<commons-codec.version>1.10</commons-codec.version>
+	</properties>
+	
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector-java.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons-codec.version}</version>
+		</dependency>
+	</dependencies>
+</project>
