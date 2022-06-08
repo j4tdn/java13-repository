@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.Properties;
 
 public class DBProvider {
-    private static final String absolute_path = "lesson17-database-connection/application.properties";
+    private static final String absolute_path = "../lesson17-database-connection/application.properties";
     public static Properties getProps() throws IOException {
         Properties props = new Properties();
         props.load(Files.newInputStream(Paths.get(absolute_path)));
