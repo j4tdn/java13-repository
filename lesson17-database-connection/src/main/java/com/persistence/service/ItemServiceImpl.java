@@ -7,11 +7,13 @@ import com.persistence.persistence.Item;
 import java.util.List;
 import java.util.Objects;
 
-public class ItemServiceImpl implements ItemService{
+public class ItemServiceImpl implements ItemService {
     private ItemDao itemDao;
-    public ItemServiceImpl(){
+
+    public ItemServiceImpl() {
         itemDao = new JdbcItemDao();
     }
+
     @Override
     public List<Item> getAll() {
         return itemDao.getAll();

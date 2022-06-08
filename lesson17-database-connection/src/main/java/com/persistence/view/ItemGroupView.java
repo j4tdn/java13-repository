@@ -1,19 +1,17 @@
 package com.persistence.view;
 
-import com.persistence.persistence.Item;
 import com.persistence.persistence.ItemGroup;
-import com.persistence.persistence.ItemGroupDto;
 import com.persistence.service.ItemGroupService;
 import com.persistence.service.ItemGroupServiceImpl;
-import com.persistence.service.ItemService;
-import com.persistence.service.ItemServiceImpl;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class ItemGroupView {
     private static ItemGroupService itemGroupService;
     private static Scanner sc = new Scanner(System.in);
+
     static {
         itemGroupService = new ItemGroupServiceImpl();
     }
@@ -39,7 +37,18 @@ public class ItemGroupView {
 //        ItemGroup itemGroup = itemGroupService.getItemGroup(tenLH);
 //        System.out.println(itemGroup);
 
-        List<ItemGroupDto> itemGroupDtoList = itemGroupService.getItemsByItemGroup();
-        itemGroupDtoList.forEach(System.out::println);
+//        List<ItemGroupDto> itemGroupDtoList = itemGroupService.getItemsByItemGroup();
+//        itemGroupDtoList.forEach(System.out::println);
+
+        int[] affectedRows = itemGroupService.save(mockData());
+        Arrays.stream(affectedRows).forEach(System.out::println);
+    }
+
+    private static List<ItemGroup> mockData() {
+        return Arrays.asList(
+                new ItemGroup(11, "IG111"),
+                new ItemGroup(222, "IG222"),
+                new ItemGroup(33, "IG333")
+        );
     }
 }

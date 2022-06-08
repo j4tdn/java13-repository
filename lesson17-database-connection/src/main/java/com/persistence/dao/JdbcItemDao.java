@@ -12,32 +12,31 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JdbcItemDao implements ItemDao{
+public class JdbcItemDao implements ItemDao {
     private final Connection conn;
     private static Statement st;
     private static PreparedStatement pst;
     private static ResultSet rs;
 
-    public JdbcItemDao(){
+    public JdbcItemDao() {
         conn = DBConnection.getConnection();
     }
+
     @Override
     public List<Item> getAll() {
         List<Item> items = new ArrayList<>();
         String sql = "SELECT * FROM `mathang`";
-        try{
+        try {
             st = conn.createStatement();
             rs = st.executeQuery(sql);
-            while (rs.next()){
+            while (rs.next()) {
                 Item item = new Item(rs.getInt("MaMH"), rs.getString("TenMH"), rs.getString("MauSac"));
                 items.add(item);
             }
 
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
-        }
-        finally {
+        } finally {
             SqlUtils.close(rs, st);
         }
         return items;
@@ -47,20 +46,18 @@ public class JdbcItemDao implements ItemDao{
     public List<Item> findItemsByItemGroupName(String name) {
         List<Item> items = new ArrayList<>();
         String sql = "SELECT mh.*, lh.TenLH FROM `loaihang` lh JOIN `mathang` mh ON lh.MaLH = mh.MaLH WHERE lh.TenLH = ?";
-        try{
+        try {
             pst = conn.prepareStatement(sql);
             pst.setString(1, name);
             rs = pst.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 ItemGroup itemGroup = new ItemGroup(rs.getInt("MaLH"), rs.getString("TenLH"));
                 Item item = new Item(rs.getInt("MaMH"), rs.getString("TenMH"), rs.getString("MauSac"), itemGroup);
                 items.add(item);
             }
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
-        }
-        finally {
+        } finally {
             SqlUtils.close(rs, pst);
         }
         return items;

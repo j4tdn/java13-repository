@@ -14,6 +14,8 @@ public interface ItemGroupService {
 
     int save(ItemGroup itemGroup);
 
+    int[] save(List<ItemGroup> itemGroups);
+
     int update(ItemGroup itemGroup);
 
     List<ItemGroupDto> getItemsByItemGroup();

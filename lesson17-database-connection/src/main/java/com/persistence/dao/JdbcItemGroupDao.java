@@ -44,7 +44,7 @@ public class JdbcItemGroupDao implements ItemGroupDao {
         try {
             st = conn.createStatement();
             rs = st.executeQuery(sql);
-            if (rs.next()){
+            if (rs.next()) {
                 itemGroup = new ItemGroup(rs.getInt("MaLH"), rs.getString("TenLH"));
             }
         } catch (SQLException e) {
@@ -65,8 +65,7 @@ public class JdbcItemGroupDao implements ItemGroupDao {
             return pst.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             SqlUtils.close(pst);
         }
     }
@@ -74,16 +73,14 @@ public class JdbcItemGroupDao implements ItemGroupDao {
     @Override
     public int update(ItemGroup itemGroup) {
         String sql = "UPDATE `loaihang` SET TenLH = ? WHERE MaLH = ? ";
-        try{
+        try {
             pst = conn.prepareStatement(sql);
             pst.setString(1, itemGroup.getName());
             pst.setInt(2, itemGroup.getId());
             return pst.executeUpdate();
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
-        }
-        finally{
+        } finally {
             SqlUtils.close(pst);
         }
         return -1;
@@ -93,18 +90,16 @@ public class JdbcItemGroupDao implements ItemGroupDao {
     public ItemGroup getItemGroup(String name) {
         ItemGroup itemGroup = new ItemGroup();
         String sql = "SELECT * FROM `LoaiHang` WHERE TenLH = ?";
-        try{
+        try {
             pst = conn.prepareStatement(sql);
             pst.setString(1, name);
             rs = pst.executeQuery();
-            if (rs.next()){
+            if (rs.next()) {
                 itemGroup = new ItemGroup(rs.getInt("MaLh"), rs.getString("TenLH"));
             }
-        }
-        catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
-        }
-        finally {
+        } finally {
             SqlUtils.close(rs, pst);
         }
         return itemGroup;
@@ -120,23 +115,40 @@ public class JdbcItemGroupDao implements ItemGroupDao {
                 "JOIN `mathang` mh ON ctmh.MaMH = mh.MaMH\n" +
                 "JOIN `loaihang` lh ON lh.MaLH = mh.MaLH\n" +
                 "GROUP BY mh.MaLH;";
-        try{
-                st = conn.createStatement();
-                rs = st.executeQuery(sql);
-                while (rs.next()){
-                    ItemGroupDto itemGroupDto = new ItemGroupDto(rs.getInt("MaLH"),
-                                                                rs.getString("TenLH"),
-                                                                rs.getString("DanhSachMatHang"),
-                                                                rs.getInt("TongSoLuong"));
-                    itemGroupDtos.add(itemGroupDto);
-                }
-        }
-        catch (Exception ex){
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(sql);
+            while (rs.next()) {
+                ItemGroupDto itemGroupDto = new ItemGroupDto(rs.getInt("MaLH"),
+                        rs.getString("TenLH"),
+                        rs.getString("DanhSachMatHang"),
+                        rs.getInt("TongSoLuong"));
+                itemGroupDtos.add(itemGroupDto);
+            }
+        } catch (Exception ex) {
             ex.printStackTrace();
-        }
-        finally {
+        } finally {
             SqlUtils.close(rs, st);
         }
         return itemGroupDtos;
+    }
+
+    @Override
+    public int[] save(List<ItemGroup> itemGroups) {
+        String sql = "INSERT INTO `loaihang`(MaLH, TenLH) VALUES(?, ?)";
+        try {
+            pst = conn.prepareStatement(sql);
+            for (ItemGroup itemGroup : itemGroups) {
+                pst.setInt(1, itemGroup.getId());
+                pst.setString(2, itemGroup.getName());
+                pst.addBatch();
+            }
+            return pst.executeBatch();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            SqlUtils.close(pst);
+        }
+        return null;
     }
 }

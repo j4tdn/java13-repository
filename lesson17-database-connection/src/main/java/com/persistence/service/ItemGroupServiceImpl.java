@@ -7,11 +7,13 @@ import com.persistence.persistence.ItemGroupDto;
 
 import java.util.List;
 
-public class ItemGroupServiceImpl implements ItemGroupService{
+public class ItemGroupServiceImpl implements ItemGroupService {
     private ItemGroupDao itemGroupDao;
-    public ItemGroupServiceImpl(){
+
+    public ItemGroupServiceImpl() {
         itemGroupDao = new JdbcItemGroupDao();
     }
+
     @Override
     public List<ItemGroup> getAll() {
         return itemGroupDao.getAll();
@@ -25,6 +27,11 @@ public class ItemGroupServiceImpl implements ItemGroupService{
     @Override
     public int save(ItemGroup itemGroup) {
         return itemGroupDao.save(itemGroup);
+    }
+
+    @Override
+    public int[] save(List<ItemGroup> itemGroups) {
+        return itemGroupDao.save(itemGroups);
     }
 
     @Override

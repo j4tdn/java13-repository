@@ -1,18 +1,25 @@
 package com.persistence.utils;
 
-import java.io.Closeable;
+import org.apache.commons.codec.digest.DigestUtils;
+
+import java.util.Objects;
 
 public class SqlUtils {
-    private SqlUtils(){
+    private SqlUtils() {
 
     }
-    public static void close(AutoCloseable ... closeables){
-        try{
-            for(AutoCloseable closeable: closeables){
+
+    public static String encrypt(String text) {
+        Objects.requireNonNull(text, "Encrypt text cannot be null!");
+        return DigestUtils.md5Hex(text);
+    }
+
+    public static void close(AutoCloseable... closeables) {
+        try {
+            for (AutoCloseable closeable : closeables) {
                 closeable.close();
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
