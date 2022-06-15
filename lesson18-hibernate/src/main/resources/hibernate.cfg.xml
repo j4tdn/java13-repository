@@ -27,6 +27,7 @@
 
         <!-- Scan Entities -->
         <mapping class="com.persistence.persistence.ItemGroup"/>
+        <mapping class="com.persistence.persistence.Item"/>
 
     </session-factory>
 

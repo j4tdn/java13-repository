@@ -1,17 +1,20 @@
 package com.persistence.persistence;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "LoaiHang")
+@Table(name="LoaiHang")
+
+//Required: query -> JPQL
+@NamedQueries(
+        @NamedQuery(name = ItemGroup.Q_SELECT_ALL, query = "FROM ItemGroup ")
+)
 public class ItemGroup {
+    public static final String Q_SELECT_ALL = "SELECT_ALL_ITEM_GROUPS";
     @Id
-    @Column(name = "MaLH")
+    @Column(name="MaLH")
     private Integer id;
-    @Column(name = "TenLH")
+    @Column(name="TenLH")
     private String name;
 
     public ItemGroup() {
