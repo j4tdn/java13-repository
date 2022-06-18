@@ -13,7 +13,7 @@
         <!-- Hibernate Properties -->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
-        <property name="show_sql">true</property>
+        <property name="show_sql">false</property>
         <property name="format_sql">true</property>
 
         <!-- Set the current session context getCurrentSession -->
@@ -28,7 +28,8 @@
         <!-- Scan Entities -->
         <mapping class="com.persistence.persistence.ItemGroup"/>
         <mapping class="com.persistence.persistence.Item"/>
-
+        <mapping class="com.persistence.persistence.Size"/>
+        <mapping class="com.persistence.persistence.ItemSizeRelation"/>
     </session-factory>
 
 </hibernate-configuration>

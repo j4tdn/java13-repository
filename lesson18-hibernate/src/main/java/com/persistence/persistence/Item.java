@@ -1,6 +1,7 @@
 package com.persistence.persistence;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="MatHang")
@@ -12,11 +13,12 @@ public class Item {
     private String name;
     @Column(name = "MauSac")
     private String color;
-
-//    @ManyToOne(fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "item")
+    private List<ItemSizeRelation> sizes;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MaLH", referencedColumnName = "MaLH")
     private ItemGroup itemGroup;
+
     public Item(){
 
     }
@@ -61,6 +63,14 @@ public class Item {
 
     public void setItemGroup(ItemGroup itemGroup) {
         this.itemGroup = itemGroup;
+    }
+
+    public List<ItemSizeRelation> getSizes() {
+        return sizes;
+    }
+
+    public void setSizes(List<ItemSizeRelation> sizes) {
+        this.sizes = sizes;
     }
 
     @Override

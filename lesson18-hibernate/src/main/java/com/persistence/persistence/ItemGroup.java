@@ -1,9 +1,10 @@
 package com.persistence.persistence;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name="LoaiHang")
+@Table(name = "LoaiHang")
 
 //Required: query -> JPQL
 @NamedQueries(
@@ -12,10 +13,13 @@ import javax.persistence.*;
 public class ItemGroup {
     public static final String Q_SELECT_ALL = "SELECT_ALL_ITEM_GROUPS";
     @Id
-    @Column(name="MaLH")
+    @Column(name = "MaLH")
     private Integer id;
-    @Column(name="TenLH")
+    @Column(name = "TenLH")
     private String name;
+    //default fetch: LAZY
+    @OneToMany(mappedBy = "itemGroup")
+    private List<Item> items;
 
     public ItemGroup() {
 
@@ -40,6 +44,14 @@ public class ItemGroup {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     @Override
