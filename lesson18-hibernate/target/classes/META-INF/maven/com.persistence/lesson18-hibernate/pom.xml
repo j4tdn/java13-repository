@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.persistence</groupId>
+	<artifactId>lesson18-hibernate</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>lesson18-hibernate</name>
+	<description>Demo Hibernate code</description>
+
+	<properties>
+		<mysql-connector-java.version>8.0.29</mysql-connector-java.version>
+		<commons-codec.version>1.10</commons-codec.version>
+		<hibernate-core.version>5.4.32.Final</hibernate-core.version>
+		<hibernate-ehcache.version>5.4.27.Final</hibernate-ehcache.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector-java.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate-core.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>${hibernate-ehcache.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons-codec.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>

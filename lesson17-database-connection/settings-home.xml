@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <!-- Maven Local -->
+    <!-- <localRepository>C:\Users\qphan\.m2\repository home</localRepository> -->
+    <mirrors>
+        <!-- Maven Central -->
+        <mirror>
+            <id>MavenCentral</id>
+            <name>Maven Central</name>
+            <url>https://repo.maven.apache.org/maven2/</url>
+            <mirrorOf>central</mirrorOf>
+        </mirror>
+    </mirrors>
+    <profiles>
+        <!-- Custom Profiles -->
+        <profile>
+            <id>central</id>
+            <repositories>
+                <!-- Maven Remote -->
+                <repository>
+                    <id>public central repository</id>
+                    <name>central</name>
+                    <url>https://repo.maven.apache.org/maven2/</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>central</id>
+                    <url>http://central</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+</settings>

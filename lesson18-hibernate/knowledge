@@ -1,0 +1,33 @@
+Khi thực hiện truy vấn dữ liệu với Hibernate. Có những cách sau
+
+Option 1: Using native query --> createNativeQuery
+  --> private static final String Q_SELECT_ITEM_GROUPS = "SELECT * FROM LoaiHang";
+	
+Option 2: Java Persistence Query Language (JPQL, HQL) 
+  --> private static final String Q_SELECT_ITEM_GROUPS = "SELECT ig FROM ItemGroup ig";
+  --> 2.1: Using createQuery
+  --> 2.2: Using createNamedQuery --> NamedQueries, @NamedQuery
+  
+Mapping JPA + Database
+@Entity, @Table(name="...") @Id, @Column(name = "...") 
+
+Relationship
+@ManyToOne --> Item<-->ItemGroup ==> @JoinColumn
+@OneToMany                       ==> mappedBy
+
+FetchType
++ Lazy
++ Eager
+
+Caching Data
+1. First level cache  --> Auto enable by Hibernate
+2. Second level cache --> Enable manually
+   + B1. Add 2nd cache support dependencies
+   + B2. Enable 2nd cache in hibernate.cfg.xml and link to support 2nd class
+   + B3. Configure Entity cache with class, name, living time --> ehcache.xml
+   + B4. Add @Cache(CacheRegionStrategy.READ_WRITE) to Entity used for 2nd cache
+   + ===> Demo in 2 3 sessions
+
+Thao tác cơ bản
+--> Create Read(ALL|One) Update Delete
+--> save(Entity), select, get(id), save/saveOrUpdate(Entity), remove(id)

@@ -1,0 +1,13 @@
+Statement
+  + Query without parameter
+
+PrepareStatement
+  + Query without parameter
+  + Advantage: Handle query with many parameters
+             : Replace parameter ? by real value
+  + Reject SQL injections
+             
+Query
+  + SELECT: #executeQuery --> ResultSet
+  
+  + INSERT/UPDATE/DELETE: #executeUpdate --> int
