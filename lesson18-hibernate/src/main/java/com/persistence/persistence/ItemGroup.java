@@ -1,15 +1,17 @@
 package com.persistence.persistence;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Cache;
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "LoaiHang")
-
 //Required: query -> JPQL
 @NamedQueries(
         @NamedQuery(name = ItemGroup.Q_SELECT_ALL, query = "FROM ItemGroup ")
 )
+@Cache(usage= CacheConcurrencyStrategy.READ_WRITE)
 public class ItemGroup {
     public static final String Q_SELECT_ALL = "SELECT_ALL_ITEM_GROUPS";
     @Id

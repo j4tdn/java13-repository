@@ -2,6 +2,7 @@ package com.persistence.persistence;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @Table(name="ChiTietMatHang")
@@ -10,9 +11,25 @@ public class ItemSizeRelation {
     public static class ItemSizeID implements Serializable {
         public static final long serialVersionUID = 709951244112937908L;
         @Column(name="MaMH")
-        public Integer itemId;
+        private Integer itemId;
         @Column(name="MaKC")
-        public String sizeId;
+        private String sizeId;
+
+        public Integer getItemId() {
+            return itemId;
+        }
+
+        public void setItemId(Integer itemId) {
+            this.itemId = itemId;
+        }
+
+        public String getSizeId() {
+            return sizeId;
+        }
+
+        public void setSizeId(String sizeId) {
+            this.sizeId = sizeId;
+        }
 
         public ItemSizeID() {
 
@@ -21,6 +38,19 @@ public class ItemSizeRelation {
         public ItemSizeID(Integer itemId, String sizeId) {
             this.itemId = itemId;
             this.sizeId = sizeId;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (!(this instanceof ItemSizeID)) return false;
+            final ItemSizeID that = (ItemSizeID)obj;
+            return getItemId() == that.getItemId() && getSizeId() == that.getSizeId();
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(getItemId(), getSizeId());
         }
     }
     @EmbeddedId

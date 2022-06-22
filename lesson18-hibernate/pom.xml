@@ -19,6 +19,9 @@
         <mysql-connector-java.version>8.0.29</mysql-connector-java.version>
         <commons-codec.version>1.10</commons-codec.version>
         <hibernate.version>5.4.32.Final</hibernate.version>
+        <hibernate-ehcache.version>5.4.27.Final</hibernate-ehcache.version>
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+        <slf4j-binding.version>1.7.25</slf4j-binding.version>
     </properties>
 
     <dependencies>
@@ -39,11 +42,27 @@
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${hibernate-ehcache.version}</version>
+        </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>${commons-codec.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-binding.version}</version>
         </dependency>
     </dependencies>
 
