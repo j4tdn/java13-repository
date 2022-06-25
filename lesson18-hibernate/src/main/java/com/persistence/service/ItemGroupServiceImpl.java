@@ -28,4 +28,9 @@ public class ItemGroupServiceImpl implements ItemGroupService {
     public void secondLevelCache() {
         itemGroupDao.secondLevelCache();
     }
+
+    @Override
+    public boolean save(List<ItemGroup> itemGroups) {
+        return itemGroupDao.save(itemGroups);
+    }
 }

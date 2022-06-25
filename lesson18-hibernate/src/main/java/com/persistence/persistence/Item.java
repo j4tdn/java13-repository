@@ -30,7 +30,7 @@ public class Item {
 
     public Item(int id, String name, String color, ItemGroup itemGroup) {
         this(id, name, color);
-        this.itemGroup = itemGroup;
+//        this.itemGroup = itemGroup;
     }
 
     public int getId() {
@@ -57,12 +57,12 @@ public class Item {
         this.color = color;
     }
 
-    public ItemGroup getItemGroup() {
-        return itemGroup;
-    }
+//    public ItemGroup getItemGroup() {
+//        return itemGroup;
+//    }
 
     public void setItemGroup(ItemGroup itemGroup) {
-        this.itemGroup = itemGroup;
+//        this.itemGroup = itemGroup;
     }
 
     public List<ItemSizeRelation> getSizes() {
@@ -79,7 +79,7 @@ public class Item {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", color='" + color + '\'' +
-                ", itemGroup=" + (itemGroup != null ? itemGroup.getName() : "") +
+//                ", itemGroup=" + (itemGroup != null ? itemGroup.getName() : "") +
                 '}';
     }
 }

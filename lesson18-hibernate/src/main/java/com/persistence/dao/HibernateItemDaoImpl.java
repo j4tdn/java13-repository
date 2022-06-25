@@ -3,6 +3,7 @@ package com.persistence.dao;
 import com.persistence.persistence.Item;
 import org.hibernate.Session;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 

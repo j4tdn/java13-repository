@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE ehcache>
 <ehcache>
-    <cache name="persistence.ItemGroup"
+    <diskStore path="java.io.tmpdir/ehcache" />
+
+<!--    <defaultCache maxEntriesLocalHeap="10000" eternal="false"-->
+<!--                  timeToIdleSeconds="120" timeToLiveSeconds="120" diskSpoolBufferSizeMB="30"-->
+<!--                  maxEntriesLocalDisk="10000000" diskExpiryThreadIntervalSeconds="120"-->
+<!--                  memoryStoreEvictionPolicy="LRU" statistics="true">-->
+<!--        <persistence strategy="localTempSwap"/>-->
+<!--    </defaultCache>-->
+
+    <defaultCache name="persistence.ItemGroup"
            maxElementsInMemory="1000"
            timeToIdleSeconds="3"
            timeToLiveSeconds="20"
-    />
+    ></defaultCache>
 </ehcache>

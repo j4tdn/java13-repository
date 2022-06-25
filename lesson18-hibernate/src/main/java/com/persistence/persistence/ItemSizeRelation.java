@@ -49,6 +49,11 @@ public class ItemSizeRelation {
         }
 
         @Override
+        public String toString() {
+            return "item_id = " + itemId + ", size_id = " + sizeId;
+        }
+
+        @Override
         public int hashCode() {
             return Objects.hash(getItemId(), getSizeId());
         }

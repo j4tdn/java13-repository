@@ -1,0 +1,4 @@
+Caches cannot be added by name when default cache config is not specified in the config.
+Please add a default cache config in the configuration.
+
+=> Set the ehcache tag to defaultCache

@@ -1,6 +1,7 @@
 package com.persistence.dao;
 
 import com.persistence.persistence.Item;
+import com.persistence.persistence.ItemGroup;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,6 +12,5 @@ public interface ItemDao {
     Optional<Item> get(int id);
 
     Optional<Item> find(int id);
-
     void firstLevelCache();
 }

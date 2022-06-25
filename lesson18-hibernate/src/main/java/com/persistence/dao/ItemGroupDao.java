@@ -8,6 +8,7 @@ import java.util.List;
 public interface ItemGroupDao {
     List<ItemGroup> getAll();
     List<ItemGroupDto> getItemsByItemGroup();
+    boolean save(List<ItemGroup> itemGroups);
 
     void secondLevelCache();
 }

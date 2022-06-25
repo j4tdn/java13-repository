@@ -4,10 +4,13 @@ import com.persistence.persistence.Item;
 import com.persistence.persistence.ItemGroup;
 import com.persistence.persistence.ItemGroupDto;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.hibernate.transform.Transformers;
 import org.hibernate.type.IntegerType;
 import org.hibernate.type.StringType;
+
+import java.sql.SQLException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +19,7 @@ public class HibernateItemGroupDaoImpl extends AbstractHibernateDao implements I
 //    private static final String Q_SELECT_ITEM_GROUPS = "SELECT * FROM `loaihang`";
 
     // Option 2: Java Persistence Query Language (JPQL, HQL) -> createQuery
+    private static Session session;
     private static final String Q_SELECT_ITEM_GROUPS = "SELECT ig FROM ItemGroup ig";
     private static final String Q_SELECT_ITEMS_BY_GROUP =
             "SELECT mh.MaLH AS "+ItemGroupDto.ITEM_GROUP_ID+",\n"
@@ -71,6 +75,9 @@ public class HibernateItemGroupDaoImpl extends AbstractHibernateDao implements I
         ItemGroup group1 = session1.get(ItemGroup.class, 1);
         System.out.println(">>> ItemGroup 1: " + group1);
 
+        ItemGroup group1_1 = session1.get(ItemGroup.class, 1);
+        System.out.println(">>> ItemGroup 1_1: " + group1_1);
+
 //        itemgroup 2 -> query
         ItemGroup group2 = session1.get(ItemGroup.class, 2);
         System.out.println(">>> ItemGroup 2: " + group2);
@@ -88,5 +95,27 @@ public class HibernateItemGroupDaoImpl extends AbstractHibernateDao implements I
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean save(List<ItemGroup> itemGroups) {
+        boolean isSuccess = false;
+        session = openSession();
+        Transaction transaction = session.beginTransaction();
+        try{
+            for(ItemGroup itemGroup: itemGroups){
+                session.save(itemGroup);
+            }
+            transaction.commit();
+            isSuccess = true;
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            transaction.rollback();
+        }
+        finally {
+            session.close();
+        }
+        return isSuccess;
     }
 }

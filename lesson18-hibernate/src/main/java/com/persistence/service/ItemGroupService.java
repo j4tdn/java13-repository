@@ -9,4 +9,6 @@ public interface ItemGroupService {
     List<ItemGroup> getAll();
     List<ItemGroupDto> getItemsByItemGroup();
     void secondLevelCache();
+    boolean save(List<ItemGroup> itemGroups);
+
 }

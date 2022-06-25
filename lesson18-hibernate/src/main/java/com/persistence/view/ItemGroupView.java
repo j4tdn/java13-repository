@@ -1,5 +1,7 @@
 package com.persistence.view;
 
+import com.persistence.dao.ItemGroupDao;
+import com.persistence.data.ItemGroupData;
 import com.persistence.persistence.Item;
 import com.persistence.persistence.ItemGroup;
 import com.persistence.persistence.ItemGroupDto;
@@ -16,8 +18,8 @@ public class ItemGroupView {
     }
 
     public static void main(String[] args) {
-        System.out.println("\n==============2nc cache====================\n");
-        itemGroupService.secondLevelCache();
+//        System.out.println("\n==============2nc cache====================\n");
+//        itemGroupService.secondLevelCache();
 
 //        System.out.println("GET ITEMS BY ITEM GROUP: ");
 //        List<ItemGroupDto> countedItemsByGroup = itemGroupService.getItemsByItemGroup();
@@ -33,6 +35,9 @@ public class ItemGroupView {
 //                    items.forEach(System.out::println);
 //                }
 //        );
-
+        System.out.println("===== Test Save Items ======");
+        List<ItemGroup> itemGroups = ItemGroupData.itemgroups_data;
+        boolean isSuccess = itemGroupService.save(itemGroups);
+        System.out.println("Is saved successfully: " + isSuccess);
     }
 }
