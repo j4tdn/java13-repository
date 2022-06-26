@@ -17,5 +17,13 @@ private static DepartmentProjectDTOService departmentProjectDTOService;
 		System.out.println("=== 3. List all projects of departments which have budget greater than 400 main days");
 		List<DepartmentProjectDTO> departmentProjectDTOs = departmentProjectDTOService.getProjectGreaterThan400();
 		departmentProjectDTOs.forEach(System.out::println);
+		
+		System.out.println("=== 4. List total of budget of each department in 2020");
+		List<DepartmentProjectDTO> dtos = departmentProjectDTOService.getTotalBudget();
+		dtos.forEach(System.out::println);
+		
+		System.out.println("=== 5. Get department which has project with highest budget in 2020");
+		List<DepartmentProjectDTO> departmentProjectDTOs2 = departmentProjectDTOService.getProjectHighestBudget(2021);
+		departmentProjectDTOs2.forEach(System.out::println);
 	}
 }	

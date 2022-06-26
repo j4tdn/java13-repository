@@ -7,4 +7,6 @@ import persistences.DepartmentProjectDTO;
 
 public interface DepartmentProjectDTOService {
 	List<DepartmentProjectDTO> getProjectGreaterThan400();
+	List<DepartmentProjectDTO> getProjectHighestBudget(int year);
+	List<DepartmentProjectDTO> getTotalBudget();
 }

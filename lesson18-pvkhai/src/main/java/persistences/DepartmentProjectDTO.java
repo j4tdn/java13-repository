@@ -1,6 +1,11 @@
 package persistences;
 
 public class DepartmentProjectDTO {
+	
+	public static final String DEPT_NAME = "dept_name";
+	public static final String PRO_NAME = "pro_name";
+	public static final String BUDGET = "budget";
+	
 	private String dept_name;
 	private String pro_name;
 	private Double budget;
@@ -10,7 +15,6 @@ public class DepartmentProjectDTO {
 	}
 
 	public DepartmentProjectDTO(String dept_name, String pro_name, Double budget) {
-		super();
 		this.dept_name = dept_name;
 		this.pro_name = pro_name;
 		this.budget = budget;

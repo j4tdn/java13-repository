@@ -16,4 +16,12 @@ public class DepartmentProjectServoceImpl implements DepartmentProjectDTOService
 	public List<DepartmentProjectDTO> getProjectGreaterThan400() {
 		return departmentProjectDTODao.getProjectGreaterThan400();
 	}
+	@Override
+	public List<DepartmentProjectDTO> getProjectHighestBudget(int year) {
+		return departmentProjectDTODao.getProjectHighestBudget(year);
+	}
+	@Override
+	public List<DepartmentProjectDTO> getTotalBudget() {
+		return departmentProjectDTODao.getTotalBudget();
+	}
 }
