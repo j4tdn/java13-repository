@@ -1,0 +1,8 @@
+p.copy {
+    color: blue;
+}
+
+.bg-yellow {
+    background-color: yellow;
+    display: inline;
+}

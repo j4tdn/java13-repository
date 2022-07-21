@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ex07FormTags Demo</title>
+    <link rel="icon" href="../static/images/header.png">
+    <style>
+        .page-title {
+            color: green;
+        }
+        
+        tr td {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="page-title">
+        Welcome to Java13's web page
+    </header>
+    <hr>
+    <main>
+        <form action="">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label for="">First Name: </label></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Last Name: </label></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Gender: </label></td>
+                        <td>
+                            <label for="">Male</label> <input type="radio" name="gender">
+                            <label for="">Female</label> <input checked type="radio" name="gender">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Age: </label></td>
+                        <td><input type="number" min="14" max="40"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">University: </label></td>
+                        <td>
+                            <select name="" id="">
+                                    <option value="">Bach Khoa</option>
+                                    <option value="">Kinh Te</option>
+                                    <option value="">Duy Tan</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Language: </label></td>
+                        <td>
+                            <label for="">JAVA</label><input type="checkbox" name="language">
+                            <label for="">PHP</label><input type="checkbox" name="language">
+                            <label for="">NODEJS</label><input type="checkbox" name="language">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="">DateOfBirth: </label></td>
+                        <td><input type="date"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Email: </label></td>
+                        <td><input type="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Password: </label></td>
+                        <td><input type="password"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit">
+                        </td>
+                        <td>
+                            <input type="reset">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </form>
+    </main>
+    <hr>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ex04AnchorTag Demo</title>
+    <link rel="icon" href="../static/images/header.png">
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Reference links</h2>
+    <a href="Ex01ContentTags.html">View Ex01ContentTags Demo</a> <br>
+    <a href="Ex02ListItemTags.html">View Ex02ListItemTags Demo</a> <br>
+    <a href="Ex03TableTags.html">View Ex03TableTags Demo</a> <br>
+    <hr>
+    <h2>Table of contents - Relative links</h2>
+    <a href="#heading-block">1.1 Heading tags</a> <br>
+    <a href="#paragraph-block">1.2 Paragraph tags</a> <br>
+    <a href="#list-item-block">1.3 List Item tags</a> <br>
+    <a href="#table-block">1.4 Table tags</a> <br>
+    <hr>
+
+    <h2>Anchor (Inline) Tag</h2>
+    <hr>
+
+    <a href="https://www.google.com/" target="_blank">Click to Google</a>
+    <br>
+    <br>
+    <a href="tel:+0935169835">Call me: 0935169835</a>
+    <br>
+    <br>
+    <a href="mailto:trancongviet0710@gmail.com">Mail to me:
+            trancongviet0710@gmail.com</a>
+
+    <hr>
+    <!-- heading tags -->
+    <h1 id="heading-block">This is H1 tag - style</h1>
+    <h2>This is H1 tag - style</h2>
+    <h3>This is H1 tag - style</h3>
+    <h4>This is H1 tag - style</h4>
+    <h5>This is H1 tag - style</h5>
+    <h6>This is H1 tag - style</h6>
+
+    <hr>
+    <!-- paragraph tags -->
+    <h3 id="paragraph-block">Paragraph Lorem 50</h3>
+    <p>Lorem ipsum <span class="text-red">dolor</span> sit amet consectetur adipisicing elit.
+        <br> Repellendus et excepturi natus voluptates quod officiis
+        <strong>dignissimos</strong> adipisci, accusamus ea ducimus nemo obcaecati amet est ipsam quisquam voluptas? Vero, veritatis quam?
+    </p>
+    <h3>Paragraph Lorem 30</h3>
+    <p>Lorem ipsum <span class="text-green">dolor</span> sit amet consectetur <em>adipisicing</em> elit. Nisi minima, pariatur cumque molestias cupiditate perspiciatis ipsum doloremque quidem quasi, adipisci totam, mollitia eum amet. Nisi sint natus doloremque
+        commodi facere.</p>
+
+    <hr>
+    <!-- List Item Tag -->
+    <h4 id="list-item-block">Công thức làm nước chanh</h4>
+    <ol>
+        <li>Mua chanh</li>
+        <li>Mua đường</li>
+        <li>Khuấy</li>
+        <li>Uống</li>
+    </ol>
+
+    <h4>Thành phần</h4>
+    <ul>
+        <li>Chanh</li>
+        <li>Đường</li>
+        <li>Đá</li>
+        <li>Nước</li>
+        <li>Muối</li>
+    </ul>
+    <img class="img-big-size" src="../static/images/lemon.png" alt="Lemonade">
+
+    <hr>
+
+    <h3 id="table-block">Table 3.1: Java13 Student List</h3>
+    <table class="student" border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th rowspan="2">Age</th>
+                <th rowspan="2">Email</th>
+                <th colspan="2">Phone</th>
+            </tr>
+            <tr>
+                <th>Fax1</th>
+                <th>Fax2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Peter</td>
+                <td>19</td>
+                <td>peter@gmail.com</td>
+                <td>123</td>
+                <td>456</td>
+            </tr>
+            <tr>
+                <td>Jerry</td>
+                <td>19</td>
+                <td>jerry@gmail.com</td>
+                <td>123</td>
+                <td>456</td>
+            </tr>
+            <tr>
+                <td>Tom</td>
+                <td>18</td>
+                <td>tom@gmail.com</td>
+                <td>123</td>
+                <td>456</td>
+            </tr>
+            <tr>
+                <td>Hello</td>
+                <td>18</td>
+                <td>hello@gmail.com</td>
+                <td>123</td>
+                <td>456</td>
+            </tr>
+            <tr>
+                <td>World</td>
+                <td>20</td>
+                <td>world@gmail.com</td>
+                <td>123</td>
+                <td>456</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <!-- unicode character and simple html character -->
+    <p>Desigin by Java13 with <i>&#x1F970</i> &#129315; - &copy; Mr.Quyen</p>
+</body>
+
+</html>

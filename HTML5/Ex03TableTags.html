@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ex03TableTags Demo</title>
+    <link rel="icon" href="../static/images/header.png">
+    <style>
+        table.student {
+            width: 600px;
+        }
+        
+        table.student td {
+            text-align: center;
+        }
+        
+        table.student tbody tr:nth-child(odd) {
+            background-color: gray;
+        }
+        
+        table.student thead tr {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Table 3.1: Java13 Student List</h3>
+    <table class="student" border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th rowspan="2">Age</th>
+                <th rowspan="2">Email</th>
+                <th colspan="2">Phone</th>
+            </tr>
+            <tr>
+                <th>Fax1</th>
+                <th>Fax2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Peter</td>
+                <td>19</td>
+                <td>peter@gmail.com</td>
+                <td>123</td>
+                <td>456</td>
+            </tr>
+            <tr>
+                <td>Jerry</td>
+                <td>19</td>
+                <td>jerry@gmail.com</td>
+                <td>123</td>
+                <td>456</td>
+            </tr>
+            <tr>
+                <td>Tom</td>
+                <td>18</td>
+                <td>tom@gmail.com</td>
+                <td>123</td>
+                <td>456</td>
+            </tr>
+            <tr>
+                <td>Hello</td>
+                <td>18</td>
+                <td>hello@gmail.com</td>
+                <td>123</td>
+                <td>456</td>
+            </tr>
+            <tr>
+                <td>World</td>
+                <td>20</td>
+                <td>world@gmail.com</td>
+                <td>123</td>
+                <td>456</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

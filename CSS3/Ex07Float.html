@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 - Float</title>
+    <style>
+        .img-block {
+            background-color: orange;
+            height: 220px;
+            width: 160px;
+            float: left;
+        }
+        
+        .lorem20 {
+            color: green;
+        }
+        
+        .lorem30 {
+            color: red;
+        }
+        
+        .clearfix {
+            /* previous element float left --> clear left 
+                normal: both;
+            */
+            clear: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-block">
+
+    </div>
+    <div class="lorem20">
+        Lorem-20, ipsum dolor sit amet consectetur adipisicing elit. Sunt impedit non voluptate atque quidem repellendus deserunt a officia amet! Totam aliquam iure ad culpa consequatur aut consectetur dolorem obcaecati facilis., ipsum dolor sit amet consectetur
+        adipisicing elit. Praesentium numquam reiciendis ea aliquid provident voluptatem molestiae nesciunt quas? Officia beatae mollitia repellendus, voluptatibus quidem fuga consequuntur corrupti dicta voluptatem omnis.
+    </div>
+    <br>
+    <div class="lorem30 clearfix">
+        Lorem-30, ipsum dolor sit amet, consectetur adipisicing elit. Porro voluptatum architecto, commodi recusandae doloribus est officiis natus adipisci dolorem molestias illum nobis facere earum accusantium, impedit quo ad nesciunt praesentium.
+    </div>
+</body>
+
+</html>
