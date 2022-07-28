@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS03 - Border Padding Margin</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .block {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .border-block {
+            border: 2px solid green;
+            border-bottom: 5px solid red;
+            /* Keep the box size as defined -> default: content-box */
+            /* Padding with parent */
+            padding: 10px 8px;
+            /* Margin with by-side component */
+            margin-bottom: 20px;
+        }
+        
+        .text-block {
+            border: 2px solid blue;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block border-block">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus architecto maxime voluptatum, quis accusamus voluptates enim, quas libero modi voluptatem dolorum? Totam iusto distinctio minima rerum debitis nesciunt ipsa officiis?
+    </div>
+    <div class="block text-block">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur id delectus asperiores earum quas dicta modi temporibus nemo ex. Repellendus!
+    </div>
+</body>
+
+</html>
