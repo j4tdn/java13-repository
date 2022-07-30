@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS03 - Absolute Position</title>
+    <style>
+        .border {
+            border: 1px solid black;
+        }
+        
+        .small-block {
+            width: 30px;
+            height: 80px;
+        }
+        
+        .big-block {
+            width: 620px;
+            height: 340px;
+        }
+        
+        .block-green {
+            background: green;
+        }
+        
+        .block-yellow {
+            background: yellow;
+        }
+        
+        .parent {
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .child {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        
+        img {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 15px;
+            left: 10px;
+        }
+        
+        input {
+            padding: 13px 42px;
+            font-size: 20px;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent big-block block-yellow border">
+        <div class="child small-block block-green border"></div>
+
+    </div>
+    <div class="search-box">
+        <img src="images/loupe.png" alt="">
+        <input type="text" placeholder="Input field">
+    </div>
+
+</body>
+
+</html>
