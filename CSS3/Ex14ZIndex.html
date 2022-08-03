@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS03 - ZIndex</title>
+    <style>
+        .block {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+        
+        .block-orange {
+            background: orange;
+            z-index: 1;
+        }
+        
+        .block-green {
+            background: green;
+            z-index: 4;
+        }
+        
+        .block-blue {
+            background: blue;
+            left: 150px;
+            bottom: 300px;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block block-orange"></div>
+    <div class="block block-green"></div>
+    <div class="block block-blue"></div>
+</body>
+
+</html>
