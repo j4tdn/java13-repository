@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS03 - Animation with transition</title>
+    <style>
+        .block {
+            margin: 120px;
+            width: 200px;
+            height: 200px;
+            background: orange;
+            border: 1px solid blue;
+            border-radius: 50%;
+            /* trasition: properties(all) duration [delay] delay_function*/
+            transition: all 2s ease-out;
+        }
+        
+        .block:hover {
+            width: 400px;
+            height: 400px;
+            border-radius: 0;
+            background: red;
+            transform: translate(500px, 0px);
+            box-shadow: 0 0 50px 10px green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block">
+
+    </div>
+</body>
+
+</html>
