@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ex03 Table Tags Demo</title>
+	<link rel="icon" href="../static/images/header.png" type="image/png">
+	<style type="text/css">
+		table.student-table{
+			width: 600px;
+		}
+		table.student-table td{
+			text-align: center;
+		}
+		table.student-table tbody tr:nth-child(2n+1){
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	<table class="student-table" border="1" cellspacing="0" cellpadding="5px">
+		<thead>
+			<tr>
+				<th rowspan="2">Name</th>
+				<th rowspan="2">Age</th>
+				<th rowspan="2">Email</th>
+				<th colspan="2">Phone</th>
+			</tr>
+			<tr>
+				<th>Fax1</th>
+				<th>Fax1</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Peter</td>
+				<td>19</td>
+				<td>peteralert@gmai.com</td>
+				<td>123</td>
+				<td>123</td>
+			</tr>
+			<tr>
+				<td>Terry</td>
+				<td>22</td>
+				<td>tomandjerry@edu.com</td>
+				<td>234</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Dummy</td>
+				<td>25</td>
+				<td>dummyheart@gmai.com</td>
+				<td>345</td>
+				<td>345</td>
+			</tr>
+			<tr>
+				<td>Peter</td>
+				<td>19</td>
+				<td>peteralert@gmai.com</td>
+				<td>123</td>
+				<td>123</td>
+			</tr>
+			<tr>
+				<td>Terry</td>
+				<td>22</td>
+				<td>tomandjerry@edu.com</td>
+				<td>234</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Dummy</td>
+				<td>25</td>
+				<td>dummyheart@gmai.com</td>
+				<td>345</td>
+				<td>345</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
