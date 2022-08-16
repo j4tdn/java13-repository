@@ -1,0 +1,19 @@
+.logo{
+    margin-left: 100px;
+}
+.header{
+    height: 70px;
+    background: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navigation a{ 
+    color: white;
+    /* list-style-type: none; */
+}
+
+.navigation li{
+    display: inline-block;
+    margin: 40px;
+}

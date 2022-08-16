@@ -1,0 +1,8 @@
+footer{
+    width: 100vw;
+    background: orange;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}

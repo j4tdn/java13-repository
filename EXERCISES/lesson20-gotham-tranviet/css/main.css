@@ -1,0 +1,115 @@
+@font-face {
+    font-family: ProximaNova;
+    src: url(../ExportedFonts/ProximaNova/ProximaNova-Light.otf);
+    
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url(../ExportedFonts/ProximaNova/ProximaNova-Bold.otf);
+    font-weight: bold;
+}
+main{
+    margin-left: 70px;
+    font-family: ProximaNova;
+}
+.body-container{
+    float:left;
+    width: 65%;
+}
+.article{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+h1{    
+    font-size: 20px;
+    font-weight: bold;
+    margin: 30px 0px;
+    
+}
+.title{
+    font-size: 30px;
+    
+}
+
+.article-text{
+    margin-left: 20px;
+
+}
+.article-image{
+    border-radius: 5px;
+}
+
+.article-text div{
+    margin-bottom: 15px;
+}
+.type{
+    color: orange;
+}
+.more-artilcles{
+    border: 2px solid yellow;
+    padding: 10px 20px;
+}    
+.btn{
+    text-align: center;
+}
+.vertical-line{
+    border-left: 1px solid orange;
+    height: 100rem;
+    position: absolute;
+    left: 65%;
+    top: 50px;
+}
+.search-icon{
+    width: 15px;
+    height: 15px;
+
+}
+.search-bar{
+    border:1px lightblue solid;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.sidebar-container{
+    width: 40%;
+    /* border-left: 1px solid black; */
+    padding: 50px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table tr td {
+    border: 1px solid black;
+}
+td{
+    text-align: center;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    padding: 10px 0px;
+}
+tr:nth-of-type(1){
+    background: gray;
+}
+
+.sidebar-container h2{
+    margin-top: 20px;
+    font-weight: bold;
+}
+.sidebar-container h2::after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: wheat;
+    margin: 20px 0;
+}
+.date{
+    font-size: 10px;
+}
+.new{
+    margin: 30px 0px;
+}
