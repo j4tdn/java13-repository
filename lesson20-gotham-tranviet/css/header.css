@@ -1,0 +1,14 @@
+header{
+    background: orange;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ul{
+    display: flex;
+}
+li{
+    margin:15px;
+    padding: 15px;
+}
