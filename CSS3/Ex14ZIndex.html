@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS3 - ZIndex</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		.block {
+			width: 200px;
+			height: 200px;
+			position: relative;
+		}
+		.block-orange {
+			background: orange;
+			z-index: 1;
+		}
+		.block-blue {
+			background: blue;
+			z-index: 3;
+		}
+		.block-green {
+			background: green;
+			left: 120px;
+			bottom: 300px;
+			z-index: 2;
+		}
+	</style>
+</head>
+<body>
+	<div class="block block-orange">
+	</div>
+	<div class="block block-blue">
+	</div>
+	<div class="block block-green">
+	</div>
+</body>
+</html>

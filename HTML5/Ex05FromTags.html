@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ex07 Form Tags</title>
+	<link rel="icon" href="../static/images/header.png" type="image/png">
+
+	<style>
+		.page-title {
+			color: green;
+		}
+
+		tr td {
+			padding: 8px;
+		}
+	</style>
+
+</head>
+<body>
+	<header>
+		<h2 class="page-title">Welcome to JAVA13's web page</h2>
+	</header>
+
+	<hr>
+
+	<main>
+		<form>
+			<table>
+				<tbody>
+					<tr>
+						<td><label>First Name</label></td>
+						<td><input type="text"></td>
+					</tr>
+
+					<tr>
+						<td><label>Last Name</label></td>
+						<td><input type="text"></td>
+					</tr>
+
+					<tr>
+						<td><label>Gender</label></td>
+						<td>
+							<lable>Male</lable> <input type="radio" name="gender-group">
+							<lable>Female</lable> <input checked type="radio" name="gender-group">
+						</td>
+					</tr>
+
+					<tr>
+						<td><label>Age</label></td>
+						<td><input type="number" min="14" max="40"></td>
+					</tr>
+
+					<tr>
+						<td><label>University</label></td>
+						<td>
+							<select>
+								<option value="u1id">U1</option>
+								<option value="u2id">U2</option>
+								<option value="u3id">U3</option>
+							</select>
+						</td>
+					</tr>
+
+					<tr>
+						<td><label>Languages</label></td>
+						<td>
+							<input type="checkbox"> JAVA
+							<input type="checkbox"> PHP
+							<input type="checkbox"> NodeJs
+						</td>
+					</tr>
+
+					<tr>
+						<td><label>DateOfBirth</label></td>
+						<td><input type="date" min="2017-04-01" max="2017-04-30"></td>
+					</tr>
+
+					<tr>
+						<td><label>Email</label></td>
+						<td><input type="email"></td>
+					</tr>
+
+					<tr>
+						<td><label>Password</label></td>
+						<td><input type="password"></td>
+					</tr>
+
+					<tr>
+						<td><input type="button" value="Sign Up"></td>
+						<td><input type="reset" value="Reset"></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</main>
+
+	<hr>
+
+	<footer>
+		
+	</footer>
+</body>
+</html>

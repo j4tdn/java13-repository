@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ex03 Table Tags Demo</title>
+	<link rel="icon" href="../static/images/header.png" type="image/png">
+
+	<style>
+		table.student-table {
+			width: 600px;
+		}
+
+		table.student-table thead {
+			background: yellow;
+		}
+
+		/*
+			an + b
+			+ a: life cycle
+			+ b: start index , one-index base
+		*/
+		table.student-table tbody tr:nth-child(2n+1) {
+			background-color: grey;
+		}
+
+		table.student-table td {
+			text-align: center;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<h3>Table 3.1: Java13 Student List</h3>
+
+	<table class="student-table" border="1" cellspacing="0" cellpadding="5px">
+		<thead>
+			<tr>
+				<th rowspan="2">Name</th>
+				<th rowspan="2">Age</th>
+				<th rowspan="2">Email</th>
+				<th colspan="2">Phone</th>
+			</tr>
+			<tr>
+				<th>Fax1</th>
+				<th>Fax2</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Peter</td>
+				<td>19</td>
+				<td>peteralex@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Terry</td>
+				<td>22</td>
+				<td>tomandjerry@edu.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Dummy</td>
+				<td>20</td>
+				<td>dummydata@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Peter</td>
+				<td>19</td>
+				<td>peteralex@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Terry</td>
+				<td>22</td>
+				<td>tomandjerry@edu.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Dummy</td>
+				<td>20</td>
+				<td>dummydata@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+		</tbody>
+	</table>	
+</body>
+</html>

@@ -1,0 +1,86 @@
+/*CSS pseudo elements - position*/
+.lessons p {
+	background: #fff;
+	color: #000;
+}
+
+/*.lessons p:first-child {*/
+.lessons p:first-of-type {
+	background: orange;
+}
+
+.lessons p:last-child {
+	background: blue;
+}
+
+
+/*CSS pseudo elements - form*/
+form.register>div {
+	margin: 20px 0;
+}
+
+.inp-1:focus {
+	border: none;
+	outline: none;
+	padding: 10px;
+	box-shadow: inset 0 0 2px green;
+}
+
+.cbx-group input[type='checkbox']:checked + label {
+	color: red;
+	font-weight: bold;
+}
+
+.inp-3:valid {
+	box-shadow: 0 0 3px green;
+}
+
+.inp-3:invalid {
+	box-shadow: 0 0 3px red;
+}
+
+.inp-4:enabled {
+	color: blue;
+}
+
+.inp-4:disabled {
+	color: black;
+}
+
+/*CSS selectors*/
+* {
+	box-sizing: border-box;
+	/*margin: 0;
+	padding: 0;*/
+}
+p {
+	color: red;
+}
+
+.description {
+	color: green;
+	font-size: 18px;
+}
+
+/*X Y*/
+ul li {
+	background: yellow;
+}
+
+/*X>Y*/
+ul>li>a {
+	text-decoration: none;
+}
+
+/*
+	X+Y: Y nearest X
+  	X~Y: many levels
+*/
+h1~p {
+	text-decoration: line-through;
+}
+
+/*X[attribute]*/
+a[href='link1'] {
+	background: white;
+}

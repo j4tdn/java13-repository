@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS3 - Position Absolute</title>
+	<style>
+		.border {
+			border: 1px solid black;
+		}
+		.small-block {
+			width: 80px;
+			height: 80px;
+		}
+		.big-block {
+			width: 620px;
+			height: 340px;
+		}
+		.block-green {
+			background: green;
+		}
+		.block-yellow {
+			background: yellow;
+		}
+
+		.parent {
+			position: relative;
+			margin-bottom: 20px;
+		}
+
+		.child {
+			position: absolute;
+			left: 20px;
+			top: 20px;
+		}
+
+		.search-box {
+			position: relative;
+		}
+		img {
+			position: absolute;
+		    top: 11px;
+		    left: 6px;
+		}
+		input[type='text'] {
+			padding: 20px 60px;
+    		font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent big-block block-yellow border">
+		<div class="child small-block block-green border"></div>
+	</div>
+
+	<div class="search-box">
+		<img src="images/header.png">
+		<input type="text" placeholder="Input field">
+	</div>
+	
+</body>
+</html>

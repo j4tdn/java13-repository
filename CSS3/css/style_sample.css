@@ -1,0 +1,13 @@
+.block {
+	width: 200px;
+	height: 200px;
+}
+.block-orange {
+	background: orange;
+}
+.block-blue {
+	background: blue;
+}
+.block-green {
+	background: green;
+}

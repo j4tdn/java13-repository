@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS3 - Border Padding Margin</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		.block {
+			width: 200px;
+			height: 200px;
+		}
+
+		.border-block {
+			border: 2px solid green;
+		    border-bottom: 10px solid red;
+		    
+		    /* Keep box size as defined 
+		    --> default:  content-box */
+		    padding: 10px 8px;
+
+		    margin-bottom: 20px;
+		}
+
+		.text-block {
+			border: 2px solid blue;
+			margin-top: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="block border-block">
+		Lorem *** ipsum dolor sit amet consectetur adipisicing elit. Delectus reprehenderit eligendi molestiae voluptatum deserunt minus nostrum perferendis ipsum, voluptate debitis.
+	</div>
+
+	<div class="block text-block">
+		Lorem ### ipsum dolor, sit amet consectetur adipisicing, elit. Consequuntur sit, illum, beatae cumque id itaque nemo. Possimus eius magni, commodi.
+	</div>
+</body>
+</html>

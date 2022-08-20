@@ -1,0 +1,37 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.parent {
+	background: #ddd;
+	width: 77vw;
+	height: 200px;
+	display: flex;
+}
+
+.child {
+	/*flex: grow(0) shrink(1) basis(auto)*/
+	background: skyblue;
+	flex-basis: 400px;
+	border: 2px solid #000;
+	font-size: 2rem;
+}
+
+.child:nth-of-type(1) {
+	
+}
+.child:nth-of-type(2) {
+	flex-shrink: 2;
+}
+.child:nth-of-type(3) {
+
+}
+.child:nth-of-type(4) {
+
+}
+
