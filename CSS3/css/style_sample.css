@@ -1,0 +1,19 @@
+.block {
+	width: 200px;
+	height: 200px;
+	position: relative;
+}
+.block-orange {
+	background: orange;
+	z-index: 1;
+}
+.block-blue {
+	background: blue;
+	z-index: 3;
+}
+.block-green {
+	background: green;
+	bottom: 300px;
+	left: 120px;
+	z-index: 2;
+}

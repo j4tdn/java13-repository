@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS3 - Display and Sample</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style_sample.css">
+	<style type="text/css">
+		div {
+			padding: 10px;
+			box-sizing: border-box;
+
+			/*display*/
+			/*div: default --> display:  block
+			inline:  cannot set size for element;
+				: size depends on it's own content
+				: do not enter new line after finish
+
+			inline-block: ;
+				: could set size of element
+				: could use padding property
+				: do not enter new line after finish an element
+			*/
+			display: inline-block;
+		}
+		.testing {
+			/*display:  none;*/
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="block block-orange">
+		Block A1
+	</div>
+	<div class="block block-blue">
+		Block A2
+	</div>
+	<div class="block block-green">
+		Block A3
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+p {
+    color: red;
+}
+
+.description {
+    color: green;
+}
+
+a[href*='link'] {
+    background-color: yellow;
+}
+
+h1~p {
+    text-decoration: line-through;
+}
+
+
+.inp-3:invalid {
+    box-shadow: 0px 0px 5px 10px red;
+}
+
+.inp-3:valid {
+    box-shadow: 0px 0px 5px green;
+}
+
+.inp-1:focus {
+    border: none;
+    outline: none;
+    padding: 10px;
+    box-shadow: inset 0px 0px 2px red;
+}
+
+#fb:checked +label{
+    box-shadow: 0px 0px 5px red;
+}
+
