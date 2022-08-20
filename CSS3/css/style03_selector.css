@@ -1,0 +1,82 @@
+/*CSS pseudo elements - position*/
+.lessons p {
+	background: #fff;
+}
+
+.lessons p:first-of-type {
+	background: orange;
+}
+
+.lessons p:first-child {
+	background: red;
+}
+
+.lessons p:last-child {
+	background: blue;
+}
+
+
+
+
+
+
+/*CSS pseudo element - form*/
+form.register>div {
+	margin: 20px 0;
+}
+
+.inp-1:focus {
+	border: none;
+	outline: none;
+	padding: 10px;
+	box-shadow: inset 0 0 10px red;
+}
+
+.cbx-group input[type="checkbox"]:checked + label {
+	color: red;
+}
+
+.inp-3:valid {
+	box-shadow: 0 0 10px green;
+}
+
+.inp-3:invalid {
+	box-shadow: 0 0 10px red;
+}
+
+.inp-4:enable {
+
+}
+
+.inp-4:disable {
+
+}
+
+
+
+
+
+/* CSS selectors */
+
+
+.description {
+	color: green;
+	font-size: 18px;
+}
+
+ul li {
+	background: yellow;
+}
+
+ul>li>a {
+	text-decoration: none;
+}
+
+/*h1+p {
+	text-decoration: line-through;
+}
+*/
+h1~p {
+	text-decoration: line-through;
+}
+ 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS3 - Animation Transition</title>
+	<style>
+		.block {
+			margin: 120px;
+			width: 200px;
+			height: 200px;
+			border: 2px solid blue;
+			background: orange;
+			border-radius: 50%;
+			/*transition: property(all), delay, duration, function*/
+			transition: all 2s 0s linear;
+		}
+
+		.block:hover {
+			width: 50px;
+			height: 50px;
+			background: yellow;
+			box-shadow: 0 0 50px 10px red;
+		}
+	</style>
+</head>
+<body>
+	<div class="block">
+		
+	</div>
+</body>
+</html>

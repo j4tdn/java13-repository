@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ex03 Table Tags</title>
+	<link rel="icon" href="../static/images/header.png" type="">
+
+	<style>
+		table.student-table {
+			width: 500px;
+		}
+
+		table.student-table td {
+			text-align: center;
+		}
+
+		/*
+			an + b
+			an:  life-circle;
+			b:  start index;
+		*/
+		table.student-table tbody tr:nth-child(2n+1) {
+			background-color: grey;
+		}
+	</style>
+</head>
+<body>
+	<h3>Table 3.1: Java 13 Student List</h3>
+	<table class="student-table" border="1" cellspacing="0" cellpadding="10px">
+		<thead>
+			<tr>
+				<th rowspan="2">Name</th>
+				<th rowspan="2">Age</th>
+				<th rowspan="2">Email</th>
+				<th colspan="2">Phone</th>
+			</tr>
+			<tr>
+				<th>Fax 1</th>
+				<th>Fax 2</th>
+			</tr>	
+		</thead>
+		<tbody>
+			<tr>
+				<td>Peter</td>
+				<td>19</td>
+				<td>peter@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Alex</td>
+				<td>22</td>
+				<td>alex@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Tom</td>
+				<td>15</td>
+				<td>tom@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Jerry</td>
+				<td>30</td>
+				<td>jerry@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Peter</td>
+				<td>19</td>
+				<td>peter@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Alex</td>
+				<td>22</td>
+				<td>alex@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Tom</td>
+				<td>15</td>
+				<td>tom@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+			<tr>
+				<td>Jerry</td>
+				<td>30</td>
+				<td>jerry@gmail.com</td>
+				<td>123</td>
+				<td>234</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

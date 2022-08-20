@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ex07 Form Tags</title>
+	<link rel="icon" href="../static/images/header.png" type="">
+	<style>
+		.page-title {
+			color: green;
+		}
+		tr td {
+			padding: 8px;
+		}
+	</style>
+</head>
+<body>
+	<header class="page-title">Welcome to JAVA13's web page</header>
+
+	<main>
+		<form>
+			<table>
+				<tbody>
+					<tr>
+						<td><label>Firstname</label></td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td><label>Lastname</label></td>
+						<td><input type="text"></td>
+					</tr>
+					<tr>
+						<td><label>Gender</label></td>
+						<td>
+							<label>Male</label> <input type="radio" name="gender-group">
+							<label>Female</label> <input type="radio" name="gender-group">
+						</td>
+					</tr>
+					<tr>
+						<td><label>Age</label></td>
+						<td><input type="number" min="12" max="30"></td>
+					</tr>
+					<tr>
+						<td><label>University</label></td>
+						<td>
+							<select>
+								<option value="U1">U1</option>
+								<option value="U2">U2</option>
+								<option value="U3">U3</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</main>
+
+	<footer>
+		
+	</footer>
+</body>
+</html>

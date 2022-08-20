@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS3 - Background property</title>
+	<style>
+		.block {
+			width: 200px;
+			height: 300px;
+
+			border: 2px solid black;
+			box-sizing: border-box;
+
+			margin: 20px;
+			float: left;
+		}
+
+		.image-bottom-right {
+			background-image: url(images/cat.jfif);
+			background-size: 100px 100px;
+			background-repeat: no-repeat;
+			background-position: bottom right;
+		}
+
+		.image-cover {
+			background-image: url(images/cat.jfif);
+			/*width height of container must match rate width original with height*/
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div class="block image-bottom-right">
+		
+	</div>
+	<div class="block image-cover">
+		
+	</div>
+</body>
+</html>

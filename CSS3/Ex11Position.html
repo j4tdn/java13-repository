@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS3 - Position property</title>
+	<style>
+		.block {
+			border: 1px solid black;
+			margin: 5px;
+			width: 200px;
+			height: 200px;
+		}
+
+		.block-green {
+			background-color: green;
+		}
+
+		.block-yellow {
+			background-color: yellow;
+			/* relative to itself */
+			position: relative;
+			left: 20px;
+			top: 60px;
+		}
+
+		.block-blue {
+			background-color: blue; 
+			/*absolute with it's parent
+			  default:  parent is html
+			  If has parent:  parent is relative; 
+			*/
+			position: absolute;
+			top: 30px;
+			left: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- div default position:static -->
+	<div class="block block-green"></div>
+	<div class="block block-yellow">
+		<div class="block block-blue"></div>
+	</div>
+	<div class="block block-blue"></div>
+</body>
+</html>

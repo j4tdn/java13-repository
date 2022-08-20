@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS3 - Border Padding Margin</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		.block {
+			width: 300px;
+			height: 300px;
+		}
+		.border-block {
+			border: 2px solid green;
+			border-bottom: 10px solid red;
+			/*keep box size as defined -- default: content-box*/
+			padding: 20px 8px;
+			margin-bottom: 20px ;
+		}
+		.text-block {
+			border: 2px solid blue; 
+			/*margin-top: 40px ;*/
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="block border-block">
+		Lorem *** ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+	<div class="block text-block">
+		Lorem ### ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+</body>
+</html>
