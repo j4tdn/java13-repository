@@ -103,6 +103,68 @@
   padding-left: 65px;
 }
 
+.page-footer {
+  background: #111;
+  padding: 25px 0;
+  color: #fff;
+}
+.page-footer .wrapper {
+  width: 1120px;
+  height: 100%;
+  margin: 0 auto;
+}
+.page-footer a {
+  font-size: 13px;
+  color: #999;
+}
+.page-footer a:hover {
+  color: #fff;
+}
+.page-footer .footer-column {
+  width: 25%;
+  float: left;
+}
+.page-footer::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.page-footer .category {
+  color: #fff;
+  text-transform: uppercase;
+}
+.page-footer .category::after {
+  content: "";
+  margin: 15px 0;
+  display: block;
+  width: 90%;
+  height: 1px;
+  background-color: #292929;
+}
+.page-footer .social-icons li {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #000;
+  line-height: 44px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 5px;
+}
+.page-footer .social-icons li:hover {
+  background: #fff;
+}
+.page-footer .social-icons li:hover a {
+  color: red;
+}
+.page-footer .social-icons li a {
+  font-size: 16px;
+  color: #fff;
+}
+.page-footer .copyright {
+  margin-top: 20px;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

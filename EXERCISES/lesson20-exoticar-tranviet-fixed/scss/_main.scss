@@ -1,3 +1,4 @@
+@import './utils';
 .banner {
     display: flex;
     font-size: 22px;
@@ -41,9 +42,7 @@
 
         // display: flex;
         &::after {
-            content: '';
-            display: block;
-            clear: both;
+            @include reset-float;
         }
 
         .quote {
@@ -75,7 +74,6 @@
     }
 
     article {
-
         width: 50%;
         padding-top: 50px
     }
