@@ -1,4 +1,33 @@
+@import 'reset';
 @import 'footer';
 @import 'main';
 @import 'header';
-@import 'reset';
+@import 'utils';
+
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: Proxima;
+    src: url('../fonts/ProximaNova/ProximaNova-Light.otf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: Proxima;
+    src: url('../fonts/ProximaNova/ProximaNova-Reg.otf') format('truetype');
+}
+@font-face {
+    font-family: Proxima;
+    src: url('../fonts/ProximaNova/ProximaNova-Bold.otf') format('truetype');
+    font-weight: bold;
+}
+
+.wrapper{
+    @include wrapper-props;
+}
