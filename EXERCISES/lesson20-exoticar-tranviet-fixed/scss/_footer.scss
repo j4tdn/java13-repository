@@ -1,0 +1,61 @@
+@import './utils';
+.page-footer{
+    background: #111;
+    padding: 25px 0;
+    color: #fff;
+    .wrapper {
+       @include wrapper-props;
+    } 
+    a{
+        font-size: 13px;
+        color: #999;
+        &:hover{
+            color: #fff;
+        }
+    }
+    .footer-column{
+        width: 25%;
+        float: left;
+    }
+    &::after{
+        @include reset-float;
+    }
+    .category{
+        color: #fff;
+        text-transform: uppercase;
+
+        &::after{
+            content: '';
+            margin: 15px 0;
+            display: block;
+            width: 90%;
+            height: 1px;
+            background-color: #292929;
+        }
+    }
+    .social-icons {
+        li{
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #000;
+            line-height: 44px;
+            text-align: center;
+            display: inline-block;
+            margin-right: 5px;
+            &:hover{
+                background: #fff;
+                a{
+                    color: red;
+                }
+            }
+            a{
+                font-size: 16px;
+                color:#fff;
+            }
+        }
+    }
+    .copyright{
+        margin-top: 20px;
+    }
+} 

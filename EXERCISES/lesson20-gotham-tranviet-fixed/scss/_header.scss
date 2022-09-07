@@ -1,0 +1,19 @@
+.page-header{
+    height: 68px;
+    background: #f7c61d;
+    .wrapper{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        nav{
+            ul{
+                display: flex;
+                // gap: 70px;
+                li{
+                    margin: 30px;
+                }
+            }
+            
+        }
+    }
+}

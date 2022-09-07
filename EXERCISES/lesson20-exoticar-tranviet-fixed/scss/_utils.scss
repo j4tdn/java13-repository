@@ -1,0 +1,11 @@
+@mixin reset-float {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+@mixin wrapper-props{
+        width: 1120px;
+        height: 100%;
+        margin: 0 auto;
+}

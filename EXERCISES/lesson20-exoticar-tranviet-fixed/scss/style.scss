@@ -1,0 +1,15 @@
+@import 'header';
+@import 'main';
+@import 'footer';
+@import 'reset';
+
+/* UTILITIES */
+$text-white: white;
+$text-black: black;
+
+/* BASE STYLE */
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+}
