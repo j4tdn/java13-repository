@@ -1,0 +1,8 @@
+.welcome::after {
+	content: '';
+	display: block;
+	width: 39vw;
+	height: 2px;
+	background: green;
+	margin: 40px 0;
+}
