@@ -1,9 +1,17 @@
 /*
    JS Functions
 
-   function name();
+	- Function declaration
+     function name(){};
+     function name(arg1, arg2, ...){};
 
-   function name(arg1, arg2, ...);
+   - Function expression
+     let name = function(){};
+     let name = function(arg1, arg2, ...){}; 
+     let name = () => {}
+     let name = (arg1, arg2, ...) => {}
+
+   -- Everything in JS is object  
 
 */
 
@@ -60,3 +68,11 @@ printElements(numbers, isOdd);
 printElements(numbers, function(number) {
 	return number % 2 === 0;
 });
+
+printf('-----------expression functions-----------');
+// let isEven = function(number) {
+let isEven = (number) => {
+	return number % 2 === 0;
+}
+// isOdd is callback function
+printElements(numbers, isEven);
