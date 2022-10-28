@@ -1,0 +1,8 @@
+.bg-green-internal>div {
+    background-color: green;
+}
+
+.block-medium>div {
+    height: 100px;
+    border: 1px solid blue;
+}
