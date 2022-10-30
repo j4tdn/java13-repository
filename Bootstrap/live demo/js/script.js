@@ -10,4 +10,3 @@ function printCurrentWindowWidth() {
     let size = window.innerWidth
     $('.ww').text(size + "px")
 }
-s
