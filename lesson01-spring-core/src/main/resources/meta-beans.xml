@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="itemGroupA" class="javaot.bean.ItemGroup"></bean>
+    <bean id="itemGroupB" class="javaot.bean.ItemGroup">
+        <property name="id" value="1"></property>
+        <property name="name" value="Item Group 1"></property>
+    </bean>
+    <bean id="itemGroupC" class="javaot.bean.ItemGroup">
+        <constructor-arg name="id" value="2"></constructor-arg>
+        <constructor-arg name="name" value="Item Group 2"></constructor-arg>
+    </bean>
+</beans>
