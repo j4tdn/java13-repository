@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<import resource="factory.xml"/>
+	<import resource="lifecycle.xml"/>
+	
+	<!-- Create an Item object by empty constructor -->
+	<bean id="itemGroupA" class="javaot.bean.ItemGroup"></bean>
+	
+	<bean id="itemGroupB" class="javaot.bean.ItemGroup" scope="prototype">
+		<property name="id" value="1"></property>
+		<property name="name" value="Item Group B1"></property>
+	</bean>
+	
+	<!-- Create an Item object by constructor full parameters -->
+	<bean id="itemGroupC" class="javaot.bean.ItemGroup">
+		<constructor-arg name="id" value="2"></constructor-arg>
+		<constructor-arg name="name" value="Item Group C2"></constructor-arg>
+	</bean>
+	
+	<bean id="item" class="javaot.bean.Item">
+		<property name="id" value="301"></property>
+		<property name="name" value="Item 301"></property>
+		<property name="itemGroup" ref="itemGroupB"></property>
+		<property name="providers">
+			<list>
+				<value>P1</value>
+				<value>P2</value>
+				<value>P3</value>
+			</list>
+		</property>
+	</bean>
+		
+	
+</beans>
