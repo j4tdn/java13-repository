@@ -1,16 +1,23 @@
 package javaot.demo;
 
+import com.sun.security.ntlm.Client;
+import javaot.bean.Item;
 import javaot.bean.ItemGroup;
+import javaot.services.ClientService;
 import javaot.utils.ContextUtils;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringBeanDemo {
     private static final String LOCATION = "meta-beans.xml";
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext(LOCATION);
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(LOCATION);
 
         ContextUtils.showBeansName(context);
+
+        ClientService clientService = context.getBean("clientServiceX", ClientService.class);
+        clientService.logClient();
 
         ItemGroup igA = context.getBean("itemGroupA", ItemGroup.class);
         ItemGroup igB1 = context.getBean("itemGroupB", ItemGroup.class);
@@ -24,5 +31,10 @@ public class SpringBeanDemo {
 
         System.out.println("igB1 hashcode: " + System.identityHashCode(igB1));
         System.out.println("igB2 hashcode: " + System.identityHashCode(igB2));
+
+        Item itA = context.getBean("itemA", Item.class);
+        System.out.println("itA ==> " + itA);
+
+        context.close();
     }
 }

@@ -3,15 +3,29 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    <import resource="factory.xml"></import>
+    <import resource="lifecycle.xml"></import>
     <!-- bean definitions here -->
     <bean id="itemGroupA" class="javaot.bean.ItemGroup"></bean>
-    <bean id="itemGroupB" class="javaot.bean.ItemGroup">
+    <bean id="itemGroupB" class="javaot.bean.ItemGroup" scope="prototype">
         <property name="id" value="1"></property>
         <property name="name" value="Item Group 1"></property>
     </bean>
     <bean id="itemGroupC" class="javaot.bean.ItemGroup">
         <constructor-arg name="id" value="2"></constructor-arg>
         <constructor-arg name="name" value="Item Group 2"></constructor-arg>
+    </bean>
+
+    <bean id="itemA" class="javaot.bean.Item">
+        <property name="id" value="301"></property>
+        <property name="name" value="Item 301"></property>
+        <property name="itemGroup" ref="itemGroupB"></property>
+        <property name="providers">
+            <list>
+                <value>P1</value>
+                <value>P2</value>
+                <value>P3s</value>
+            </list>
+        </property>
     </bean>
 </beans>
