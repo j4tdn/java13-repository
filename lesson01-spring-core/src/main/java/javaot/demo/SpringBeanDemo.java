@@ -15,7 +15,7 @@ public class SpringBeanDemo {
         ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(LOCATION);
 
         ContextUtils.showBeansName(context);
-
+        	
         ClientService clientService = context.getBean("clientServiceX", ClientService.class);
         clientService.logClient();
 
