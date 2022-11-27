@@ -31,3 +31,6 @@ Caching Data
 Thao tác cơ bản
 --> Create Read(ALL|One) Update Delete
 --> save(Entity), select, get(id), save/saveOrUpdate(Entity), remove(id)
+
+
+==> save, update, delete ---> require Transaction in Hibernate
