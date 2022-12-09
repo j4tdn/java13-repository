@@ -9,22 +9,22 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Customer Form</title>
+    <title>Student Form</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/customer-process" method="post">
+<form:form modelAttribute="student" action="${pageContext.request.contextPath}/student-process" method="post">
     <div>
-        <input type="text" name="fullName" placeholder="First Name">
+        <form:input type="number" path="id" placeholder="ID" />
     </div>
     <div>
-        <input type="text" name="lastName" placeholder="Last name">
+        <form:input type="text" path="fullName" placeholder="Full name"/>
     </div>
     <div>
-        <input type="number" name="age" placeholder="Age">
+        <form:input type="number" path="age" placeholder="Age"/>
     </div>
     <div>
-        <input type="submit" value="Submit" >
+        <input type="submit" value="Submit">
     </div>
-</form>
+</form:form>
 </body>
 </html>
