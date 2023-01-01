@@ -30,6 +30,7 @@ public class StudentController
         Student student = new Student();
         student.setAge(10);
         model.addAttribute("student", student);
+        model.addAttribute("countries", new String[]{"VietNam", "America", "France", "China", "Indonesia"});
         return "student/student-form";
     }
 }

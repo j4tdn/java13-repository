@@ -12,24 +12,23 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- Add support for component scanning  -->
-    <context:component-scan base-package="javaot" />
+    <context:component-scan base-package="javaot"/>
 
     <!-- Enable scanning, Add support for conversion, format and validation support  -->
-    <mvc:annotation-driven />
-
+    <mvc:annotation-driven/>
+    <!-- Load static data to web server -->
+    <mvc:resources mapping="/static/**" location="/static/"></mvc:resources>
     <!-- Define Spring MVC view resolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/view/" />
-        <property name="suffix" value=".jsp" />
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
-<!--    &lt;!&ndash; Add support for static resources &ndash;&gt;-->
-<!--    <mvc:resources mapping="/resources/**" location="/static/" ></mvc:resources>-->
 
-<!--    &lt;!&ndash; customer error message with validation  &ndash;&gt;-->
-<!--    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">-->
-<!--        <property name="basename" value="MessageResource" />-->
-<!--    </bean>-->
+    <!-- custom error message with validation  -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames" value="messages"/>
+    </bean>
 
 </beans>

@@ -1,29 +1,36 @@
 package javaot.controller;
 
 import javaot.bean.Customer;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
-public class CustomerController
-{
+public class CustomerController {
+    @InitBinder
+    public void preHandler(WebDataBinder webDataBinder){
+        StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+        webDataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+    }
     @GetMapping("customer")
-    public String customerForm(){
+    public String customerForm(Model model) {
+        model.addAttribute("customer", new Customer());
         return "customer/customer-form";
     }
+
     @PostMapping("customer-process")
     public String customerProcess(
-            @RequestParam String fullName,
-            @RequestParam String lastName,
-            @RequestParam Integer age,
-            Model model
-    ){
-        Customer customer = new Customer(fullName, lastName, age);
-        model.addAttribute("customer", customer);
-        return "customer/customer";
+            @Valid @ModelAttribute("customer") Customer customer,
+            BindingResult bindingResult
+            ) {
+        System.out.println("bindingResult: " + bindingResult);
+        System.out.println("\n\n");
+
+        return bindingResult.hasErrors() ? "customer/customer-form" : "customer/customer";
     }
 }
