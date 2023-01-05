@@ -1,18 +1,22 @@
+<%@include file="WEB-INF/taglib/import.jsp" %>
 <html>
 <body>
-    <h2>Hello World. My name is Viet! </h2>
-    <p>Today I will show you how  to install tomcat server, and run spring mvc project with TC in Intellij</p>
-    <div>
-        <a href="${pageContext.request.contextPath}/home">Home Page</a>
-    </div>
-    <div>
-        <a href="${pageContext.request.contextPath}/hello">Name Form</a>
-    </div>
-    <div>
-        <a href="${pageContext.request.contextPath}/customer">Customer Form</a>
-    </div>
-    <div>
-        <a href="${pageContext.request.contextPath}/student">Student Form TAG</a>
-    </div>
+<h2>Hello World. My name is Viet! </h2>
+<p>Today I will show you how to install tomcat server, and run spring mvc project with TC in Intellij</p>
+<div>
+    <a href="${contextPath}/home">Home Page</a>
+</div>
+<div>
+    <a href="${contextPath}/hello">Name Form</a>
+</div>
+<div>
+    <a href="${contextPath}/customer">Customer Form</a>
+</div>
+<div>
+    <a href="${contextPath}/student">Student Form TAG</a>
+</div>
+<div>
+    <a href="${contextPath}/children">Children Index</a>
+</div>
 </body>
 </html>

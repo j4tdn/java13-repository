@@ -9,7 +9,8 @@ public class Student {
     private String country;
     private String favoriteLanguage;
     private String[] operatingSystems;
-    public Student(){
+
+    public Student() {
 
     }
 

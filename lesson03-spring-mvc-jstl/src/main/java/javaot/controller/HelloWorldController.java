@@ -2,23 +2,23 @@ package javaot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
+import static javaot.common.Application.NAME_FORM_PAGE;
+import static javaot.common.Application.NAME_INFO_PAGE;
 
 @Controller
 public class HelloWorldController {
-//    @RequestMapping(path="hello", method= RequestMethod.GET)
     @GetMapping("hello")
-    public String helloWorld(){
-        return "name/name-form";
+    public String helloWorld() {
+        return NAME_FORM_PAGE;
     }
 
-//    @RequestMapping("process")
     @PostMapping("process")
-
-    public String processHello(@RequestParam("fullName") String content, Model model){
+    public String processHello(@RequestParam("fullName") String content, Model model) {
         model.addAttribute("fullName", content);
-        return "name/name";
+        return NAME_INFO_PAGE;
     }
 }

@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../../taglib/import.jsp" %>
+<%@ include file="../../taglib/import.jsp"%>
 <html>
 <head>
-    <title>Student</title>
+    <title>CHILDREN INFORMATION</title>
 </head>
 <body>
-<h1>${student}</h1>
+    <h1>${children}</h1>
 </body>
 </html>

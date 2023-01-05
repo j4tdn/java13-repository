@@ -11,8 +11,8 @@ public class Customer {
     private String lastName;
 
     @NotNull
-    @Min(value=1000, message="must bigger than 1000")
-    @Max(value=99999999, message="")
+    @Min(value = 1000, message = "must bigger than 1000")
+    @Max(value = 99999999, message = "")
     private Integer freePasses;
     @NotNull
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
@@ -24,6 +24,7 @@ public class Customer {
         this.freePasses = freePasses;
         this.postalCode = postalCode;
     }
+
     public Customer() {
 
     }
