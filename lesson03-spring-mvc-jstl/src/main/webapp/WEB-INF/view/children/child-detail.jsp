@@ -5,6 +5,6 @@
     <title>CHILDREN INFORMATION</title>
 </head>
 <body>
-    <h1>${children}</h1>
+    <h1>${child}</h1>
 </body>
 </html>

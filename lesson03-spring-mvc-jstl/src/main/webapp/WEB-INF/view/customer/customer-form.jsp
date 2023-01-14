@@ -3,14 +3,12 @@
 <html>
 <head>
     <title>Customer Form</title>
-    <link rel="stylesheet" href="<c:url value="/static/css/style.css"/>">
 </head>
 <body>
 <form:form modelAttribute="customer" action="${contextPath}/customer-process" method="post">
     <div>
-        First Name: <form:input type="text" name="fullName" placeholder="First Name" path="firstName"/>
+        First Name: <form:input type="text" name="firstName" placeholder="First Name" path="firstName"/>
         <form:errors path="firstName" cssClass="error"/>
-
     </div>
     <div>
         Last Name (*): <form:input type="text" name="lastName" placeholder="Last name" path="lastName"/>

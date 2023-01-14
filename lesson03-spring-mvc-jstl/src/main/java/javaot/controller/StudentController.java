@@ -1,6 +1,7 @@
 package javaot.controller;
 
 import javaot.bean.Student;
+import javaot.common.MockData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,7 +23,9 @@ public class StudentController {
         Student student = new Student();
         student.setAge(10);
         model.addAttribute("student", student);
-        model.addAttribute("countries", new String[]{"VietNam", "America", "France", "China", "Indonesia"});
+        model.addAttribute("countries", MockData.getAllCountries());
+        model.addAttribute("operatingSystems", MockData.getAllOperatingSystems());
+        model.addAttribute("favoriteLanguages", MockData.getAllFavoriteLanguages());
         return STUDENT_FORM_PAGE;
     }
 }

@@ -26,15 +26,15 @@
     </div>
     <div>
         Favorite Language:
-        <form:radiobutton path="favoriteLanguage" value="JAVA" label="JAVA"></form:radiobutton>
-        <form:radiobutton path="favoriteLanguage" value="PYTHON" label="PYTHON"></form:radiobutton>
-        <form:radiobutton path="favoriteLanguage" value=".NET" label=".NET"></form:radiobutton>
+        <c:forEach var="language" items="${favoriteLanguages}">
+            <form:radiobutton path="favoriteLanguage" value="${language}" label="${language}"></form:radiobutton>
+        </c:forEach>
     </div>
     <div>
         Operating Systems:
-        <form:checkbox path="operatingSystems" value="MACOS" label="MACOS"></form:checkbox>
-        <form:checkbox path="operatingSystems" value="LINUX" label="LINUX"></form:checkbox>
-        <form:checkbox path="operatingSystems" value="WINDOWS" label="WINDOWS"></form:checkbox>
+        <c:forEach var="os" items="${operatingSystems}">
+            <form:checkbox path="operatingSystems" value="${os}" label="${os}"></form:checkbox>
+        </c:forEach>
     </div>
     <div>
         <input type="submit" value="Submit">

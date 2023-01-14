@@ -21,7 +21,7 @@
 </table>
 <hr>
 <div style="margin-top: 10px">
-<a class="add-btn" href="${contextPath}/add-children-form"> + </a>
+<a class="add-btn" href="${contextPath}/add-child-form"> + </a>
 </div>
 </body>
 </html>

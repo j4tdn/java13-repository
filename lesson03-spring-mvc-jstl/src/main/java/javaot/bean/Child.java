@@ -1,15 +1,21 @@
 package javaot.bean;
 
+import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
-public class Children {
-    private Integer id;
+public class Child {
+    @NotNull
     private String fullName;
+    @NotNull
+    private Integer id;
+    @NotNull
     private Integer yearOfBirth;
-    public Children(){
+
+    public Child() {
 
     }
-    public Children(Integer id, String fullName, Integer yearOfBirth) {
+
+    public Child(Integer id, String fullName, Integer yearOfBirth) {
         this.id = id;
         this.fullName = fullName;
         this.yearOfBirth = yearOfBirth;
@@ -39,9 +45,10 @@ public class Children {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public Integer getAge(){
+    public Integer getAge() {
         return LocalDateTime.now().getYear() - yearOfBirth;
     }
+
     @Override
     public String toString() {
         return "Children{" +
