@@ -1,10 +1,13 @@
 package javaot.bean;
 
+import javaot.annotation.StartsWith;
+
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
 public class Child {
     @NotNull
+//    @StartsWith(prefix = "FN", message = "Full name must start with FN")
     private String fullName;
     @NotNull
     private Integer id;
