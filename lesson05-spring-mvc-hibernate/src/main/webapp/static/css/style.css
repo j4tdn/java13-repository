@@ -1,0 +1,24 @@
+h1 {
+    color: red;
+}
+
+.error {
+    color: red;
+    font-style: italic;
+}
+
+table, td {
+    border: 2px solid black;
+}
+
+.add-btn {
+    background: bisque;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
