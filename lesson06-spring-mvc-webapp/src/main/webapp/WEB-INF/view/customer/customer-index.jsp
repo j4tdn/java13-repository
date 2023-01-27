@@ -32,7 +32,6 @@
                 </svg>
             </a>
             <div class="collapse navbar-collapse" id="#navbarTogglerId">
-
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link customer-nav" aria-current="page" href="${contextPath}/customer">Customer</a>
@@ -58,12 +57,16 @@
 
 
 <main class="container-fluid">
-    <a href=""
-       class="btn btn-primary btn-sm mt-3 mb-3"> <i
-            class="far fa-address-book"></i> Add Customer
-    </a>
-
-    <table class="table table-bordered table-striped">
+    <div class="toolbar">
+        <a href="${contextPath}/customer/add"
+           class="btn btn-primary btn-sm mt-3 mb-3"> <i
+                class="far fa-address-book"></i> Add Customer
+        </a>
+        <p class="message alert">
+            ${param.message}
+        </p>
+    </div>
+    <table class="table table-bordered table-customer-striped">
         <thead class="table-dark">
         <tr>
             <th><a href="">First name</a></th>
@@ -75,15 +78,16 @@
 
         <tbody>
         <c:forEach var="customer" items="${customers}">
-        <tr>
-            <td>${customer.first_name}</td>
-            <td>${customer.last_name}</td>
-            <td>${customer.email}</td>
-            <td>
-                <a href="" class="btn btn-info btn-sm">Update</a>
-                <a href="" class="btn btn-danger btn-sm">Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>${customer.firstName}</td>
+                <td>${customer.lastName}</td>
+                <td>${customer.email}</td>
+                <td>
+                    <a href="${contextPath}/customer/update?id=${customer.id}" class="btn btn-info btn-sm">Update</a>
+                    <a onclick="if (!confirm('Do you really want to delete this customer?')) return false;"
+                       href="${contextPath}/customer/delete?id=${customer.id}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
         </c:forEach>
         </tbody>
     </table>

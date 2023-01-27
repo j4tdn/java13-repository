@@ -11,6 +11,21 @@ import java.util.List;
 public class HibernateCustomerDao extends AbstractHibernateDao implements CustomerDao {
     @Override
     public List<Customer> findAllCustomers() {
-        return openSession().createQuery("FROM Customer", Customer.class).getResultList();
+        return getCurrentSession().createQuery("FROM Customer", Customer.class).getResultList();
+    }
+
+    @Override
+    public void save(Customer customer) {
+        getCurrentSession().saveOrUpdate(customer);
+    }
+
+    @Override
+    public Customer get(Integer id) {
+        return getCurrentSession().get(Customer.class, id);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        getCurrentSession().delete(get(id));
     }
 }

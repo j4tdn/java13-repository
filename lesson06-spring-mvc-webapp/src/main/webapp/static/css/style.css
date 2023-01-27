@@ -1,3 +1,24 @@
-h2{
-    color:red;
+h2 {
+    color: red;
+}
+
+th a {
+    text-decoration: none;
+}
+
+tr th {
+    text-align: center;
+}
+
+tr td {
+    text-align: center;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toolbar p{
+    margin-top:1rem;
 }
