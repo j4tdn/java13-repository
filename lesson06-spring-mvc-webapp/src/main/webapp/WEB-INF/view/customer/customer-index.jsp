@@ -72,35 +72,26 @@
         <thead class="table-dark">
         <tr>
             <th>
-                <a href="${contextPath}/customer/page/${currentPage}?property=first_name&&direction=${direction.equals("asc")? 'desc' : 'asc'}&&keyword=${keyword}"
+                <a href="${contextPath}/customer/page/${currentPage}?property=first_name&&direction=${property.equals("first_name")? reverseOrder : 'asc'}${keyword!=""? '&&keyword='.concat(keyword) : ''}"
                    class="${property.equals("first_name")? 'chose' : ''}">
                     First name
                 </a>
-                <c:if test="${direction.equals('asc') && property.equals('first_name')}">
-                    <span class="fa fa-arrow-up"></span>
-                </c:if>
-                <c:if test="${direction.equals('desc') && property.equals('first_name')}">
-                    <span class="fa fa-arrow-down"></span>
+                <c:if test="${property.equals('first_name')}">
+                    <span class="${direction.equals("asc")?'fa fa-arrow-up' : 'fa fa-arrow-down'}"></span>
                 </c:if>
             </th>
             <th>
-                <a href="${contextPath}/customer/page/${currentPage}?property=last_name&&direction=${direction.equals("asc")? 'desc' : 'asc'}&&keyword=${keyword}"
-                   class="${(property.equals("last_name")&& property.equals("last_name")) ? 'chose' : ''}">Last name</a>
-                <c:if test="${direction.equals('asc') && property.equals('last_name')}">
-                    <span class="fa fa-arrow-up"></span>
-                </c:if>
-                <c:if test="${direction.equals('desc') && property.equals('last_name')}">
-                    <span class="fa fa-arrow-down"></span>
+                <a href="${contextPath}/customer/page/${currentPage}?property=last_name&&direction=${property.equals("last_name")? reverseOrder : 'asc'}${keyword!=""? '&&keyword='.concat(keyword) : ''}"
+                   class="${property.equals("last_name") ? 'chose' : ''}">Last name</a>
+                <c:if test="${property.equals('last_name')}">
+                    <span class="${direction.equals("asc")?'fa fa-arrow-up' : 'fa fa-arrow-down'}"></span>
                 </c:if>
             </th>
             <th>
-                <a href="${contextPath}/customer/page/${currentPage}?property=email&&direction=${direction.equals("asc")? 'desc' : 'asc'}&&keyword=${keyword}"
-                   class="${(property.equals("email") && property.equals("email"))? 'chose' : ''}">Email</a>
-                <c:if test="${direction.equals('asc') && property.equals('email')}">
-                    <span class="fa fa-arrow-up"></span>
-                </c:if>
-                <c:if test="${direction.equals('desc') && property.equals('email')}">
-                    <span class="fa fa-arrow-down"></span>
+                <a href="${contextPath}/customer/page/${currentPage}?property=email&&direction=${property.equals("email")? reverseOrder : 'asc'}${keyword!=""? '&&keyword='.concat(keyword): ''}"
+                   class="${property.equals("email")? 'chose' : ''}">Email</a>
+                <c:if test="${property.equals('email')}">
+                    <span class="${direction.equals("asc")?'fa fa-arrow-up' : 'fa fa-arrow-down'}"></span>
                 </c:if>
             </th>
             <th>Action</th>
@@ -124,16 +115,17 @@
     </table>
 
     <nav class="float-end mb-3">
+        <c:if test="${totalPage>0}">
         <ul class="pagination">
             <li class="page-item ${currentPage == 1 ? 'active' : ''}">
-                <a href="${contextPath}/customer/page/1?property=${property}&&direction=${direction}&&keyword=${keyword}"
+                <a href="${contextPath}/customer/page/1?property=${property}&&direction=${direction}${keyword!=""? '&&keyword='.concat(keyword) : ''}"
                    aria-label="Next"
                    class="page-link">
                     <span aria-hidden="true">First</span>
                 </a>
             </li>
             <li class="page-item">
-                <a href="${contextPath}/customer/page/${currentPage - 1 > 1 ? currentPage - 1 : 1}?property=${property}&&direction=${direction}&&keyword=${keyword}"
+                <a href="${contextPath}/customer/page/${currentPage - 1 > 1 ? currentPage - 1 : 1}?property=${property}&&direction=${direction}${keyword!=""? '&&keyword='.concat(keyword) : ''}"
                    aria-label="Previous" class="page-link">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
@@ -141,22 +133,23 @@
             <c:forEach begin="1" end="${totalPage}" step="1" var="pageNum">
                 <li class="page-item ${currentPage == pageNum ? 'active' : ''}">
                     <a class="page-link"
-                       href="${contextPath}/customer/page/${pageNum}?property=${property}&&direction=${direction}&&keyword=${keyword}">${pageNum}</a>
+                       href="${contextPath}/customer/page/${pageNum}?property=${property}&&direction=${direction}${keyword!=""? '&&keyword='.concat(keyword) : ''}">${pageNum}</a>
                 </li>
             </c:forEach>
             <li class="page-item">
-                <a href="${contextPath}/customer/page/${currentPage + 1 < totalPage ? currentPage : totalPage}?property=${property}&&direction=${direction}&&keyword=${keyword}"
+                <a href="${contextPath}/customer/page/${currentPage + 1 < totalPage ? currentPage : totalPage}?property=${property}&&direction=${direction}${keyword!=""? '&&keyword='.concat(keyword) : ''}"
                    aria-label="Next" class="page-link">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
             <li class="page-item ${currentPage == totalPage ? 'active' : ''}">
-                <a href="${contextPath}/customer/page/${totalPage}?property=${property}&&direction=${direction}&&keyword=${keyword}"
+                <a href="${contextPath}/customer/page/${totalPage}?property=${property}&&direction=${direction}${keyword!=""? '&&keyword='.concat(keyword) : ''}"
                    aria-label="Next" class="page-link">
                     <span aria-hidden="true">Last</span>
                 </a>
             </li>
         </ul>
+        </c:if>
     </nav>
 </main>
 

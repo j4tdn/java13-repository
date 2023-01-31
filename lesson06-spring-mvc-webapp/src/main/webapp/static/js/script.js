@@ -21,7 +21,7 @@ function handleMessageInfo() {
     if (message.textContent.includes("successfully")) {
         message.classList.add('alert-success')
     } else if (message.textContent.includes("unsuccessfully")) {
-        message.classList.add('alert-success')
+        message.classList.add('alert-danger')
     }
 }
 

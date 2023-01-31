@@ -33,24 +33,20 @@ public class CustomerController {
 
     @GetMapping
     public String index(Model model, @RequestParam(required = false, name = "keyword") String keyword) {
-        if (keyword == null) {
-            keyword = defaultKeyword;
-        }
-        Integer totalCustomers = customerService.getTotalCustomers(keyword);
-        System.out.println("totalCustomers: " + totalCustomers);
-        customerList = customerService.findAllCustomers(defaultPage, defaultPro, defaultDir, keyword);
-        addAttributes(model, defaultDir, defaultPro, defaultPage, getTotalPage(totalCustomers), customerList, keyword);
-        return CUSTOMER_INDEX_PAGE;
+        return pagination(model, String.valueOf(defaultPage), defaultDir, defaultPro, keyword);
     }
 
     @GetMapping("/page/{pageNum}")
     public String pagination(Model model, @PathVariable String pageNum, @RequestParam("direction") String direction, @RequestParam("property") String property, @RequestParam(required = false, name = "keyword") String keyword) {
+        if (keyword == null) {
+            keyword = defaultKeyword;
+        }
         Integer pageNumAsInt = Integer.parseInt(pageNum);
-        customerList = customerService.findAllCustomers(pageNumAsInt, property, direction, keyword);
         Integer totalCustomers = customerService.getTotalCustomers(keyword);
         Integer totalPage = getTotalPage(totalCustomers);
-        pageNumAsInt = pageNumAsInt > totalPage ? totalPage : pageNumAsInt;
+        customerList = customerService.findAllCustomers(pageNumAsInt, property, direction, keyword);
         addAttributes(model, direction, property, pageNumAsInt, totalPage, customerList, keyword);
+        model.addAttribute("reverseOrder", direction.equals("asc") ? "desc" : "asc");
         return CUSTOMER_INDEX_PAGE;
     }
 
