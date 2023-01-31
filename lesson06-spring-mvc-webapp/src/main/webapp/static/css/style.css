@@ -19,6 +19,11 @@ tr td {
     justify-content: space-between;
     align-items: center;
 }
-.toolbar p{
-    margin-top:1rem;
+
+.toolbar p {
+    margin-top: 1rem;
+}
+
+.chose {
+    color: red;
 }

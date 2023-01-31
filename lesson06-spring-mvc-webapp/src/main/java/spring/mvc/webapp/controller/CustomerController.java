@@ -12,17 +12,45 @@ import java.util.List;
 
 import static common.Application.*;
 import static common.Message.*;
+import static spring.mvc.webapp.utils.CustomerUtils.*;
 
 @Controller
 @RequestMapping("customer")
 public class CustomerController {
+    List<Customer> customerList;
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping
-    public String index(Model model) {
-        List<Customer> customerList = customerService.findAllCustomers();
+    public static void addAttributes(Model model, String direction, String property, Integer pageNum, Integer totalPage, List<Customer> customerList, String keyword) {
+        model.addAttribute("direction", direction);
+        model.addAttribute("property", property);
+        model.addAttribute("currentPage", pageNum);
+        model.addAttribute("totalPage", totalPage);
         model.addAttribute("customers", customerList);
+        model.addAttribute("keyword", keyword);
+
+    }
+
+    @GetMapping
+    public String index(Model model, @RequestParam(required = false, name = "keyword") String keyword) {
+        if (keyword == null) {
+            keyword = defaultKeyword;
+        }
+        Integer totalCustomers = customerService.getTotalCustomers(keyword);
+        System.out.println("totalCustomers: " + totalCustomers);
+        customerList = customerService.findAllCustomers(defaultPage, defaultPro, defaultDir, keyword);
+        addAttributes(model, defaultDir, defaultPro, defaultPage, getTotalPage(totalCustomers), customerList, keyword);
+        return CUSTOMER_INDEX_PAGE;
+    }
+
+    @GetMapping("/page/{pageNum}")
+    public String pagination(Model model, @PathVariable String pageNum, @RequestParam("direction") String direction, @RequestParam("property") String property, @RequestParam(required = false, name = "keyword") String keyword) {
+        Integer pageNumAsInt = Integer.parseInt(pageNum);
+        customerList = customerService.findAllCustomers(pageNumAsInt, property, direction, keyword);
+        Integer totalCustomers = customerService.getTotalCustomers(keyword);
+        Integer totalPage = getTotalPage(totalCustomers);
+        pageNumAsInt = pageNumAsInt > totalPage ? totalPage : pageNumAsInt;
+        addAttributes(model, direction, property, pageNumAsInt, totalPage, customerList, keyword);
         return CUSTOMER_INDEX_PAGE;
     }
 
@@ -39,7 +67,7 @@ public class CustomerController {
     }
 
     @GetMapping("/delete")
-    public String delete(@RequestParam("id") Integer id, Model model) {
+    public String delete(@RequestParam("id") Integer id) {
         try {
             customerService.delete(id);
         } catch (Exception ignored) {

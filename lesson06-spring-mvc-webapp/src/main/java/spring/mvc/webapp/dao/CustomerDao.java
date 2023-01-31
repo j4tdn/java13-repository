@@ -12,4 +12,8 @@ public interface CustomerDao {
     Customer get(Integer id);
 
     void delete(Integer id);
+
+    List<Customer> findAllCustomers(Integer pageNum, String property, String direction, String keyword);
+
+    Integer getTotalCustomers(String keyword);
 }

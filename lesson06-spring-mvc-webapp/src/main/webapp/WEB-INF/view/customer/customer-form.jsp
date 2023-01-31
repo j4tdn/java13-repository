@@ -16,7 +16,7 @@
 
     <hr>
 
-    <form:form action="${contextPath}/customer/save" method="post" modelAttribute="customer" >
+    <form:form action="${contextPath}/customer/save" method="post" modelAttribute="customer">
         <form:hidden path="id"></form:hidden>
         <div class="form-group row mt-4 mb-4">
             <label for="firstName" class="col-sm-2 col-form-label">First name:</label>
@@ -44,7 +44,7 @@
 
     <hr>
 
-    <a href="">Back to Customer List</a>
+    <a href="${contextPath}/customer">Back to Customer List</a>
 
     <footer class="bg-light fixed-bottom py-3 text-center">
         <div class="container-fluid">

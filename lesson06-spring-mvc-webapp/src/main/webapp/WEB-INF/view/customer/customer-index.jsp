@@ -44,9 +44,11 @@
                     </li>
                 </ul>
 
-                <form:form action="" method="GET" class="d-flex">
-                    <input name="text" value=""
-                           class="form-control me-2" type="search" placeholder="Search"
+                <form:form action="${contextPath}/customer"
+                           method="GET" class="d-flex">
+                    <input name="keyword" value="${keyword}"
+                           class="form-control me-2" type="search"
+                           placeholder="Search"
                            aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form:form>
@@ -60,7 +62,7 @@
     <div class="toolbar">
         <a href="${contextPath}/customer/add"
            class="btn btn-primary btn-sm mt-3 mb-3"> <i
-                class="far fa-address-book"></i> Add Customer
+                class="fa fa-address-book"></i> Add Customer
         </a>
         <p class="message alert">
             ${param.message}
@@ -69,9 +71,38 @@
     <table class="table table-bordered table-customer-striped">
         <thead class="table-dark">
         <tr>
-            <th><a href="">First name</a></th>
-            <th><a href="">Last name</a></th>
-            <th><a href="">Email</a></th>
+            <th>
+                <a href="${contextPath}/customer/page/${currentPage}?property=first_name&&direction=${direction.equals("asc")? 'desc' : 'asc'}&&keyword=${keyword}"
+                   class="${property.equals("first_name")? 'chose' : ''}">
+                    First name
+                </a>
+                <c:if test="${direction.equals('asc') && property.equals('first_name')}">
+                    <span class="fa fa-arrow-up"></span>
+                </c:if>
+                <c:if test="${direction.equals('desc') && property.equals('first_name')}">
+                    <span class="fa fa-arrow-down"></span>
+                </c:if>
+            </th>
+            <th>
+                <a href="${contextPath}/customer/page/${currentPage}?property=last_name&&direction=${direction.equals("asc")? 'desc' : 'asc'}&&keyword=${keyword}"
+                   class="${(property.equals("last_name")&& property.equals("last_name")) ? 'chose' : ''}">Last name</a>
+                <c:if test="${direction.equals('asc') && property.equals('last_name')}">
+                    <span class="fa fa-arrow-up"></span>
+                </c:if>
+                <c:if test="${direction.equals('desc') && property.equals('last_name')}">
+                    <span class="fa fa-arrow-down"></span>
+                </c:if>
+            </th>
+            <th>
+                <a href="${contextPath}/customer/page/${currentPage}?property=email&&direction=${direction.equals("asc")? 'desc' : 'asc'}&&keyword=${keyword}"
+                   class="${(property.equals("email") && property.equals("email"))? 'chose' : ''}">Email</a>
+                <c:if test="${direction.equals('asc') && property.equals('email')}">
+                    <span class="fa fa-arrow-up"></span>
+                </c:if>
+                <c:if test="${direction.equals('desc') && property.equals('email')}">
+                    <span class="fa fa-arrow-down"></span>
+                </c:if>
+            </th>
             <th>Action</th>
         </tr>
         </thead>
@@ -92,29 +123,46 @@
         </tbody>
     </table>
 
-    <nav class="float-end">
+    <nav class="float-end mb-3">
         <ul class="pagination">
-
+            <li class="page-item ${currentPage == 1 ? 'active' : ''}">
+                <a href="${contextPath}/customer/page/1?property=${property}&&direction=${direction}&&keyword=${keyword}"
+                   aria-label="Next"
+                   class="page-link">
+                    <span aria-hidden="true">First</span>
+                </a>
+            </li>
             <li class="page-item">
-                <a href="" aria-label="Previous" class="page-link">
+                <a href="${contextPath}/customer/page/${currentPage - 1 > 1 ? currentPage - 1 : 1}?property=${property}&&direction=${direction}&&keyword=${keyword}"
+                   aria-label="Previous" class="page-link">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link bg-warning" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <c:forEach begin="1" end="${totalPage}" step="1" var="pageNum">
+                <li class="page-item ${currentPage == pageNum ? 'active' : ''}">
+                    <a class="page-link"
+                       href="${contextPath}/customer/page/${pageNum}?property=${property}&&direction=${direction}&&keyword=${keyword}">${pageNum}</a>
+                </li>
+            </c:forEach>
             <li class="page-item">
-                <a href="" aria-label="Next" class="page-link">
+                <a href="${contextPath}/customer/page/${currentPage + 1 < totalPage ? currentPage : totalPage}?property=${property}&&direction=${direction}&&keyword=${keyword}"
+                   aria-label="Next" class="page-link">
                     <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li class="page-item ${currentPage == totalPage ? 'active' : ''}">
+                <a href="${contextPath}/customer/page/${totalPage}?property=${property}&&direction=${direction}&&keyword=${keyword}"
+                   aria-label="Next" class="page-link">
+                    <span aria-hidden="true">Last</span>
                 </a>
             </li>
         </ul>
     </nav>
 </main>
 
-<footer class="bg-light fixed-bottom py-3 text-center">
+<footer class="bg-light fixed-bottom text-center">
     <div class="container-fluid">
-        <span class="text-muted">CMA made with JAVA11  &#129392;  25.06.2022</span>
+        <span class="text-muted">CMA made with JAVA13  &#129392;  25.06.2022</span>
     </div>
 </footer>
 

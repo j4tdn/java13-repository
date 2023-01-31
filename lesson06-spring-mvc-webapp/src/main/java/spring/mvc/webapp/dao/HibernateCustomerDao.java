@@ -1,9 +1,8 @@
 package spring.mvc.webapp.dao;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import spring.mvc.webapp.entity.Customer;
+import spring.mvc.webapp.utils.CustomerUtils;
 
 import java.util.List;
 
@@ -28,4 +27,22 @@ public class HibernateCustomerDao extends AbstractHibernateDao implements Custom
     public void delete(Integer id) {
         getCurrentSession().delete(get(id));
     }
+
+    @Override
+    public List<Customer> findAllCustomers(Integer pageNum, String property, String direction, String keyword) {
+        String sql = "select * from Customer" +
+                " where first_name LIKE '%" + keyword + "%' or last_name LIKE '%" + keyword + "%' or email LIKE '%" + keyword + "%'" +
+                " order by " + property + (direction.equals("desc") ? " desc" : "") +
+                " limit " + CustomerUtils.getOffset(pageNum) + "," + CustomerUtils.customerPerPage;
+        return getCurrentSession().createNativeQuery(sql, Customer.class).getResultList();
+    }
+
+    @Override
+    public Integer getTotalCustomers(String keyword) {
+        String sql = "select * from Customer" +
+                " where first_name LIKE '%" + keyword + "%' or last_name LIKE '%" + keyword + "%' or email LIKE '%" + keyword + "%'";
+        return Math.toIntExact(getCurrentSession().createNativeQuery(sql, Customer.class).getResultList().stream().count());
+    }
+
+
 }

@@ -10,10 +10,11 @@ public class AbstractHibernateDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public Session openSession(){
+    public Session openSession() {
         return sessionFactory.openSession();
     }
-    public Session getCurrentSession(){
+
+    public Session getCurrentSession() {
         return sessionFactory.getCurrentSession();
     }
 }

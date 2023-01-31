@@ -41,7 +41,8 @@
                         <a class="nav-link stuff-nav" href="${contextPath}/stuff">Stuff</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link admin-nav active" href="${contextPath}/admin" tabindex="-1" aria-disabled="true">Admin</a>
+                        <a class="nav-link admin-nav active" href="${contextPath}/admin" tabindex="-1"
+                           aria-disabled="true">Admin</a>
                     </li>
                 </ul>
 

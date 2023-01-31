@@ -7,6 +7,7 @@ public class Application {
     public static final String ADMIN_INDEX_PAGE = "admin/admin-index";
     public static final String CUSTOMER_FORM_PAGE = "customer/customer-form";
     public static final String CUSTOMER_REDIRECT_PAGE = "redirect:/customer";
+
     private Application() {
 
     }
