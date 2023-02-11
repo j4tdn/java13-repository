@@ -6,6 +6,18 @@
 <h2>User: <security:authentication property="principal.username"></security:authentication></h2>
 <h2>Role(s): <security:authentication property="principal.authorities"></security:authentication></h2>
 <hr>
+<security:authorize access="isAuthenticated()">
+<p>
+    User:
+    <security:authentication property="principal.username" />
+</p>
+<p>
+    Role(s):
+    <security:authentication property="principal.authorities" />
+</p>
+<p>FirstName: ${user.firstName}, LastName: ${user.lastName}</p>
+<hr>
+</security:authorize>
 <security:authorize access="hasRole('MANAGER')">
     <div><a href="${contextPath}/managers/">
         Go to managers page

@@ -166,6 +166,10 @@
             transform: translate(1.4em, 2em) scale(0.65);
             opacity: 1;
         }
+        .signup-btn{
+            text-decoration: none;
+
+        }
     </style>
 </head>
 
@@ -331,8 +335,11 @@
 <div class="inputGroup inputGroup3">
     <button id="login" type="submit">Log in</button>
 </div>
-
+<a class="inputGroup inputGroup3 signup-btn" href="${contextPath}/signup">
+    Register new user
+</a>
 </form:form>
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script>
 <script src="${contextPath}/resources/js/script.js">
 </script>

@@ -1,11 +1,15 @@
 package com.spring.configuration;
 
+import com.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.sql.DataSource;
 
@@ -13,8 +17,12 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    protected DataSource dataSource;
+    private UserService userService;
+//    @Autowired
+//    protected DataSource dataSource;
 
+    @Autowired
+    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         /* Opt1: use in memory authentication
@@ -25,7 +33,10 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser(users.username("susan").password("1").roles("EMPLOYEE", "ADMIN")); */
 
         /* Opt2: */
-        auth.jdbcAuthentication().dataSource(dataSource);
+//        auth.jdbcAuthentication().dataSource(dataSource);
+
+       /* Opt3: */
+        auth.authenticationProvider(authenticationProvider());
     }
 
     @Override
@@ -36,8 +47,26 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/managers/**").hasRole("MANAGER")
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .and().formLogin().loginPage("/login")
-                .loginProcessingUrl("/authenticate").permitAll()
-                .and().logout().permitAll()
-                .and().exceptionHandling().accessDeniedPage("/access-denied");
+                .loginProcessingUrl("/authenticate")
+                .failureUrl("/login?error")
+                .successHandler(customAuthenticationSuccessHandler)
+                .permitAll()
+                .and().logout()
+                .permitAll()
+                .and().exceptionHandling()
+                .accessDeniedPage("/access-denied");
+    }
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
+        auth.setUserDetailsService(userService);
+        auth.setPasswordEncoder(passwordEncoder());
+        return auth;
     }
 }
