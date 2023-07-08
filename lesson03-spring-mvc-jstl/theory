@@ -1,0 +1,57 @@
+0. Create project using Maven
+--> File - New Maven Project - Maven Archetype(template) Web App
+                             - Project Structure for Web App
+
+jsp --> java server page(fe, java, jsp syntax)
+                             
+1. Fix error after create project
+   + Structure
+   		src
+   			main
+   				java(src/main/java)           --> Backend: code & configuration(bye java)
+   				resources(src/main/resources) --> Backend: code & resources(.properties)
+   				webapp                        --> Frontend: code
+   					WEB-INF(configure)
+   						web.xml(main-config with xml)
+   					index.jsp(first come when start application)
+   					
+   + index.jsp(error first)
+   	 --> The superclass "javax.servlet.http.HttpServlet" was not found on the Java Build Path
+	 --> java extends/implement HttpServlet
+	 	 --> import dependency for servlet/jsp(contains HttpServlet)
+	 	 
+
+2. Import dependencies for web
+   spring-webmvc
+   	 core, aop, context, web(dependencies)
+
+3. Configure DispatcherServlet || FrontController
+   --> manage request mapping/functions existed in webapp
+   --> web browser --> front controller -- (OK)   -- webapp function
+   										-- (FAIL) -- return web browser with error
+   + XML  : web.xml
+   + JAVA : .......
+   ==> Configure necessary parameters for Spring MVC Application
+      + spring-mvc-config.xml
+
+4. Controller
+   + index.jsp
+   + request mapping/function
+     --> default(empty or /) --> WEB-INF/view/hompage.jsp
+   
+5.1 View Resolver
+	Class --> prefix = /WEB-INF/view/
+		      suffix = .jsp
+	
+	return homepage       --> prefix+homepage+suffix --> /WEB-INF/view/homepage.jsp
+	return student/index  /WEB-INF/view/student/index.jsp
+
+5.2 View Template
+   jsp(fe, java, jsp syntax) --> convert html to show in web browser
+   return /WEB-INF/view/homepage.jsp
+
+Some Issues
+1. Right click -> Properties -> Project Facets -> JAVA 1.8
+2. Open project folder -> .settings -> ...facet.core.xml
+   Edit --> jst.web = 3.1
+        --> java    = 1.8
